@@ -1,0 +1,77 @@
+{
+  "ecommerceProvider": "VTEX",
+  "providerInfo": {
+    "account": "worldwine",
+    "faststore": "worldwine",
+    "host": "https://www.worldwine.com.br",
+    "vtexCmsUrl": "https://euentregobr.myvtex.com"
+  },
+  "appConfigs": {
+    "clarityId": "YOUR_CLARITY_ID",
+    "autoTriggerGAEvents": true,
+    "statusBarTextColor": "black",
+    "headerLogo": "https://console.eitri.tech/assets/logo-dark-CpI6qVKD.svg",
+    "headerBackgroundColor": "secondary-500",
+    "headerContentColor": "neutral-900",
+    "productCard": {
+      "style": "fullImage",
+      "showListPrice": false,
+      "buyGoesToPDP": true
+    }
+  },
+  "storePreferences": {
+    "displayCompanyName": "World Wine",
+    "currencyCode": "BRL",
+    "locale": "pt-BR",
+    "segments": {
+      "campaigns": null,
+      "channel": "1",
+      "priceTables": null,
+      "regionId": null,
+      "utm_campaign": null,
+      "utm_source": "eitri-shop-source",
+      "utmi_campaign": null,
+      "currencyCode": "BRL",
+      "currencySymbol": "R$",
+      "countryCode": "BRA",
+      "cultureInfo": "pt-BR",
+      "admin_cultureInfo": "pt-BR",
+      "channelPrivacy": "public"
+    },
+    "marketingTag": "eitri-shop",
+    "salesChannel": "1"
+  },
+  "searchOptions": {
+    "legacySearch": false
+  },
+  "eitriConfig": {
+    "mainApp": "eitri-shopping-vtex-daisy-home",
+    "bottomNavItems": [
+      {
+        "slug": "eitri-shopping-vtex-daisy-home",
+        "initParams": {
+          "tabIndex": 0
+        }
+      },
+      {
+        "slug": "eitri-shopping-vtex-daisy-home",
+        "initParams": {
+          "tabIndex": 1,
+          "route": "Categories"
+        }
+      },
+      {
+        "slug": "eitri-shopping-vtex-daisy-cart",
+        "initParams": {
+          "tabIndex": 2
+        }
+      },
+      {
+        "slug": "eitri-shopping-vtex-daisy-account",
+        "initParams": {
+          "tabIndex": 3
+        }
+      }
+    ]
+  }
+}
