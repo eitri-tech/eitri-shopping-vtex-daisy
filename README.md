@@ -1,0 +1,1 @@
+# eitri-shopping-vtex-daisy
