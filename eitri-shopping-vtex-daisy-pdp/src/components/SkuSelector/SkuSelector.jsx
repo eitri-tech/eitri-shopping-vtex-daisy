@@ -5,8 +5,8 @@ export default function SkuSelector(props) {
 	const [skuVariations, setSkuVariations] = useState([])
 
 	useEffect(() => {
-		const selectedVariations = product.items.reduce((acc, item) => {
-			item.variations.forEach(variation => {
+		const selectedVariations = product?.items?.reduce((acc, item) => {
+			item.variations.length > 0 && item.variations.forEach(variation => {
 				const accVar = acc.find(foundVariation => foundVariation?.field?.name === variation.name)
 
 				if (accVar) {
