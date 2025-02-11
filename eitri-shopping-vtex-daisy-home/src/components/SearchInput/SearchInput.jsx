@@ -1,4 +1,5 @@
 import Eitri from 'eitri-bifrost'
+import { Text, View} from "eitri-luminus";
 import { Vtex } from 'eitri-shopping-vtex-shared'
 import { autocompleteSuggestions } from '../../services/ProductService'
 import CInput from '../CInput/CInput'

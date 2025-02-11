@@ -1,4 +1,5 @@
 import { resolveNavigation } from '../../../services/NavigationService'
+import { Text, View} from "eitri-luminus";
 export default function CategoryTiles(props) {
   const { data } = props
   const onPress = (content) => {

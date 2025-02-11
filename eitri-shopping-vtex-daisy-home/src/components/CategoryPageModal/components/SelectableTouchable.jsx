@@ -1,3 +1,4 @@
+import {View} from "eitri-luminus";
 export default function SelectableTouchable(props) {
   const { addCategory, removeCategory, checked, value, categoryKey, name } = props
   const handleCheck = (value) => {

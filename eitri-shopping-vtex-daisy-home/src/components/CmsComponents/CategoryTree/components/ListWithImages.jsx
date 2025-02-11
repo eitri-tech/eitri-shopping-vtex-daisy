@@ -1,3 +1,4 @@
+import { Text, View} from "eitri-luminus";
 export default function ListWithImages(props) {
   const { currentShelf, chooseCategory } = props
   return (

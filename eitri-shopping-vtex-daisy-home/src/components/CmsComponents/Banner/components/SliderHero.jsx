@@ -1,3 +1,4 @@
+import { Text, View} from "eitri-luminus";
 export default function SliderHero(props) {
   const [currentSlide, setCurrentSlide] = useState(0)
   const { data, onPress } = props

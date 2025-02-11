@@ -1,5 +1,6 @@
 import ProductCard from '../../ProductCard/ProductCard'
 import ProductCardLoading from './ProductCardLoading'
+import {View} from "eitri-luminus";
 export default function ShelfOfProductsCarousel(props) {
   const { isLoading, products, gap, locale, currency } = props
   const [currentSlide, setCurrentSlide] = useState(0)

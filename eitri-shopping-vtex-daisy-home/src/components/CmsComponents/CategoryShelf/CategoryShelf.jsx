@@ -1,4 +1,5 @@
 import Eitri from 'eitri-bifrost'
+import { Text, View} from "eitri-luminus";
 import SwiperContent from '../../SwiperContent/SwiperContent'
 export default function CategoryShelf(props) {
   const { data } = props

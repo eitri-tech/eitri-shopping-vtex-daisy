@@ -1,3 +1,4 @@
+import { Text, View} from "eitri-luminus";
 export default function SwiperContent(props) {
   const { title, children, marginBottom, paddingHorizontal, gap } = props
   return (

@@ -1,3 +1,4 @@
+import { Text, View} from "eitri-luminus";
 import SwiperContent from '../../../SwiperContent/SwiperContent'
 export default function RoundedBannerList(props) {
   const { data, onPress } = props

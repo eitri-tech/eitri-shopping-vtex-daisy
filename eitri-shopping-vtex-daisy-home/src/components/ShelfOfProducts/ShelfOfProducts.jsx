@@ -1,4 +1,5 @@
 import { Loading } from 'eitri-shopping-vtex-daisy-shared'
+import { Text, View} from "eitri-luminus";
 import ProductCard from '../ProductCard/ProductCard'
 import ShelfOfProductsCarousel from './components/ShelfOfProductsCarousel'
 import Eitri from 'eitri-bifrost'

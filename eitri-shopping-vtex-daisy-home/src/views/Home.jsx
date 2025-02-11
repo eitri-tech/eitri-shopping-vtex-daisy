@@ -77,7 +77,7 @@ export default function Home() {
         quantityOfItems={cart?.items?.length}
       />
       <HomeSkeleton show={!cmsContent} />
-      {/* <CmsContentRender cmsContent={cmsContent} /> */}
+      <CmsContentRender cmsContent={cmsContent} />
     </Page>
   )
 }

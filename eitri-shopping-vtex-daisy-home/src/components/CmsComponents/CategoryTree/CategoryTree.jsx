@@ -1,4 +1,5 @@
 import Eitri from 'eitri-bifrost'
+import { Text, View} from "eitri-luminus";
 import { Vtex } from 'eitri-shopping-vtex-shared'
 import { resolveNavigation } from '../../../services/NavigationService'
 import ListWithImages from './components/ListWithImages'

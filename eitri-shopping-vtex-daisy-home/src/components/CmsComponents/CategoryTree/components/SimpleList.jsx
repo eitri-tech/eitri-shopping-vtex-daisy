@@ -1,3 +1,4 @@
+import { Text, View} from "eitri-luminus";
 export default function SimpleList(props) {
   const { currentShelf, chooseCategory } = props
   const totalLength = currentShelf?.content?.length
