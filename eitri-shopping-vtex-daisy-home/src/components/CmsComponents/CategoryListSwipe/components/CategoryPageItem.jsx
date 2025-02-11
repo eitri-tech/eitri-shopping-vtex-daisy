@@ -19,20 +19,28 @@ export default function CategoryPageItem(props) {
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M9 6L15 12L9 18" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path> </g></svg>
       </View>
       <View
-        width="100vw"
-        position={showSubItems ? 'absolute' : 'fixed'}
-        left={showSubItems ? '0' : '100vw'}
-        transition="left 0.2s linear"
-        className="top-0 z-9999"
+        className={`
+          w-screen 
+          ${showSubItems ? 'absolute left-0' : 'fixed left-[100vw]'} 
+          top-0 
+          transition-left duration-200 
+          z-[9999]
+        `}
       >
         <View>
-          <View left={showSubItems ? '0' : '100vw'} className="fixed top-0 right-0 bg-base-100">
+        <View
+          className={`
+            fixed top-0 right-0 bg-base-100 
+            ${showSubItems ? 'left-0' : 'left-[100vw]'} 
+            transition-left duration-200
+          `}
+        >
             <View topInset className="bg-primary-content" />
-            <View
-              id="mini-header"
-              width={'100vw'}
-              className="px-8 flex items-center justify-between bg-primary-content"
-            >
+              <View
+                id="mini-header"
+                className="w-screen px-8 flex items-center justify-between bg-primary-content"
+              >
+
               <View className="flex items-center">
                 <HeaderReturn onClick={() => setShowSubItems(false)} />
                 <Text contentColor className="text-primary-content">
@@ -42,9 +50,9 @@ export default function CategoryPageItem(props) {
             </View>
           </View>
         </View>
-        <View minHeight="100vh" className="bg-base-100">
+        <View className="min-h-screen bg-base-100">
           <View topInset />
-          <View height={headerHeight} width="100%" />
+          <View className={`w-full h-[${headerHeight}px]`} />
           <View className="flex flex-col p-8">
             {item?.subcategories?.map((subItem, index) => (
               <View onClick={() => goToItem(subItem)} className="p-8 flex justify-between items-center">

@@ -1,6 +1,6 @@
 import ProductCard from '../../ProductCard/ProductCard'
 import ProductCardLoading from './ProductCardLoading'
-import {View} from "eitri-luminus";
+import {View, Carousel} from "eitri-luminus";
 export default function ShelfOfProductsCarousel(props) {
   const { isLoading, products, gap, locale, currency } = props
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -27,18 +27,18 @@ export default function ShelfOfProductsCarousel(props) {
           {productsPage &&
             productsPage
               .map((page) => (
-                <View key={page?.[0]?.productId} className="flex justify-center">
-                  <View width="50%" className="pl-8 pr-1">
+                <Carousel.Item key={page?.[0]?.productId} className="flex justify-center">
+                  <View className="w-1/2 pr-8 pl-1" >
                     <ProductCard product={page[0]} locale={locale} currency={currency} />
                   </View>
                   {page.length > 1 ? (
-                    <View width="50%" className="pr-8 pl-1">
+                   <View className="w-1/2 pr-8 pl-1" >
                       <ProductCard product={page[1]} locale={locale} currency={currency} />
                     </View>
                   ) : (
-                    <View height="1px" width="50%" />
+                    <View className="h-px w-1/2" />
                   )}
-                </View>
+                </Carousel.Item> 
               ))
               .filter((item) => !!item)}
         </Carousel>
@@ -52,10 +52,9 @@ export default function ShelfOfProductsCarousel(props) {
             (_, index) => (
               <View
                 key={index}
-                backgroundColor={currentSlide === index ? 'primary-700' : 'neutral-300'}
-                width="32px"
-                height="6px"
+                className={`w-8 h-[6px] ${currentSlide === index ? 'bg-primary-700' : 'bg-neutral-300'}`}
               />
+
             ),
           )}
       </View>
