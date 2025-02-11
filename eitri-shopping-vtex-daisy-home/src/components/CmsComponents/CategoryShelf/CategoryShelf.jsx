@@ -17,7 +17,7 @@ export default function CategoryShelf(props) {
       <View>
         {data?.title && (
           <View className="px-8">
-            <Text fontFamily="Baloo 2" className="font-bold">
+            <Text className="font-bold font-['Baloo_2']">
               {data.title}
             </Text>
           </View>
@@ -25,7 +25,7 @@ export default function CategoryShelf(props) {
         <View title={data.title} className="flex justify-between px-8 overflow-scroll">
           {data?.shelves?.map((category) => (
             <View key={category.imageUrl} onClick={() => goToCategoryPage(category)}>
-              <View backgroundImage={category.imageUrl} width={category.width} height={category.height} />
+              <View backgroundImage={category.imageUrl} className="w-[100px] h-[50px]" />
             </View>
           ))}
         </View>
@@ -37,7 +37,7 @@ export default function CategoryShelf(props) {
       <SwiperContent title={data.title} className="px-8">
         {data?.shelves?.map((category) => (
           <View key={category.imageUrl} onClick={() => goToCategoryPage(category)}>
-            <View backgroundImage={category.imageUrl} width={category.width} height={category.height} />
+            <View backgroundImage={category.imageUrl} className="w-[100px] h-[50px]" />
           </View>
         ))}
       </SwiperContent>
