@@ -23,7 +23,7 @@ export default function ShelfOfProducts(props) {
           {searchParams && (
             <View onClick={seeMore} minWidth="fit-content" className="flex items-center">
               <Text className="font-bold text-primary-content">{t('shelfOfProducts.seeMore')}</Text>
-              <Icon iconKey="chevron-right" width={18} height={18} className="text-primary-content" />
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M9 6L15 12L9 18" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path> </g></svg>
             </View>
           )}
         </View>

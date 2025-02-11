@@ -15,7 +15,7 @@ export default function CategoryPageItem(props) {
     <>
       <View onClick={() => setShowSubItems(true)} className="p-8 flex justify-between items-center">
         <Text className="font-bold">{item.title}</Text>
-        <Icon iconKey="chevron-right" width={14} height={14} />
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M9 6L15 12L9 18" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path> </g></svg>
       </View>
       <View
         width="100vw"
@@ -48,7 +48,7 @@ export default function CategoryPageItem(props) {
             {item?.subcategories?.map((subItem, index) => (
               <View onClick={() => goToItem(subItem)} className="p-8 flex justify-between items-center">
                 <Text className="font-bold">{subItem.title}</Text>
-                <Icon iconKey="chevron-right" width={14} height={14} />
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M9 6L15 12L9 18" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path> </g></svg>
               </View>
             ))}
           </View>

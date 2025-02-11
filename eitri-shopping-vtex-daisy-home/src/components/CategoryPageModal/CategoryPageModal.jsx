@@ -29,7 +29,7 @@ export default function CategoryPageModal(props) {
         <View className="p-2 mx-1 flex flex flex-row justify-between items-center">
           <Text>{`${t('categoryPageModal.title')}`}</Text>
           <View width="36px" height="36px" onClick={onClose} className="bg-neutral items-center justify-center">
-            <Icon iconKey="x" height={20} width={20} />
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="Menu / Close_MD"> <path id="Vector" d="M18 18L12 12M12 12L6 6M12 12L18 6M12 12L6 18" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path> </g> </g></svg>
           </View>
         </View>
         <View className="mx-1">
@@ -50,7 +50,7 @@ export default function CategoryPageModal(props) {
                           className="flex items-center py-1 px-2 bg-primary-content"
                         >
                           <Text className="text-base-100 font-bold">{value.name}</Text>
-                          <Icon iconKey="x" height={20} width={20} className="text-base-100" />
+                          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="Menu / Close_MD"> <path id="Vector" d="M18 18L12 12M12 12L6 6M12 12L18 6M12 12L6 18" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path> </g> </g></svg>
                         </View>
                       )),
                   )}
