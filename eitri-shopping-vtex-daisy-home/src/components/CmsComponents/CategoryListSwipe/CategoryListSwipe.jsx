@@ -1,3 +1,4 @@
+import {View} from "eitri-luminus";
 import { resolveNavigation } from '../../../services/NavigationService'
 import CategoryPageItem from './components/CategoryPageItem'
 export default function CategoryListSwipe(props) {

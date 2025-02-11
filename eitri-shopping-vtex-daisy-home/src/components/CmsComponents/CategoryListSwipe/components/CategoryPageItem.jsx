@@ -1,4 +1,5 @@
 import { HeaderReturn } from 'eitri-shopping-vtex-daisy-shared'
+import { Text, View} from "eitri-luminus";
 export default function CategoryPageItem(props) {
   const { item, goToItem } = props
   const [headerHeight, setHeaderHeight] = useState(0)

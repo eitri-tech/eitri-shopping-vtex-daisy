@@ -1,4 +1,5 @@
 import SwiperContent from '../../../SwiperContent/SwiperContent'
+import { Text, View} from "eitri-luminus";
 export default function BannerList(props) {
   const { data, onPress } = props
   const imagesList = data.images

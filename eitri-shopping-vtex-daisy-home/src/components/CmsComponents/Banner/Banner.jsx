@@ -1,4 +1,5 @@
 import Eitri from 'eitri-bifrost'
+import {View} from "eitri-luminus";
 import SliderHero from './components/SliderHero'
 import BannerList from './components/BannerList'
 import { openBrand, openProductById, resolveNavigation } from '../../../services/NavigationService'

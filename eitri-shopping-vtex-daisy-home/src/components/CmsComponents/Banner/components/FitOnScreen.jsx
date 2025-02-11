@@ -1,3 +1,4 @@
+import { Text, View} from "eitri-luminus";
 export default function FitOnScreen(props) {
   const { data, onPress } = props
   return (

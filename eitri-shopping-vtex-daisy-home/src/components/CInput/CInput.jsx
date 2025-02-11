@@ -1,3 +1,4 @@
+import {View, Image} from "eitri-luminus";
 export default function CInput(props) {
   const { icon, type, backgroundColor, mask, ...rest } = props
   return (

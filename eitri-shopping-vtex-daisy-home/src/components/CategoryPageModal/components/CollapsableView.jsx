@@ -1,3 +1,4 @@
+import { Text, View} from "eitri-luminus";
 export default function CollapsableView(props) {
   const { children, title, willStartCollapsed } = props
   const [collapsed, setCollapsed] = useState(willStartCollapsed)

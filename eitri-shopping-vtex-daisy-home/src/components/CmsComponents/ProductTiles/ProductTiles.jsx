@@ -1,4 +1,5 @@
 import { getProductsByFacets } from '../../../services/ProductService'
+import { Text, View} from "eitri-luminus";
 import ShelfOfProducts from '../../ShelfOfProducts/ShelfOfProducts'
 export default function ProductTiles(props) {
   const { data } = props

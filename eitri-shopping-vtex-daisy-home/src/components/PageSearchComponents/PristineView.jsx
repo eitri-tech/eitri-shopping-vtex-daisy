@@ -1,4 +1,5 @@
 import { useTranslation } from 'eitri-i18n'
+import { Text, View} from "eitri-luminus";
 export default function PristineView() {
   const { t } = useTranslation()
   return (

@@ -1,4 +1,5 @@
 import { Loading } from 'eitri-shopping-vtex-daisy-shared'
+import {View} from "eitri-luminus";
 export default function ProductCardLoading(props) {
   const { width, gap } = props
   return (
