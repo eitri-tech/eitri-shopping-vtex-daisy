@@ -2,217 +2,132 @@ import CollapsableView from './components/CollapsableView'
 import SelectableTouchable from './components/SelectableTouchable'
 import { Loading } from 'eitri-shopping-vtex-daisy-shared'
 import { useTranslation } from 'eitri-i18n'
-
 export default function CategoryPageModal(props) {
-	const {
-		show,
-		onClose,
-		facets,
-		removeFilter,
-		addFilter,
-		clearFilters,
-		executeSearch,
-		facetsLoading,
-		listOrdering,
-		addOrdering
-	} = props
-
-	const { t } = useTranslation()
-
-	return (
-		<Modal
-			show={show}
-			position={'bottom'}
-			closeOnPressOut={true}
-			transition='background-color 0.5s ease-in-out'
-			onClose={onClose}>
-			<View
-				bottomInset
-				backgroundColor='background-color'
-				borderRadiusRightTop='small'
-				borderRadiusLeftTop='small'
-				minHeight='70vh'
-				overflow='scroll'
-				width='100vw'>
-				<View
-					padding='small'
-					marginHorizontal='nano'
-					display='flex'
-					direction='row'
-					justifyContent='between'
-					alignItems='center'>
-					<Text
-						fontSize='extra-large'
-						fontWeight='medium'>
-						{`${t('categoryPageModal.title')}`}
-					</Text>
-					<Touchable
-						width='36px'
-						height='36px'
-						borderRadius='circular'
-						backgroundColor='neutral-100'
-						alignItems='center'
-						justifyContent='center'
-						onPress={onClose}>
-						<Icon
-							iconKey='x'
-							height={20}
-							width={20}
-						/>
-					</Touchable>
-				</View>
-				<View marginHorizontal='nano'>
-					{facetsLoading ? (
-						<Loading inline />
-					) : (
-						<>
-							<View
-								gap={8}
-								padding='small'
-								display='flex'
-								flexWrap='wrap'>
-								{facets &&
-									facets.map(facet =>
-										facet.values
-											.filter(value => value.selected)
-											.map(value => (
-												<Touchable
-													key={value.value}
-													onPress={() => removeFilter(value)}
-													display='flex'
-													alignItems='center'
-													gap={8}
-													paddingVertical='nano'
-													paddingHorizontal='small'
-													width='fit-content'
-													backgroundColor='primary-700'
-													borderRadius='pill'>
-													<Text
-														color={'background-color'}
-														fontWeight='bold'
-														fontSize='nano'>
-														{value.name}
-													</Text>
-													<Icon
-														color='background-color'
-														iconKey='x'
-														height={20}
-														width={20}
-													/>
-												</Touchable>
-											))
-									)}
-							</View>
-
-							{listOrdering && (
-								<CollapsableView
-									key={listOrdering.key}
-									title={listOrdering.title}
-									willStartCollapsed={false}
-									border='none'
-									fontWeight='light'>
-									<View
-										display='flex'
-										direction='column'
-										gap={16}>
-										{listOrdering.values.map(value => (
-											<Touchable
-												key={value.id}
-												gap={8}
-												display='flex'
-												alignItems='center'
-												onPress={() =>
-													addOrdering({ key: value.categoryKey, value: value.value })
-												}>
-												<Radio checked={value.checked} />
-												{value.name}
-											</Touchable>
-										))}
-									</View>
-								</CollapsableView>
-							)}
-							{facets &&
-								facets.map(facet => (
-									<CollapsableView
-										key={facet.key}
-										title={facet.name}
-										willStartCollapsed={false}
-										border='none'
-										fontWeight='light'>
-										<View
-											display='flex'
-											direction='column'
-											gap={16}>
-											{facet.values.map(value => (
-												<SelectableTouchable
-													key={`${facet.key}_${value.value}`}
-													categoryKey={value.key}
-													name={`${value.name}`}
-													value={`${value.value}`}
-													removeCategory={removeFilter}
-													addCategory={addFilter}
-													checked={value.selected}
-												/>
-											))}
-										</View>
-									</CollapsableView>
-								))}
-						</>
-					)}
-
-					<View height={120} />
-
-					<View
-						position='fixed'
-						bottom={0}
-						left={0}
-						right={0}
-						paddingVertical='nano'
-						paddingHorizontal='small'
-						backgroundColor='background-color'
-						elevation={'highest'}>
-						<View
-							width='100%'
-							display='flex'
-							justifyContent='center'
-							height='48px'
-							gap='16px'>
-							<Touchable
-								borderRadius='pill'
-								display='flex'
-								padding='small'
-								alignItems='center'
-								justifyContent='center'
-								borderColor='primary-700'
-								borderWidth='hairline'
-								onPress={clearFilters}
-								grow={1}
-								backgroundColor='background-color'>
-								<Text color='primary-700'>{t('categoryPageModal.clear')}</Text>
-							</Touchable>
-
-							<Touchable
-								onPress={executeSearch}
-								borderRadius='pill'
-								display='flex'
-								padding='small'
-								alignItems='center'
-								justifyContent='center'
-								grow={1}
-								backgroundColor='primary-700'
-								fontWeight='bold'>
-								<Text
-									color='neutral-100'
-									fontWeight='bold'>
-									{t('categoryPageModal.button')}
-								</Text>
-							</Touchable>
-						</View>
-
-						<View bottomInset />
-					</View>
-				</View>
-			</View>
-		</Modal>
-	)
+  const {
+    show,
+    onClose,
+    facets,
+    removeFilter,
+    addFilter,
+    clearFilters,
+    executeSearch,
+    facetsLoading,
+    listOrdering,
+    addOrdering,
+  } = props
+  const { t } = useTranslation()
+  return (
+    <Modal show={show} closeOnPressOut={true} transition="background-color 0.5s ease-in-out" onClose={onClose}>
+      <View
+        bottomInset
+        borderRadiusRightTop="small"
+        borderRadiusLeftTop="small"
+        minHeight="70vh"
+        width="100vw"
+        className="bg-base-100 overflow-scroll"
+      >
+        <View className="p-2 mx-1 flex flex flex-row justify-between items-center">
+          <Text>{`${t('categoryPageModal.title')}`}</Text>
+          <View width="36px" height="36px" onClick={onClose} className="bg-neutral items-center justify-center">
+            <Icon iconKey="x" height={20} width={20} />
+          </View>
+        </View>
+        <View className="mx-1">
+          {facetsLoading ? (
+            <Loading inline />
+          ) : (
+            <>
+              <View className="p-2 flex flex-wrap">
+                {facets &&
+                  facets.map((facet) =>
+                    facet.values
+                      .filter((value) => value.selected)
+                      .map((value) => (
+                        <View
+                          key={value.value}
+                          onClick={() => removeFilter(value)}
+                          width="fit-content"
+                          className="flex items-center py-1 px-2 bg-primary-content"
+                        >
+                          <Text className="text-base-100 font-bold">{value.name}</Text>
+                          <Icon iconKey="x" height={20} width={20} className="text-base-100" />
+                        </View>
+                      )),
+                  )}
+              </View>
+              {listOrdering && (
+                <CollapsableView
+                  key={listOrdering.key}
+                  title={listOrdering.title}
+                  willStartCollapsed={false}
+                  border="none"
+                  className="font-light"
+                >
+                  <View className="flex flex flex-col">
+                    {listOrdering.values.map((value) => (
+                      <View
+                        key={value.id}
+                        onClick={() =>
+                          addOrdering({
+                            key: value.categoryKey,
+                            value: value.value,
+                          })
+                        }
+                        className="flex items-center"
+                      >
+                        <Radio checked={value.checked} />
+                        {value.name}
+                      </View>
+                    ))}
+                  </View>
+                </CollapsableView>
+              )}
+              {facets &&
+                facets.map((facet) => (
+                  <CollapsableView
+                    key={facet.key}
+                    title={facet.name}
+                    willStartCollapsed={false}
+                    border="none"
+                    className="font-light"
+                  >
+                    <View className="flex flex flex-col">
+                      {facet.values.map((value) => (
+                        <SelectableTouchable
+                          key={`${facet.key}_${value.value}`}
+                          categoryKey={value.key}
+                          name={`${value.name}`}
+                          value={`${value.value}`}
+                          removeCategory={removeFilter}
+                          addCategory={addFilter}
+                          checked={value.selected}
+                        />
+                      ))}
+                    </View>
+                  </CollapsableView>
+                ))}
+            </>
+          )}
+          <View height={120} />
+          <View className="fixed bottom-0 left-0 right-0 py-1 px-2 bg-base-100">
+            <View width="100%" height="48px" className="flex justify-center">
+              <View
+                onClick={clearFilters}
+                className="flex p-2 items-center justify-center border-primary-content border grow-1 bg-base-100"
+              >
+                <Text className="text-primary-content">{t('categoryPageModal.clear')}</Text>
+              </View>
+              <View
+                onClick={executeSearch}
+                className="flex p-2 items-center justify-center grow-1 bg-primary-content font-bold"
+              >
+                <Text className="text-neutral font-bold">{t('categoryPageModal.button')}</Text>
+              </View>
+            </View>
+            <View bottomInset />
+          </View>
+        </View>
+      </View>
+    </Modal>
+  )
 }

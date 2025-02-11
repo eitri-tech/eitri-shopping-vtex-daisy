@@ -1,48 +1,17 @@
-export default function HomeSkeleton (props) {
+import { Skeleton, View} from "eitri-luminus";
 
+export default function HomeSkeleton(props) {
   const { show } = props
-
   return (
-    <View
-      padding='large'
-      display={show ? 'block' : 'none'}>
-      <View
-        direction='column'
-        gap={16}>
-        <View
-          mode='skeleton'
-          width='100%'
-          height='100vw'
-          borderRadius='small'
-        />
-        <View
-          direction='row'
-          gap={16}>
-          <View
-            mode='skeleton'
-            width='100%'
-            height={80}
-            borderRadius='small'
-          />
-          <View
-            mode='skeleton'
-            width='100%'
-            height={80}
-            borderRadius='small'
-          />
-          <View
-            mode='skeleton'
-            width='100%'
-            height={80}
-            borderRadius='small'
-          />
+    <View className={`p-8 ${show ? 'block' : 'hidden'}`}>
+      <View className="flex flex-col gap-4">
+        <Skeleton className="w-full h-screen" />
+        <View className="flex flex-row gap-4">
+          <Skeleton className="w-full h-20" />
+          <Skeleton className="w-full h-20" />
+          <Skeleton className="w-full h-20" />
         </View>
-        <View
-          mode='skeleton'
-          width='100%'
-          height='100vw'
-          borderRadius='small'
-        />
+        <Skeleton className="w-full h-screen" />
       </View>
     </View>
   )
