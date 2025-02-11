@@ -34,14 +34,12 @@ export default function CustomInput(props) {
 					</View>
 				)}
 				{mask ? (
-					<MaskedInput
-						borderHidden={true}
-						mask={mask}
+					<TextInput
 						width='100%'
 						{...rest}
 					/>
 				) : (
-					<Input
+					<TextInput
 						borderHidden={true}
 						type={showPassword ? 'text' : type || 'text'}
 						width='100%'
@@ -49,9 +47,9 @@ export default function CustomInput(props) {
 					/>
 				)}
 				{type === 'password' && (
-					<Touchable onPress={() => setShowPassword(!showPassword)}>
+					<View>
 						<Image src={showPassword ? eyeOn : eyeOff} />
-					</Touchable>
+					</View>
 				)}
 			</View>
 		</View>

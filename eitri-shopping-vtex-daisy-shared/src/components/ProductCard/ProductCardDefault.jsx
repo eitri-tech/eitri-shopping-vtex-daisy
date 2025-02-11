@@ -79,12 +79,13 @@ export default function ProductCardDefault(props) {
 						fontSize='extra-small'>
 						{name}
 					</Text>
-					<Touchable
-						disabled={loadingWishlistOp}
-						onPress={onPressOnWishlist}
-						zIndex={98}>
+					<View
+						height='36px'
+						width='36px'
+						zIndex={98}
+					>
 						<WishlistIcon checked={isOnWishlist} />
-					</Touchable>
+					</View>
 				</View>
 
 				<View
@@ -121,7 +122,7 @@ export default function ProductCardDefault(props) {
 						<View height='16px' />
 					)}
 				</View>
-				<Touchable
+				<View
 					marginTop='nano'
 					height='36px'
 					width='100%'
@@ -133,7 +134,7 @@ export default function ProductCardDefault(props) {
 					borderWidth='hairline'
 					backgroundColor={loadingCartOp ? 'neutral-100' : 'primary-700'}
 					zIndex={99}
-					onPress={onPressCartButton}>
+				>
 					{loadingCartOp ? (
 						<Loading width='36px' />
 					) : (
@@ -144,11 +145,10 @@ export default function ProductCardDefault(props) {
 							{actionLabel}
 						</Text>
 					)}
-				</Touchable>
+				</View>
 			</View>
 
-			<Touchable
-				onPress={onPressOnCard}
+			<View
 				position='absolute'
 				top='0'
 				bottom='0'

@@ -21,7 +21,7 @@ export default function CustomButton(props) {
 	})()
 
 	return (
-		<Touchable
+		<Button
 			onPress={_onPress}
 			display='flex'
 			height='48px'
@@ -44,6 +44,6 @@ export default function CustomButton(props) {
 					{label}
 				</Text>
 			)}
-		</Touchable>
+		</Button>
 	)
 }

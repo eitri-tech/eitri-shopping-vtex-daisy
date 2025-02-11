@@ -60,12 +60,13 @@ export default function ProductCardFullImage(props) {
 						justifyContent='center'
 						borderRadius='circular'
 						backgroundColor='accent-100'>
-						<Touchable
-							disabled={loadingWishlistOp}
-							onPress={onPressOnWishlist}
-							zIndex={98}>
+						<View
+							width='30px'
+							height='30px'
+							zIndex={98}
+						>
 							<WishlistIcon checked={isOnWishlist} />
-						</Touchable>
+						</View>
 					</View>
 				</View>
 
@@ -127,7 +128,7 @@ export default function ProductCardFullImage(props) {
 					<View>{}</View>
 				</View>
 
-				<Touchable
+				<View
 					height='36px'
 					width='100%'
 					display='flex'
@@ -150,11 +151,10 @@ export default function ProductCardFullImage(props) {
 							{actionLabel}
 						</Text>
 					)}
-				</Touchable>
+				</View>
 			</View>
 
-			<Touchable
-				onPress={onPressOnCard}
+			<View
 				position='absolute'
 				top='0'
 				bottom='0'
