@@ -1,5 +1,5 @@
 import { getProductsByFacets } from '../../../services/ProductService'
-import { Text, View} from "eitri-luminus";
+import { Text, View } from "eitri-luminus";
 import ShelfOfProducts from '../../ShelfOfProducts/ShelfOfProducts'
 export default function ProductTiles(props) {
   const { data } = props
@@ -69,12 +69,12 @@ export default function ProductTiles(props) {
         {shelves?.map((shelf) => (
           <View
             key={shelf.title}
-            minWidth="fit-content"
             onClick={() => onChooseShelf(shelf)}
-            borderColor={shelf.title === currentShelf.title ? 'secondary-500' : 'neutral-300'}
-            className="py-1 border"
+            className={`py-1 border min-w-fit ${shelf.title === currentShelf.title ? 'border-secondary-500' : 'border-neutral-300'
+              }`}
           >
-            <Text color={shelf.title === currentShelf.title ? 'secondary-500' : 'neutral-300'} fontFamily="Baloo 2">
+            <Text className={`${shelf.title === currentShelf.title ? 'text-secondary-500' : 'text-neutral-300'
+              } font-['Baloo_2']`}>
               {shelf.title}
             </Text>
           </View>
