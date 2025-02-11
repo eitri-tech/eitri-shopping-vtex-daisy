@@ -1,35 +1,44 @@
-import { Text, View} from "eitri-luminus";
+import { Text, View, Carousel, Image} from "eitri-luminus";
 export default function SliderHero(props) {
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [index, setIndex] = useState();
   const { data, onPress } = props
   const imagesList = data.images
-  const onChangeSlide = (index) => {
-    setCurrentSlide(index)
-  }
+
+  const onSwipe = (i) => {
+    console.log('@SliderHero.onSwipe Index showed', i);
+    try {
+      setIndex(imagesList[i]?.name);
+    } catch (error) {
+      console.log('error', error);
+    }
+  };
+  
   return (
     <View className="relative">
       {data.mainTitle && (
-        <View width="100%" className="px-8 flex items-center justify-center">
+        <View className="px-8 flex items-center justify-center w-full">
           <Text className="font-bold mb-8">{data.mainTitle}</Text>
         </View>
       )}
       <Carousel
-        autoplay
-        autoplaySpeed={4000}
-        afterChange={onChangeSlide}
-        initialSlide={currentSlide}
-        adaptiveHeight
-        infinite
+        onSwipe={onSwipe} index={index}   
       >
         {imagesList &&
-          imagesList.map((slider) => (
-            <View key={slider.imageUrl} onClick={() => onPress(slider)} width="100%" className="flex flex-row px-8">
-              <View backgroundImage={slider.imageUrl} width="100%" maxWidth="100%" className="bg-neutral grow-1" />
+          imagesList.map((image) => (
+            <Carousel.Item className="w-full" key={`image_${image.imageUrl}`}>
+            <View
+              onClick={() => {
+                onPress(image);
+              }}
+            >
+              <Image className="w-full" src={image.imageUrl} alt="Burger" />
             </View>
+          </Carousel.Item>
           ))}
       </Carousel>
       {imagesList.length > 1 && (
-        <View width="100%" className="absolute flex justify-center">
+        <View className="absolute flex justify-center w-full">
           {imagesList &&
             Array.from(
               {
@@ -38,10 +47,7 @@ export default function SliderHero(props) {
               (_, index) => (
                 <View
                   key={index}
-                  opacity={currentSlide === index ? 'solid' : 'light'}
-                  width="32px"
-                  height="8px"
-                  className="bg-accent"
+                  className="w-8 h-2 bg-accent"
                 />
               ),
             )}

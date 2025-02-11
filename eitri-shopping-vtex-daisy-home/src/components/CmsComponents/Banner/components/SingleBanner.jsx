@@ -6,7 +6,7 @@ export default function SingleBanner(props) {
   return (
     <View className="relative">
       {data.mainTitle && (
-        <View width="100%" className="px-8 flex items-center justify-center">
+        <View className="px-8 flex items-center justify-center w-full">
           <Text className="font-bold mb-8">{data.mainTitle}</Text>
         </View>
       )}
@@ -14,10 +14,9 @@ export default function SingleBanner(props) {
         <View
           key={imagesList[0].imageUrl}
           onClick={() => onPress(imagesList[0])}
-          width="100vw"
-          className="flex flex-row px-8"
+          className="flex flex-row px-8 w-full"
         >
-          <View backgroundImage={imagesList[0].imageUrl} width="100%" className="bg-neutral grow-1" />
+          <View backgroundImage={imagesList[0].imageUrl} className="bg-neutral grow-1 w-full" />
         </View>
       )}
     </View>

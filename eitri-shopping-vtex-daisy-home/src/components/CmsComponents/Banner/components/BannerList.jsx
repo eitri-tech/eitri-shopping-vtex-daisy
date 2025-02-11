@@ -1,5 +1,5 @@
 import SwiperContent from '../../../SwiperContent/SwiperContent'
-import { Text, View} from "eitri-luminus";
+import { Text, View, Image} from "eitri-luminus";
 export default function BannerList(props) {
   const { data, onPress } = props
   const imagesList = data.images
@@ -16,9 +16,8 @@ export default function BannerList(props) {
             <View key={slider.imageUrl} className="flex flex-col mr-2 items-center">
               <View
                 key={slider.imageUrl}
-                height="100%"
                 onClick={() => onPress(slider)}
-                className="flex items-center justify-center"
+                className="flex items-center justify-center h-full"
               >
                 <Image
                   src={slider.imageUrl}
@@ -28,7 +27,7 @@ export default function BannerList(props) {
                 />
               </View>
               {slider?.subLabel && (
-                <Text whiteSpace="nowrap" className="font-bold text-center">
+                <Text className="font-bold text-center whitespace-nowrap">
                   {slider?.subLabel}
                 </Text>
               )}

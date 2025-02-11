@@ -14,9 +14,9 @@ export default function FitOnScreen(props) {
           <View
             key={image.imageUrl}
             onClick={() => onPress(image)}
-            width="calc(50% - 8px)" // Adjust for two items per row with spacing
+            className="w-[calc(50%-8px)]" // Adjust for two items per row with spacing
           >
-            <Image src={image.imageUrl} width="100%" maxHeight="auto" />
+            <Image src={image.imageUrl} className="w-full h-auto" />
           </View>
         ))}
       </View>
