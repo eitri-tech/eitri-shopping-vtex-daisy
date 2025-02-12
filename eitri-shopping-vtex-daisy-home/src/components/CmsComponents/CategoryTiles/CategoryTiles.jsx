@@ -1,5 +1,5 @@
 import { resolveNavigation } from '../../../services/NavigationService'
-import { Text, View} from "eitri-luminus";
+import { Text, View, Image} from "eitri-luminus";
 export default function CategoryTiles(props) {
   const { data } = props
   const onPress = (content) => {
@@ -19,7 +19,10 @@ export default function CategoryTiles(props) {
         </View>
         {data?.content?.map((content) => (
           <View key={content.imageUrl} onClick={() => onPress(content)} className="flex flex-col">
-            <Image src={content.imageUrl} maxWidth={content.width} maxHeight={content.height} />
+            <Image 
+              src={content.imageUrl} 
+              className={`max-w-[${content.width}px] max-h-[${content.height}px]`} 
+            />
             <Text fontFamily="Baloo 2" className="mt-1 text-lg">
               {content.title}
             </Text>

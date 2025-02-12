@@ -130,7 +130,7 @@ export default function ProductCardWrapper(props) {
         loadingWishlistOp={loadingWishlistOp}
         loadingCartOp={loadingCartOp}
         actionLabel={isItemOnCart() ? t('productCardVertical.cart') : t('productCardVertical.buy')}
-        width={width}
+        width={150}
         onPressOnCard={onPressOnCard}
         onPressCartButton={onPressCartButton}
         onPressOnWishlist={onPressOnWishlist}
@@ -151,7 +151,7 @@ export default function ProductCardWrapper(props) {
       isOnWishlist={isOnWishlist}
       loadingWishlistOp={loadingWishlistOp}
       loadingCartOp={loadingCartOp}
-      width={width}
+      width={150}
       onPressOnCard={onPressOnCard}
       onPressCartButton={onPressCartButton}
       onPressOnWishlist={onPressOnWishlist}
