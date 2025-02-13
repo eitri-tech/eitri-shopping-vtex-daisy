@@ -21,9 +21,7 @@ export default function RoundedBannerList(props) {
               >
                 <Image
                   src={slider.imageUrl}
-                  maxHeight={`${data?.size?.maxHeight}px` || ''}
-                  maxWidth={`${data?.size?.maxWidth}px` || ''}
-                  className="bg-neutral grow-1"
+                  className={`bg-neutral grow-1 ${data?.size?.maxHeight ? `max-h-[${data?.size?.maxHeight}px]` : ''} ${data?.size?.maxWidth ? `max-w-[${data?.size?.maxWidth}px]` : ''}`}
                 />
               </View>
               {slider?.subLabel && (

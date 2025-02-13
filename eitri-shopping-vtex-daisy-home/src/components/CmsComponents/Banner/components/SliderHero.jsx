@@ -1,17 +1,11 @@
 import { Text, View, Carousel, Image} from "eitri-luminus";
 export default function SliderHero(props) {
   const [currentSlide, setCurrentSlide] = useState(0)
-  const [index, setIndex] = useState();
   const { data, onPress } = props
   const imagesList = data.images
 
   const onSwipe = (i) => {
-    console.log('@SliderHero.onSwipe Index showed', i);
-    try {
-      setIndex(imagesList[i]?.name);
-    } catch (error) {
-      console.log('error', error);
-    }
+    setCurrentSlide(i);
   };
   
   return (
@@ -22,7 +16,7 @@ export default function SliderHero(props) {
         </View>
       )}
       <Carousel
-        onSwipe={onSwipe} index={index}   
+        onSwipe={onSwipe}   
       >
         {imagesList &&
           imagesList.map((image) => (
@@ -38,7 +32,7 @@ export default function SliderHero(props) {
           ))}
       </Carousel>
       {imagesList.length > 1 && (
-        <View className="absolute flex justify-center w-full">
+        <View className="mt-8 flex justify-center gap-2"> 
           {imagesList &&
             Array.from(
               {
@@ -47,7 +41,7 @@ export default function SliderHero(props) {
               (_, index) => (
                 <View
                   key={index}
-                  className="w-8 h-2 bg-accent"
+                  className={`w-8 h-[6px] ${currentSlide === index ? "bg-green-700" : "bg-neutral-300"}`}
                 />
               ),
             )}
