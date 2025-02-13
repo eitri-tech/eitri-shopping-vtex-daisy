@@ -9,6 +9,7 @@ import HeaderSearchIcon from './HeaderSearchIcon'
 import HeaderShare from './HeaderShare'
 import HeaderFilter from './HeaderFilter'
 import { HEADER_TYPE } from '../../utils/constants'
+import { View} from "eitri-luminus";
 
 export default function HeaderTemplate(props) {
 	const {

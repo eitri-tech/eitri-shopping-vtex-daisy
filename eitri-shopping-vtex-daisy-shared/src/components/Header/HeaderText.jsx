@@ -1,3 +1,4 @@
+import { Text, View} from "eitri-luminus";
 export default function HeaderText(props) {
 	const { text, contentColor } = props
 	return (

@@ -1,3 +1,4 @@
+import { View} from "eitri-luminus";
 export default function HeaderSearchIcon(props) {
 	const { navigateToSearch, iconColor } = props
 
