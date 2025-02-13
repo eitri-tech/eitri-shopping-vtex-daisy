@@ -6,7 +6,7 @@ export default function RoundedBannerList(props) {
   return (
     <View>
       {data?.mainTitle && (
-        <View className="px-8">
+        <View className="px-8 mb-3">
           <Text className="font-bold">{data.mainTitle}</Text>
         </View>
       )}
@@ -21,7 +21,7 @@ export default function RoundedBannerList(props) {
               >
                 <Image
                   src={slider.imageUrl}
-                  className={`bg-neutral grow-1 ${data?.size?.maxHeight ? `max-h-[${data?.size?.maxHeight}px]` : ''} ${data?.size?.maxWidth ? `max-w-[${data?.size?.maxWidth}px]` : ''}`}
+                  className={`${data?.size?.maxHeight ? `max-h-[70px]` : ''} ${data?.size?.maxWidth ? `max-w-[70px]` : ''}`}
                 />
               </View>
               {slider?.subLabel && (
