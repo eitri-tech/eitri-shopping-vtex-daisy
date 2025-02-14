@@ -43,7 +43,7 @@ export default function Freight(props) {
   return (
     <View>
       <View onClick={toggleCollapsedState}>
-        <View width="100%" className="flex items-center justify-between">
+        <View className="flex items-center justify-between w-full">
           <Text className="text-lg font-bold">{t('freight.txtCalculate')}</Text>
           <View>{/* <Icon iconKey={collapsed ? 'chevron-down' : 'chevron-up'} width={26} /> */}</View>
         </View>
@@ -51,7 +51,7 @@ export default function Freight(props) {
       {!collapsed && (
         <View>
           <Text>{t('freight.txtCalculateDeadline')}</Text>
-          <View width="100%" className="mt-2 flex justify-between items-center">
+          <View className="mt-2 flex justify-between items-center w-full">
             <CustomInput
               placeholder={t('freight.labelZipCode')}
               value={zipCode}
@@ -63,21 +63,21 @@ export default function Freight(props) {
             />
             <CustomButton variant="outlined" width="30%" onClick={() => handleFreight(zipCode)} />
           </View>
-          {loading && <View mode="skeleton" width="100%" height="100px" />}
+          {loading && <Skeleton className="w-full h-full"/>}
           {
             !loading && freightOptions && freightOptions?.options?.length > 0 && (
               <View className="flex flex flex-col my-2 py-2 border border-neutral items-center justify-between">
                 {freightOptions?.options.map((item, index) => (
-                  <View key={index} width="100%" className="flex flex flex-col items-center">
-                    <View width="100%" className="flex items-center justify-between px-2">
+                  <View key={index} className="flex flex flex-col items-center w-full">
+                    <View className="flex items-center justify-between px-2 w-full">
                       <Text className="font-bold">{item?.label}</Text>
                       <Text>{item?.price}</Text>
                     </View>
-                    <View width="100%" className="flex items-center justify-between px-2">
+                    <View className="flex items-center justify-between px-2 w-full">
                       <Text className="text-neutral-content">{item?.shippingEstimate}</Text>
                     </View>
                     {item.isPickupInPoint && (
-                      <View width="100%" className="flex items-center px-2">
+                      <View className="flex items-center px-2 w-full">
                         <Text className="text-neutral-content">{item.pickUpAddress}</Text>
                       </View>
                     )}

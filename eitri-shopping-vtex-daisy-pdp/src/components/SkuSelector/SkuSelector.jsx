@@ -61,10 +61,9 @@ export default function SkuSelector(props) {
       return (
         <View onClick={() => handleSkuChange(sku?.field?.name, value?.name)} className="flex items-center">
           <View
-            borderWidth={currentSku?.[sku?.field?.name][0] === value?.name ? 'hairline' : 'none'}
-            className="border-primary-content"
+            className={`border ${currentSku?.[sku?.field?.name]?.[0] === value?.name ? "border-primary-content" : "border-none"}`}
           >
-            <Image src={findSku?.images?.[0]?.imageUrl} maxWidth={'40px'} maxHeight={'40px'} />
+            <Image src={findSku?.images?.[0]?.imageUrl} className="max-w-[40px] max-h-[40px]" />
           </View>
           <Text>{value?.name}</Text>
         </View>
@@ -82,7 +81,7 @@ export default function SkuSelector(props) {
     )
   }
   return (
-    <View marginTop={marginTop} className="flex flex-col">
+    <View className={`flex flex-col mt-[${marginTop}px]`}>
       {skuVariations?.map((sku, index) => (
         <View>
           <Text className="font-bold text-base">{`${sku?.field?.name}`}</Text>
