@@ -58,7 +58,7 @@ export default function ProductCardDefault(props) {
 					)}
 				</View>
 
-				<View className="mt-1 h-[36px] w-full rounded-full flex justify-center items-center border border-primary-700 border-[0.5px] bg-primary-700 z-[99]">
+				<View onClick={onPressOnCard} className="mt-1 h-[36px] w-full rounded-full flex justify-center items-center border border-primary-700 border-[0.5px] bg-primary-700 z-[99]">
 					{loadingCartOp ? (
 						<Loading width="36px" />
 					) : (
