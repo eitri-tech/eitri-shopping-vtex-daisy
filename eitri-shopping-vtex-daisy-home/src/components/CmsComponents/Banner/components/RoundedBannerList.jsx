@@ -6,11 +6,11 @@ export default function RoundedBannerList(props) {
   return (
     <View>
       {data?.mainTitle && (
-        <View className="px-8 mb-3">
+        <View className="px-4 mb-3">
           <Text className="font-bold">{data.mainTitle}</Text>
         </View>
       )}
-      <SwiperContent className="px-8">
+      <SwiperContent className="px-4">
         {imagesList &&
           imagesList.map((slider) => (
             <View key={slider.imageUrl} className="flex flex-col mr-2 items-center">

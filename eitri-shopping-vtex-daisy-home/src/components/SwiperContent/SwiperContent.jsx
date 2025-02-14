@@ -2,7 +2,7 @@ import { Text, View} from "eitri-luminus";
 export default function SwiperContent(props) {
   const { title, children, marginBottom, paddingHorizontal, gap } = props
   return (
-    <View className={`${marginBottom ? `mb-[${marginBottom}]` : ''} px-8`}>
+    <View className={`${marginBottom ? `mb-[${marginBottom}]` : ''} px-4`}>
     {title && (
       <View className={`px-${paddingHorizontal || '8'}`}>
         <Text className="font-bold">{title}</Text>

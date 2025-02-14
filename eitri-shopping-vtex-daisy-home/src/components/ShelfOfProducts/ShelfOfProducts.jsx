@@ -19,7 +19,7 @@ export default function ShelfOfProducts(props) {
   return (
     <View>
       {title && (
-        <View className={`flex justify-between items-center px-${paddingHorizontal || 'lg'}`}>
+        <View className={`flex justify-between items-center px-4 py-2`}>
           <Text className="font-bold">{isLoading ? t('shelfOfProducts.loading') : title}</Text>
           {searchParams && (
             <View onClick={seeMore} className="flex items-center min-w-fit" >
