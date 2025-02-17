@@ -2,6 +2,7 @@ import { Loading } from 'eitri-shopping-vtex-daisy-shared'
 import { Text, View} from "eitri-luminus";
 import ProductCard from '../ProductCard/ProductCard'
 import ShelfOfProductsCarousel from './components/ShelfOfProductsCarousel'
+import ShelfOfProductsSlider from './components/ShelfOfProductsSlider'
 import Eitri from 'eitri-bifrost'
 import { useTranslation } from 'eitri-i18n'
 export default function ShelfOfProducts(props) {
@@ -29,7 +30,7 @@ export default function ShelfOfProducts(props) {
           )}
         </View>
       )}
-      {mode === 'carousel' && <ShelfOfProductsCarousel isLoading={isLoading} products={products} gap={gap} />}
+      {mode === 'carousel' && <ShelfOfProductsSlider isLoading={isLoading} products={products} gap={gap} />}
       {mode !== 'carousel' && (
         <View className={`flex flex-row overflow-x-scroll scroll-snap-x-mandatory gap-${gap}`} >
           {gap && <View className={`h-[1px] w-[${gap}px]`} />}
