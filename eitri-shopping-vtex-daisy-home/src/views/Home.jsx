@@ -1,5 +1,6 @@
 import Eitri from 'eitri-bifrost'
-import { HEADER_TYPE, HeaderTemplate } from 'eitri-shopping-vtex-daisy-shared'
+import { HEADER_TYPE } from 'eitri-shopping-vtex-daisy-shared'
+import HeaderTemplate from '../components/Header/HeaderTemplate'
 import { useLocalShoppingCart } from '../providers/LocalCart'
 import { getCmsContent } from '../services/CmsService'
 import { openCart } from '../services/NavigationService'
