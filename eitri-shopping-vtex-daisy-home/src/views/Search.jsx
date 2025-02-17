@@ -1,6 +1,7 @@
 import Eitri from 'eitri-bifrost'
 import { Vtex } from 'eitri-shopping-vtex-shared'
-import { HEADER_TYPE, HeaderTemplate } from 'eitri-shopping-vtex-daisy-shared'
+import { HEADER_TYPE } from 'eitri-shopping-vtex-daisy-shared'
+import HeaderTemplate from '../components/Header/HeaderTemplate'
 import { mountLegacyPath, getProductsByLagacySearch, getProductsService } from '../services/ProductService'
 import SearchInput from '../components/SearchInput/SearchInput'
 import PristineView from '../components/PageSearchComponents/PristineView'

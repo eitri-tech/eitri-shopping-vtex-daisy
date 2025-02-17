@@ -30,7 +30,8 @@ export default function SearchInput(props) {
       console.log('Entrada de pesquisa', 'Erro ao buscar sugestão', error)
     }
   }
-  const handleAutocomplete = async (value) => {
+  const handleAutocomplete = async (e) => {
+    const {value} = e.target
     setSearchTerm(value)
     if (legacySearch) {
       return
@@ -58,12 +59,10 @@ export default function SearchInput(props) {
     Eitri.navigation.back()
   }
   return (
-    <View width="100%" className="flex relative items-center">
+    <View width="100%" className="flex relative items-center w-full">
       <View
         onClick={navigateBack}
-        height="36px"
-        width="36px"
-        className="bg-neutral border-neutral border flex items-center justify-center"
+        className="flex items-center justify-center border-neutral-300 rounded-full w-[25px] h-[25px]"
       >
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M15 6L9 12L15 18" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path> </g></svg>
       </View>
@@ -81,20 +80,20 @@ export default function SearchInput(props) {
       {searchTerm && searchSuggestion && searchSuggestion.length > 0 && (
         <View
           // width='calc( 100vw - 32px )'
-          width="100vw"
+          // width="100vw"
           customColor="#fdfdfd"
-          className="absolute z-9999 top-50 p-8 flex flex-col"
+          className="absolute bg-neutral-100 z-9999 top-[50px] p-8 flex flex-col w-full"
         >
           {searchSuggestion.map((suggestion, key) => (
             <View
               key={suggestion.term}
-              width="100%"
+              // width="100%"
               onClick={() => {
                 handleSuggestionSearch(suggestion.term)
               }}
-              className="rounded-none border-0"
+              className="rounded-none border-0 w-full"
             >
-              <Text width="100%" className="text-primary-content text-lg">
+              <Text className="text-primary-content text-lg w-full">
                 {suggestion.term}
               </Text>
             </View>
