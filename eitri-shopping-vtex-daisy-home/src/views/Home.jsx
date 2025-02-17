@@ -77,6 +77,7 @@ export default function Home() {
         navigateToCart={openCart}
         quantityOfItems={cart?.items?.length}
       />
+      <View className="pt-[50px]" />
       <HomeSkeleton show={!cmsContent} />
       <CmsContentRender cmsContent={cmsContent} />
     </Page>

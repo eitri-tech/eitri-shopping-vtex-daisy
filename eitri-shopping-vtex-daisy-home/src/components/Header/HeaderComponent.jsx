@@ -94,7 +94,7 @@ export default function HeaderComponent(props) {
 				// right={0}
 				// zIndex='999'
 
-				className={`fixed top-0 left-0 right-0 z-[999] transition-all duration-300 ${translate}`}
+				className={`fixed top-0 left-0 right-0 z-[999] mt-[30px] transition-all duration-300 ${translate}`}
 				id="header-container"
 			>
 				<View className="pt-[40px]"/>
