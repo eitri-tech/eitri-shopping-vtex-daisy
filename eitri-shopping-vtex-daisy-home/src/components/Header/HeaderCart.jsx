@@ -6,7 +6,7 @@ export default function HeaderCart(props) {
 		<View
 			className={`relative w-[25px] h-[25px] flex items-center`} //bg-[${backgroundColor}]
 		>
-			<Button className="btn bg-transparent border-transparent flex items-center px-0 shadow-none pb-0" onPress={onPress}>
+			<Button className="btn bg-transparent border-transparent flex items-center px-0 shadow-none pb-0" onClick={onPress}>
 				<svg
 					className="h-6 w-6"
 					viewBox="0 0 24 24"
