@@ -3,17 +3,9 @@ export default function CInput(props) {
   const { icon, type, backgroundColor, mask, onChange, ...rest } = props
   return (
     <View
-      // backgroundColor={backgroundColor || 'neutral-100'}
-      // height="40px"
-      // width="100%"
-      className=" flex items-center text-neutral-content px-8 w-full h-[40px]"
+      className="flex items-center text-neutral-content px-2 w-full h-[40px]"
     >
-      {/* {icon && (
-        <View>
-          <Image src={icon} width="16px" />
-        </View>
-      )} */}
-     <TextInput onChange={onChange} className="input-bordered" iconInsideLeft={
+     <TextInput onChange={onChange} className="input-bordered rounded-full w-[85vw]" iconInsideLeft={
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 16 16"

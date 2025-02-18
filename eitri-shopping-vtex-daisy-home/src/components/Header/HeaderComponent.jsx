@@ -1,5 +1,6 @@
 import HeaderCart from './HeaderCart'
 import Eitri from 'eitri-bifrost'
+import { HEADER_TYPE } from 'eitri-shopping-vtex-daisy-shared'
 
 export default function HeaderComponent(props) {
 	const {
@@ -17,7 +18,8 @@ export default function HeaderComponent(props) {
 		onPressCartSearchBar,
 		scrollEffect = false,
 		iconCartColor,
-		filterOptions
+		filterOptions,
+		headerType
 	} = props
 
 	const [safeAreaTop, setSafeAreaTop] = useState(0)
@@ -91,7 +93,7 @@ export default function HeaderComponent(props) {
 				<View id='header'>
 					<View
 						id='header-content'
-						className={`pr-2 py-1 px-4 w-screen flex items-center justify-between ${minHeight ? `min-h-[${minHeight}px]` : ''} gap-6`}
+						className={`py-4 ${headerType !== HEADER_TYPE.SEARCH_INPUT_AND_FILTER && 'pr-2 px-4 py-1'} w-screen flex items-center justify-between ${minHeight ? `min-h-[${minHeight}px]` : ''} gap-6`}
 						>
 						{children}
 					</View>
@@ -99,7 +101,6 @@ export default function HeaderComponent(props) {
 						<View
 							className="flex p-6 w-full items-center">
 							<View
-								// grow={1}
 								className="flex-grow"
 								>
 								<View

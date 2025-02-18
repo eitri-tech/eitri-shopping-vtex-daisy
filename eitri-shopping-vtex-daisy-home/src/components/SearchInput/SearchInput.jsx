@@ -62,7 +62,7 @@ export default function SearchInput(props) {
     <View width="100%" className="flex relative items-center w-full">
       <View
         onClick={navigateBack}
-        className="flex items-center justify-center border-neutral-300 rounded-full w-[25px] h-[25px]"
+        className="flex items-center justify-center border-neutral-300 ml-[10px] rounded-full w-[25px] h-[25px]"
       >
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M15 6L9 12L15 18" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path> </g></svg>
       </View>
@@ -79,19 +79,16 @@ export default function SearchInput(props) {
       </View>
       {searchTerm && searchSuggestion && searchSuggestion.length > 0 && (
         <View
-          // width='calc( 100vw - 32px )'
-          // width="100vw"
           customColor="#fdfdfd"
-          className="absolute bg-neutral-100 z-9999 top-[50px] p-8 flex flex-col w-full"
+          className="absolute bg-white z-9999 top-[50px] px-4 flex flex-col w-[100vw]"
         >
-          {searchSuggestion.map((suggestion, key) => (
+          {searchSuggestion.map((suggestion, index) => (
             <View
               key={suggestion.term}
-              // width="100%"
               onClick={() => {
                 handleSuggestionSearch(suggestion.term)
               }}
-              className="rounded-none border-0 w-full"
+              className={`${index === 0 && 'mt-2'} rounded-none border-0 w-full mb-[10px]`}
             >
               <Text className="text-primary-content text-lg w-full">
                 {suggestion.term}

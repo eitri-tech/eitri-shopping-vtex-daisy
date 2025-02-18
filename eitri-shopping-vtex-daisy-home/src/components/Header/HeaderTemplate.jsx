@@ -63,18 +63,17 @@ console.info("@HeaderTemplate",headerType)
 			iconCartColor={contentColor}
 			showSearchBar={showSearchBar}
 			scrollEffect={scrollEffect}
-			handleFilterModal={handleFilterModal}>
+			handleFilterModal={handleFilterModal}
+			headerType={headerType}
+		>
 			{headerType === HEADER_TYPE.LOGO_SEARCH_AND_CART && (
 				<>
 					<HeaderLogo
 						src={logo || urlLogo}
 						height={40}
 					/>
-					<View //gap-10 justify-end
+					<View
 					 className="flex flex-row h-[50px] items-center gap-2 bg-primary-100"
-						// direction='row'
-						// justifyContent='end'
-						// gap={10}
 						>
 						<HeaderSearchIcon
 							navigateToSearch={navigateToSearch}
