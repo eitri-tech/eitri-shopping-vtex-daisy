@@ -6,6 +6,7 @@ import CategoryTree from '../components/CmsComponents/CategoryTree/CategoryTree'
 import CategoryTiles from '../components/CmsComponents/CategoryTiles/CategoryTiles'
 import LastSeenProducts from '../components/CmsComponents/LastSeenProducts/LastSeenProducts'
 import CategoryListSwipe from '../components/CmsComponents/CategoryListSwipe/CategoryListSwipe'
+import ProductInfiniteScroll from '../components/CmsComponents/ProductInfiniteScroll/ProductInfiniteScroll'
 
 const componentMap = {
 	MultipleImageBanner: Banner,
@@ -15,7 +16,8 @@ const componentMap = {
 	CategoryTree: CategoryTree,
 	CategoryTiles: CategoryTiles,
 	LastSeenProducts: LastSeenProducts,
-	CategoryListSwipe: CategoryListSwipe
+	CategoryListSwipe: CategoryListSwipe,
+	ProductInfiniteScroll: ProductInfiniteScroll
 }
 
 const shouldReloadOnResume = componentName => {

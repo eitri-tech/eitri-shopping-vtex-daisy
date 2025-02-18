@@ -87,7 +87,7 @@ export default function ProductCardFullImage(props) {
 						${loadingCartOp ? 'bg-neutral-100' : 'bg-primary-700'}
 						z-[99]
 					`}
-					onClick={onPressCartButton}
+					onClick={onPressOnCard}
 				>
 					{loadingCartOp ? (
 						<Loading width='36px' />

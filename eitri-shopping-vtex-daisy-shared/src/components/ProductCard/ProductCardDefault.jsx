@@ -19,7 +19,6 @@ export default function ProductCardDefault(props) {
 		onPressCartButton,
 		onPressOnWishlist
 	} = props
-	console.log(badge)
 	return (
 		<View className="relative bg-accent-500 min-w-auto max-w-auto rounded-sm p-2 shadow-sm">
 			<View className="flex flex-col">
