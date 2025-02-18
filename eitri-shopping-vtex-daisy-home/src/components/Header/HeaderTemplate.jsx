@@ -187,7 +187,7 @@ console.info("@HeaderTemplate",headerType)
 					<View
 						// display='flex'
 						// gap={16}
-						className="flex gap-4"
+						className="flex flex-row h-[50px] items-center gap-2 bg-primary-100"
 					>
 						<HeaderShare
 							iconColor={contentColor}

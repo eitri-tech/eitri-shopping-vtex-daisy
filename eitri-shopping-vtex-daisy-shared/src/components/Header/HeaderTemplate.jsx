@@ -177,12 +177,11 @@ export default function HeaderTemplate(props) {
 			{headerType === HEADER_TYPE.RETURN_SHARE_AND_CART && (
 				<>
 					<HeaderReturn
+						width='40px'
 						iconColor={contentColor}
 						backgroundColor={backgroundColor}
 					/>
-					<View
-						display='flex'
-						gap={16}>
+					<View className="bg-primary-100 border border-green-300">
 						<HeaderShare
 							iconColor={contentColor}
 							handleShare={handleShare}
