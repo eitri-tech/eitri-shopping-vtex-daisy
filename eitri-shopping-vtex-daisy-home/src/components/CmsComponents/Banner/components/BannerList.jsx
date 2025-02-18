@@ -6,11 +6,11 @@ export default function BannerList(props) {
   return (
     <View>
       {data?.mainTitle && (
-        <View className="px-8">
+        <View className="px-4">
           <Text className="font-bold text-lg">{data.mainTitle}</Text>
         </View>
       )}
-      <SwiperContent className="px-8">
+      <SwiperContent className="px-4">
         {imagesList &&
           imagesList.map((slider) => (
             <View key={slider.imageUrl} className="flex flex-col mr-2 items-center">

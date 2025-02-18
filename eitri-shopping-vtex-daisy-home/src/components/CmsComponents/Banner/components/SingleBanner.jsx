@@ -2,7 +2,6 @@ import { Text, View} from "eitri-luminus";
 export default function SingleBanner(props) {
   const { data, onPress } = props
   const imagesList = data.images
-  console.log('SingleBanner', data)
   return (
     <View className="relative">
       {data.mainTitle && (
