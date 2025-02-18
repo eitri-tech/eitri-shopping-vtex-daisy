@@ -71,7 +71,7 @@ console.info("@HeaderTemplate",headerType)
 						height={40}
 					/>
 					<View //gap-10 justify-end
-					 className="flex flex-row h-[50px] items-center gap-2"
+					 className="flex flex-row h-[50px] items-center gap-2 bg-primary-100"
 						// direction='row'
 						// justifyContent='end'
 						// gap={10}
