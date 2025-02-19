@@ -19,12 +19,10 @@ export const openAccount = async (action) => {
 
 export const openProduct = async product => {
 	try {
-		console.log("po")
 		Eitri.nativeNavigation.open({
 			slug: 'pdp',
 			initParams: { product }
 		})
-		console.log("po")
 	} catch (e) {
 		console.error('navigate to PDP: Error trying to open PDP', e)
 	}

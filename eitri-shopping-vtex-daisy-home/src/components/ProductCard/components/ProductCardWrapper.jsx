@@ -93,9 +93,7 @@ export default function ProductCardWrapper(props) {
   }
   // Navigation
   const onPressOnCard = () => {
-    console.log("onPressOnCard")
     openProduct(vtexProduct)
-    console.log("onPressOnCard")
   }
   const onPressOnWishlist = () => {
     if (loadingWishlistOp) return

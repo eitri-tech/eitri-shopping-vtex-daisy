@@ -20,8 +20,6 @@ export default function ProductCardFullImage(props) {
 		onPressOnWishlist
 	} = props
 
-	console.log(installments)
-
 	return (
 		<View
 			className={`

@@ -3,9 +3,7 @@ import Eitri from 'eitri-bifrost'
 
 export const getCmsContent = async (contentType, pageName) => {
 	try {
-		console.log("CHEGUEI")
 		const { faststore } = Vtex.configs
-		console.log("CHEGUEI2",Vtex.configs)
 		const cachedPage = await loadPageFromCache(faststore, contentType, pageName)
 
 		if (cachedPage) {
