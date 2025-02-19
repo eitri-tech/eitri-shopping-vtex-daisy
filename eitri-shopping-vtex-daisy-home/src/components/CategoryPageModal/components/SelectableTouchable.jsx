@@ -21,7 +21,7 @@ export default function SelectableTouchable(props) {
       }
       className="flex items-center"
     >
-      <Checkbox checked={checked} />
+      <Checkbox defaultChecked={checked} />
       {`${name}`}
     </View>
   )
