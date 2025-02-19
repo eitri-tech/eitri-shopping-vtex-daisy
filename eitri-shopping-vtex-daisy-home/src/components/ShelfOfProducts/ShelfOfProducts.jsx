@@ -1,5 +1,5 @@
 import { Loading } from 'eitri-shopping-vtex-daisy-shared'
-import { Text, View} from "eitri-luminus";
+import { Text, View, Skeleton} from "eitri-luminus";
 import ProductCard from '../ProductCard/ProductCard'
 import ShelfOfProductsCarousel from './components/ShelfOfProductsCarousel'
 import ShelfOfProductsSlider from './components/ShelfOfProductsSlider'
@@ -35,18 +35,14 @@ export default function ShelfOfProducts(props) {
         <View className={`flex flex-row overflow-x-scroll scroll-snap-x-mandatory gap-${gap}`} >
           {gap && <View className={`h-[1px] w-[${gap}px]`} />}
           {isLoading && (
-            <View className={`flex flex-row gap-${gap}`}>
-              <View className="w-[188px] min-h-[288px] border border-info-content bg-neutral">
-                <View className="flex flex-col justify-center items-center p-2">
-                  <Loading inline width="80px" />
-                </View>
-              </View>
-              <View className="w-[188px] min-h-[288px] border border-info-content bg-neutral" >
-                <View className="flex flex-col justify-center items-center p-2">
-                  <Loading inline width="80px" />
-                </View>
-              </View>
-            </View>
+            <View className={`flex flex-row gap-2 px-4 justify-center`}>
+            <Skeleton className="w-[188px] min-h-[288px] bg-neutral">
+
+            </Skeleton>
+            <Skeleton className="w-[188px] min-h-[288px] bg-neutral" >
+              
+            </Skeleton> 
+          </View>
           )}
           {!isLoading &&
             products &&

@@ -15,7 +15,7 @@ export default function SearchResults(props) {
           index % 2 === 0 && (
             <View key={searchResults[index].productId} className="flex">
               <View className="pr-1 w-[50%]">
-                <ProductCard product={searchResults[index]} />
+                <ProductCard product={searchResults[index]} /> 
               </View>
               {searchResults[index + 1] && (
                 <View  className="pl-1 w-[50%]">
