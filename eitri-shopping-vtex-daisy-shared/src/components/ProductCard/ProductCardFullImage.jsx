@@ -34,8 +34,8 @@ export default function ProductCardFullImage(props) {
 						<Image className={`object-contain h-[240px]`} src={image} />
 					</View>
 
-					<View className="absolute top-[5px] right-[5px] flex items-center justify-center rounded-full bg-accent-100 z-[99] ">
-						<View className="w-[30px] h-[30px]">
+					<View className="absolute top-[8px] right-[5px] flex items-center justify-center rounded-full bg-accent-100 z-[99] ">
+						<View className="w-[30px] h-[30px] flex justify-center items-center">
 						<WishlistIcon checked={isOnWishlist} />
 						</View>
 					</View>
@@ -73,8 +73,6 @@ export default function ProductCardFullImage(props) {
 							<View className="h-[16px]" />
 						)}
 					</View>
-
-					<View>{}</View>
 				</View>
 
 				<View

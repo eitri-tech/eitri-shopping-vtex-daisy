@@ -4,16 +4,16 @@ export default function BannerList(props) {
   const { data, onPress } = props
   const imagesList = data.images
   return (
-    <View>
+    <View >
       {data?.mainTitle && (
         <View className="px-4">
-          <Text className="font-bold text-lg">{data.mainTitle}</Text>
+          <Text className="font-bold text-xl">{data.mainTitle}</Text>
         </View>
       )}
       <SwiperContent className="px-4">
         {imagesList &&
           imagesList.map((slider) => (
-            <View key={slider.imageUrl} className="flex flex-col mr-2 items-center">
+            <View key={slider.imageUrl} className="flex flex-col items-center">
               <View
                 key={slider.imageUrl}
                 onClick={() => onPress(slider)}

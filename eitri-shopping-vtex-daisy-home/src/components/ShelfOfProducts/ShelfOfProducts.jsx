@@ -18,13 +18,13 @@ export default function ShelfOfProducts(props) {
     })
   }
   return (
-    <View>
+    <View >
       {title && (
-        <View className={`flex justify-between items-center px-4 py-2`}>
-          <Text className="font-bold">{isLoading ? t('shelfOfProducts.loading') : title}</Text>
+        <View className={`flex justify-between items-center px-4`}>
+          <Text className="font-bold text-xl">{isLoading ? t('shelfOfProducts.loading') : title}</Text>
           {searchParams && (
             <View onClick={seeMore} className="flex items-center min-w-fit" >
-              <Text className="font-bold text-primary-content">{t('shelfOfProducts.seeMore')}</Text>
+              <Text className="font-bold">{t('shelfOfProducts.seeMore')}</Text>
               <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M9 6L15 12L9 18" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path> </g></svg>
             </View>
           )}

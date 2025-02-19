@@ -19,7 +19,7 @@ export default function ShelfOfProductsSlider(props) {
       {isLoading ? (
         <ProductCardLoading gap={gap} />
       ) : (
-        <View className="w-full overflow-x-auto flex space-x-4 p-4">
+        <View className="w-full overflow-x-auto flex space-x-4 px-4">
           <View className="flex gap-2">
             {products.map((product, index) => (
               <View key={index} className="flex w-[180px]">
