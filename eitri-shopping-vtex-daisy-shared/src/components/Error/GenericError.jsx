@@ -1,5 +1,5 @@
 
-import { Text, View, Button } from "eitri-luminus";
+import { Text, View, Button, Image } from "eitri-luminus";
 import ErrorImage from '../../assets/images/error_eitri.svg';
 
 export default function GenericError(props) {
