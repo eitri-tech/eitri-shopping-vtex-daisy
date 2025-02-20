@@ -11,3 +11,5 @@ teste
 /jsconfig.json
 /**/.workspaces
 /.release
+.backup
+.eitri-app.conf.js.backup
