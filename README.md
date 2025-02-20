@@ -41,6 +41,10 @@ Configurar sua Aplicação é simples e rápido. Siga os passos abaixo para conf
 7. Realize as alterações desejadas no Json.
 8. Clique em **"Atualizar"** para finalizar.
 
+# Como testar outras aplicações?
+
+Apenas troque o "application-id" no arquivo app-config.yaml para o id da aplicação desejada.
+
 
 
 
