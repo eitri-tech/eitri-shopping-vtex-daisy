@@ -27,7 +27,7 @@ export default function CustomButton(props) {
 				flex items-center justify-center 
 				w-full
 				${_backgroundColor ? `bg-${_backgroundColor}` : ""}
-				${borderRadius ? `rounded-${borderRadius}` : "rounded-sm"}
+				rounded-full
 				${variant === "outlined" ? "border border-[1px]" : ""}
 				${_borderColor ? `border-${_borderColor} text-${_borderColor}` : ""}
 			`}

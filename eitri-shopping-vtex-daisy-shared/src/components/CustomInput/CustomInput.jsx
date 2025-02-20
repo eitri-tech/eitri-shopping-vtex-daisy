@@ -14,7 +14,7 @@ export default function CustomInput(props) {
 				</View>
 			)}
 			<View
-				className={`bg-${backgroundColor || "neutral-100"} border border-neutral-300 h-${height || "12"} flex items-center text-neutral-500 px-2 w-full rounded-sm`}
+				className={`bg-${backgroundColor || "neutral-100"} border border-neutral-300 h-${height || "12"} flex items-center text-neutral-500 px-2 w-full rounded-full`}
 			>
 				{icon && (
 				<View>
@@ -25,7 +25,7 @@ export default function CustomInput(props) {
 				<TextInput className="w-full" {...rest} />
 				) : (
 				<TextInput
-					className="w-full border-none"
+					className="w-full border-none bg-neutral-100 rounded-full"
 					type={showPassword ? "text" : type || "text"}
 					{...rest}
 				/>

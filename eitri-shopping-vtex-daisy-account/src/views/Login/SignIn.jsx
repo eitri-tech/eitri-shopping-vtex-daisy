@@ -164,9 +164,9 @@ export default function SignIn(props) {
                 onClick={() => setLoginMethod(LOGIN_WITH_EMAIL_AND_ACCESS_KEY)}
               />
             </View>
-            <View className="flex justify-center">
+            <View className="flex justify-center mt-4">
               <View onClick={goToPasswordReset}>
-                <Text className="block w-full text-primary-content">{t('signIn.forgotPass')}</Text>
+                <Text className="block w-full text-primary-content underline">{t('signIn.forgotPass')}</Text>
               </View>
             </View>
             <View className="mt-4 flex justify-center">
@@ -175,7 +175,7 @@ export default function SignIn(props) {
                   navigate(PAGES.SIGNUP)
                 }}
               >
-                <Text className="block w-full text-primary-content">{t('signIn.noRegister')}</Text>
+                <Text className="block w-full text-primary-content underline">{t('signIn.noRegister')}</Text>
               </View>
             </View>
           </>
