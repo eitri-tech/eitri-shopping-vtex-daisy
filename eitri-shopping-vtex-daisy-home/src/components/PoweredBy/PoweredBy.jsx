@@ -1,7 +1,7 @@
 import animationData from './EitriLottie'
-import {View, Animator} from "eitri-luminus";
+import { View, Animator } from "eitri-luminus";
 export default function PoweredBy(props) {
-	const { spacing, ...rest } = props
+	const { spacing } = props
 
 	const [showEffect, setShowEffect] = useState(false)
 
@@ -9,25 +9,17 @@ export default function PoweredBy(props) {
 
 	const handlePress = () => {
 		counter.current += 1
-		console.info("@handlePress",counter.current)
 		if (counter.current === 5) {
 			setShowEffect(true)
-			console.info("@handlePress if",counter.current)
 			counter.current = 0
 		}
 	}
 
 	return (
 		<>
-			{spacing && <View height={spacing} />}
+			{spacing && <View className={`h-[${spacing}]`} />}
 			<View
-				width='100%'
-				display='flex'
-				direction='column'
-				alignItems='center'
-				justifyContent='center'
-				gap={8}
-				{...rest}>
+				className="w-full flex flex-col items-center justify-center gap-2.5">
 				<View onClick={handlePress}>
 					<svg
 						width='136'
@@ -68,19 +60,10 @@ export default function PoweredBy(props) {
 			</View>
 			{showEffect && (
 				<View
-					zIndex='9998'
-					overflow='hidden'
-					position='absolute'
-					top='0'
-					left='0'
-					bottom='0'
-					right='0'
-					customColor='#1D1D1D'>
+					className="z-[9998] overflow-hidden absolute top-0 left-0 bottom-0 right-0 bg-[#1D1D1D]"
+				>
 					<View
-						position='absolute'
-						right='18px'
-						top='32px'
-						zIndex='9999'
+						className="absolute right-4 top-8 z-50"
 						onClick={() => setShowEffect(false)}>
 						<svg
 							width='32'
@@ -110,27 +93,18 @@ export default function PoweredBy(props) {
 						</svg>
 					</View>
 					<View
-						position='relative'
-						width='100vw'
-						height='100vh'>
+						className="relative h-full w-full">
 						<View
-							position='absolute'
-							top='33%'
-							left='62%'
-							transform='translate(-50%, -50%)'
-							zIndex='0'>
+							className="absolute top-1/3 left-3/5 transform -translate-x-1/2 -translate-y-1/2 z-0"
+						>
 							<Animator
-								height='100vh'
-								width='100vw'
+								className="h-full w-full"
 								animationData={animationData}
 							/>
 						</View>
 						<View
-							position='absolute'
-							top='50%'
-							left='50%'
-							transform='translate(-50%, -50%)'
-							zIndex='1'>
+							className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10"
+						>
 							<svg
 								width='190'
 								height='81'

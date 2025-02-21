@@ -66,7 +66,7 @@ export default function Home() {
   }
   const navigateToSearch = () => {
     Eitri.navigation.navigate({
-      path: 'Search',
+      path: 'Error',
     })
   }
   return (
@@ -83,8 +83,7 @@ export default function Home() {
       <CmsContentRender cmsContent={cmsContent} />
       <PoweredBy
 					spacing={'20px'}
-					opacity={'half'}
-				/>
+      />
     </Page>
   )
 }
