@@ -7,13 +7,8 @@ export default function BannerList(props) {
   const isANumber = (value) => 
     typeof value === "number" || /^\d+$/.test(value) ? true : false;
 
-  let width = data?.size?.maxWidth;
-  let height = data?.size?.maxHeight;
-
-  const widthClass = width && !isNaN(width) ? `w-[${width}px]` : null;
-  const heightClass = height && !isNaN(height) ? `h-[${height}px]` : null;
-
-  console.log("BannerList", data?.size ,heightClass, widthClass)
+  const width = data?.size?.maxWidth;
+  const height = data?.size?.maxHeight;
   return (
     <View className="flex flex-col gap-2">
       {data?.mainTitle && (
@@ -26,9 +21,9 @@ export default function BannerList(props) {
           imagesList.map((slider) => (
               <Image
                 src={slider.imageUrl}
-                className={`bg-neutral rounded-lg flex-grow ${data?.size?.maxHeight ? `h-max-[${data.size.maxHeight}]` : ''} ${data?.size?.maxWidth ? `w-max-[${data.size.maxWidth}]` : ''}
-                w-[100px] h-[100px]
-                `}
+                maxHeight={height}
+                maxWidth={width}
+                className={`bg-neutral rounded-lg flex-grow`}
               /> 
           ))}
       </SwiperContent>
