@@ -20,8 +20,8 @@ export default function ProductCardDefault(props) {
 		onPressOnWishlist
 	} = props
 	return (
-		<View className="relative bg-accent-500 min-w-auto max-w-auto rounded-sm p-2 shadow-sm">
-			<View className="flex flex-col">
+		<View className="relative bg-accent-500 min-w-auto max-w-auto rounded-lg mb-4 ">
+			<View className="flex flex-col shadow-lg rounded-lg p-2"> 
 				{badge ? (
 					<View className="max-h-[27px] min-h-[27px] rounded-full w-fit bg-green-300 px-4 py-1">
 						<Text className="font-bold font-baloo">{badge}</Text>
@@ -31,10 +31,10 @@ export default function ProductCardDefault(props) {
 				)}
 
 				<View className="relative flex flex-col w-full justify-center items-center h-[143px] min-h-[143px] max-h-[143px]">
-					<Image className="max-w-full max-h-full rounded-[4px]" src={image} />
+					<Image className="max-w-full max-h-full rounded-lg" src={image} />
 				</View>
 
-				<View className="mt-2 flex justify-between gap-4">
+				<View className="mt-2 flex justify-between gap-4 h-[48px]">
 					<Text className="line-clamp-3 font-medium text-xs">{name}</Text>
 					<View className="h-[36px] w-[36px] z-[98]">
 						<WishlistIcon checked={isOnWishlist} />

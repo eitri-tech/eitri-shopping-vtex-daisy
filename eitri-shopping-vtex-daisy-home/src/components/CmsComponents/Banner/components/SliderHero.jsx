@@ -7,7 +7,6 @@ export default function SliderHero(props) {
   const onSwipe = (i) => {
     setCurrentSlide(i);
   };
-  
   return (
     <View className="relative">
       {data.mainTitle && (
@@ -20,19 +19,19 @@ export default function SliderHero(props) {
       >
         {imagesList &&
           imagesList.map((image) => (
-            <Carousel.Item className="w-full" key={`image_${image.imageUrl}`}>
-            <View
-              onClick={() => {
-                onPress(image);
-              }}
-            >
-              <Image className="w-full" src={image.imageUrl} alt="Burger" />
-            </View>
+            <Carousel.Item className="w-full flex justify-center" key={`image_${image.imageUrl}`}>
+              <View
+                onClick={() => {
+                  onPress(image);
+                }}
+              >
+                <Image className="w-full" src={image.imageUrl} />
+              </View>
           </Carousel.Item>
           ))}
       </Carousel>
       {imagesList.length > 1 && (
-        <View className="mt-8 flex justify-center gap-2"> 
+        <View className="mt-4 flex justify-center gap-2"> 
           {imagesList &&
             Array.from(
               {
@@ -41,7 +40,7 @@ export default function SliderHero(props) {
               (_, index) => (
                 <View
                   key={index}
-                  className={`w-8 h-[6px] ${currentSlide === index ? "bg-green-700" : "bg-neutral-300"}`}
+                  className={`w-8 h-[6px] ${currentSlide === index ? "bg-red-300" : "bg-neutral-300"}`}
                 />
               ),
             )}

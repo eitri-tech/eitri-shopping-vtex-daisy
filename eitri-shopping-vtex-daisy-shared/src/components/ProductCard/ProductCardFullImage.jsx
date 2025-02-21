@@ -25,10 +25,10 @@ export default function ProductCardFullImage(props) {
 			className={`
 				relative bg-accent-100 
 				${width ? `min-w-[${width}px] max-w-[${width}px]` : 'min-w-auto max-w-auto'} 
-				rounded-sm shadow-sm
+				rounded-sm shadow-lg
 			`}
 			>
-			<View className={`flex flex-col w-full`}>
+			<View className={`flex flex-col w-full shadow-lg`}>
 				<View className={`relative flex flex-col w-full justify-center items-center rounded-xs  h-[240px] w-full min-h-[240px] max-h-[240px]`}>
 					<View className={`w-full h-[240px] rounded-tr-xs rounded-tl-xs flex items-center justify-center`}>
 						<Image className={`object-contain h-[240px]`} src={image} />

@@ -9,7 +9,7 @@ export default function SwiperContent(props) {
       </View>
     )}
     <View className="flex flex-row overflow-x-scroll ">
-      <View className={`gap-4 min-h-[72px] flex flex-row px-4`}>
+      <View className={`gap-2 min-h-[72px] flex flex-row px-4`}>
         {children}
       </View>
       {paddingHorizontal && (

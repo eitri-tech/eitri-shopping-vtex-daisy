@@ -3,8 +3,9 @@ import { Text, View, Image} from "eitri-luminus";
 export default function BannerList(props) {
   const { data, onPress } = props
   const imagesList = data.images
+  console.log(data?.size, data?.mainTitle)
   return (
-    <View >
+    <View className="flex flex-col gap-2">
       {data?.mainTitle && (
         <View className="px-4">
           <Text className="font-bold text-xl">{data.mainTitle}</Text>
@@ -13,25 +14,10 @@ export default function BannerList(props) {
       <SwiperContent className="px-4">
         {imagesList &&
           imagesList.map((slider) => (
-            <View key={slider.imageUrl} className="flex flex-col items-center">
-              <View
-                key={slider.imageUrl}
-                onClick={() => onPress(slider)}
-                className="flex items-center justify-center h-full"
-              >
-                <Image
-                  src={slider.imageUrl}
-                  maxHeight={`${data?.size?.maxHeight}px` || ''}
-                  maxWidth={`${data?.size?.maxWidth}px` || ''}
-                  className="bg-neutral grow-1"
-                />
-              </View>
-              {slider?.subLabel && (
-                <Text className="font-bold text-center whitespace-nowrap">
-                  {slider?.subLabel}
-                </Text>
-              )}
-            </View>
+              <Image
+                src={slider.imageUrl}
+                className={`bg-neutral rounded-lg flex-grow ${data?.size?.maxHeight ? `h-max-[${data.size.maxHeight}]` : ''} ${data?.size?.maxWidth ? `w-max-[${data.size.maxWidth}]` : ''}`}
+              /> 
           ))}
       </SwiperContent>
     </View>
