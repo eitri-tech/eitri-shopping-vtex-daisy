@@ -25,13 +25,12 @@ export default function ProductCardFullImage(props) {
 			className={`
 				relative bg-accent-100 
 				${width ? `min-w-[${width}px] max-w-[${width}px]` : 'min-w-auto max-w-auto'} 
-				rounded-sm shadow-lg
 			`}
 			>
-			<View className={`flex flex-col w-full shadow-lg`}>
-				<View className={`relative flex flex-col w-full justify-center items-center rounded-xs  h-[240px] w-full min-h-[240px] max-h-[240px]`}>
-					<View className={`w-full h-[240px] rounded-tr-xs rounded-tl-xs flex items-center justify-center`}>
-						<Image className={`object-contain h-[240px]`} src={image} />
+			<View className={`flex flex-col w-full shadow-md rounded-lg`}>
+				<View className={`relative flex flex-col w-full justify-center items-center rounded-lg  h-[240px] w-full min-h-[240px] max-h-[240px]`}>
+					<View className={`w-full h-[240px] rounded-lg flex items-center justify-center`}>
+						<Image className={`object-contain h-[240px] rounded-lg`} src={image} />
 					</View>
 
 					<View className="absolute top-[8px] right-[5px] flex items-center justify-center rounded-full bg-accent-100 z-[99] ">
@@ -77,11 +76,11 @@ export default function ProductCardFullImage(props) {
 
 				<View
 					className={`
-						h-[36px] w-full flex justify-center items-center 
+						h-[36px] flex justify-center items-center 
 						border border-primary-700 border-[0.5px] 
-						rounded-bl-xs rounded-br-xs 
+						rounded-lg
 						${loadingCartOp ? 'bg-neutral-100' : 'bg-primary-700'}
-						z-[99]
+						mx-2 mb-2
 					`}
 					onClick={onPressOnCard}
 				>

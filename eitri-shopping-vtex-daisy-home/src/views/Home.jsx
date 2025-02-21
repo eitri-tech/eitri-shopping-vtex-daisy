@@ -70,7 +70,7 @@ export default function Home() {
     })
   }
   return (
-    <Page topInset bottomInset>
+    <Page topInset bottomInset className="bg-white-300">
       <HeaderTemplate
         headerType={HEADER_TYPE.LOGO_SEARCH_AND_CART}
         scrollEffect={true}

@@ -61,20 +61,20 @@ export default function ProductTiles(props) {
   return (
     <View>
       {data?.title && (
-        <View className="px-8">
+        <View className="px-4 py-2">
           <Text className="font-bold">{data?.title}</Text>
         </View>
       )}
-      <View className="overflow-x-auto flex px-8">
+      <View className="overflow-x-auto flex px-4 gap-2">
         {shelves?.map((shelf) => (
           <View
             key={shelf.title}
             onClick={() => onChooseShelf(shelf)}
-            className={`py-1 border min-w-fit ${shelf.title === currentShelf.title ? 'border-secondary-500' : 'border-neutral-300'
+            className={`py-1 px-2 border min-w-fit rounded-full ${shelf.title === currentShelf.title ? 'border-blue-300' : 'border-neutral-300'
               }`}
           >
-            <Text className={`${shelf.title === currentShelf.title ? 'text-secondary-500' : 'text-neutral-300'
-              } font-['Baloo_2']`}>
+            <Text className={`${shelf.title === currentShelf.title ? 'text-blue-300' : 'text-neutral-300'
+              }`}>
               {shelf.title}
             </Text>
           </View>

@@ -22,7 +22,7 @@ export default function ShelfOfProductsSlider(props) {
         <View className="w-full overflow-x-auto flex space-x-4 px-4">
           <View className="flex gap-2">
             {products.map((product, index) => (
-              <View key={index} className="flex w-[180px]">
+              <View key={index} className="flex w-[180px] m-2">
                   <ProductCard product={product} locale={locale} currency={currency} />
               </View>
             ))}

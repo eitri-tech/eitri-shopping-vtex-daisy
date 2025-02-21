@@ -10,7 +10,7 @@ export default function SliderHero(props) {
   return (
     <View className="relative">
       {data.mainTitle && (
-        <View className="px-8 flex items-center justify-center w-full">
+        <View className="px-4 flex items-center justify-center w-full">
           <Text className="font-bold mb-8">{data.mainTitle}</Text>
         </View>
       )}

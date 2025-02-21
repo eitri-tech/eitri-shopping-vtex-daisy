@@ -5,11 +5,11 @@ export default function FitOnScreen(props) {
   return (
     <View>
       {data?.mainTitle && (
-        <View className="px-8">
+        <View className="px-4">
           <Text className="font-bold">{data.mainTitle}</Text>
         </View>
       )}
-      <View className="flex flex-wrap px-8 justify-between">
+      <View className="flex flex-wrap px-4 justify-between">
         {imagesList?.map((image) => (
           <View
             key={image.imageUrl}
