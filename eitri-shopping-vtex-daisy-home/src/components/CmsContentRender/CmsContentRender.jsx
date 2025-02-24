@@ -1,12 +1,10 @@
-import {getMappedComponent} from "../../utils/getMappedComponent";
+import { getMappedComponent } from '../../utils/getMappedComponent'
 import Eitri from 'eitri-bifrost'
+import {View} from "eitri-luminus";
 
-export default function CmsContentRender (props) {
-
+export default function CmsContentRender(props) {
   const { cmsContent } = props
-
   const [key, setKey] = useState(new Date().getTime())
-
   useEffect(() => {
     if (cmsContent) {
       Eitri.navigation.setOnResumeListener(() => {
@@ -15,14 +13,7 @@ export default function CmsContentRender (props) {
       })
     }
   }, [cmsContent])
-
   return (
-    <View
-      paddingBottom='large'
-      paddingTop='small'
-      direction='column'
-      gap={22}>
-      {cmsContent?.map(content => getMappedComponent(content, key))}
-    </View>
+    <View className="pb-8 pt-2 gap-6 flex flex-col pt-[100px]">{cmsContent?.map((content) => getMappedComponent(content, key))}</View>
   )
 }

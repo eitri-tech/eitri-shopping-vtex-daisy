@@ -19,142 +19,54 @@ export default function ProductCardDefault(props) {
 		onPressCartButton,
 		onPressOnWishlist
 	} = props
-
 	return (
-		<View
-			position='relative'
-			backgroundColor={'accent-100'}
-			minWidth={width || 'auto'}
-			maxWidth={width || 'auto'}
-			borderRadius='small'
-			padding='small'
-			elevation='low'>
-			<View direction='column'>
+		<View className="relative bg-accent-500 min-w-auto max-w-auto rounded-lg mb-4 ">
+			<View className="flex flex-col shadow-lg rounded-lg p-2"> 
 				{badge ? (
-					<View
-						maxHeight='27px'
-						minHeight='27px'
-						borderRadius='pill'
-						width='fit-content'
-						backgroundColor={'positive-300'}
-						paddingHorizontal='large'
-						paddingVertical='quark'>
-						<Text
-							fontWeight='bold'
-							fontFamily='Baloo 2'>
-							{badge}
-						</Text>
+					<View className="max-h-[27px] min-h-[27px] rounded-full w-fit bg-green-300 px-4 py-1">
+						<Text className="font-bold font-baloo">{badge}</Text>
 					</View>
 				) : (
-					<View height='27px' />
+					<View className="h-[27px]" />
 				)}
-				<View
-					position='relative'
-					display='flex'
-					direction='column'
-					width='100%'
-					justifyContent='center'
-					borderRadius='micro'
-					alignItems='center'
-					height='143px'
-					minHeight='143px'
-					maxHeight='143px'>
-					<Image
-						src={image}
-						maxWidth='100%'
-						maxHeight='100%'
-						borderRadius='micro'
-					/>
-				</View>
-				<View
-					marginTop='small'
-					display='flex'
-					justifyContent='between'
-					maxHeight='36px'
-					minHeight='36px'
-					gap={4}>
-					<Text
-						lineClamp={3}
-						fontWeight='medium'
-						fontSize='extra-small'>
-						{name}
-					</Text>
-					<Touchable
-						disabled={loadingWishlistOp}
-						onPress={onPressOnWishlist}
-						zIndex={98}>
-						<WishlistIcon checked={isOnWishlist} />
-					</Touchable>
+
+				<View className="relative flex flex-col w-full justify-center items-center h-[143px] min-h-[143px] max-h-[143px]">
+					<Image className="max-w-full max-h-full rounded-lg" src={image} />
 				</View>
 
-				<View
-					direction='column'
-					gap={2}
-					marginTop='nano'>
+				<View className="mt-2 flex justify-between gap-4 h-[48px]">
+					<Text className="line-clamp-3 font-medium text-xs">{name}</Text>
+					<View className="h-[36px] w-[36px] z-[98]">
+						<WishlistIcon checked={isOnWishlist} />
+					</View>
+				</View>
+
+				<View className="flex flex-col gap-2 mt-1">
 					{listPrice ? (
-						<Text
-							textDecoration='line-through'
-							fontWeight='bold'
-							color='neutral-500'
-							fontSize='nano'>
-							{listPrice}
-						</Text>
+						<Text className="line-through font-bold text-neutral-500 text-xs">{listPrice}</Text>
 					) : (
-						<View height='16px' />
+						<View className="h-[16px]" />
 					)}
 
-					<Text
-						fontWeight='bold'
-						color='primary-700'
-						fontSize='small'>
-						{price}
-					</Text>
+					<Text className="font-bold text-primary-700 text-sm">{price}</Text>
 
 					{installments ? (
-						<Text
-							fontWeight='bold'
-							color='neutral-500'
-							fontSize='nano'>
-							{installments}
-						</Text>
+						<Text className="font-bold text-neutral-500 text-xs">{installments}</Text>
 					) : (
-						<View height='16px' />
+						<View className="h-[16px]" />
 					)}
 				</View>
-				<Touchable
-					marginTop='nano'
-					height='36px'
-					width='100%'
-					borderRadius='pill'
-					display='flex'
-					justifyContent='center'
-					alignItems='center'
-					borderColor={'primary-700'}
-					borderWidth='hairline'
-					backgroundColor={loadingCartOp ? 'neutral-100' : 'primary-700'}
-					zIndex={99}
-					onPress={onPressCartButton}>
+
+				<View onClick={onPressOnCard} className="mt-1 h-[36px] w-full rounded-full flex justify-center items-center border border-primary-700 border-[0.5px] bg-primary-700 z-[99]">
 					{loadingCartOp ? (
-						<Loading width='36px' />
+						<Loading width="36px" />
 					) : (
-						<Text
-							color='background-color'
-							fontWeight='medium'
-							fontSize='extra-small'>
-							{actionLabel}
-						</Text>
+						<Text className="text-background-color font-medium text-xs">{actionLabel}</Text>
 					)}
-				</Touchable>
+				</View>
 			</View>
 
-			<Touchable
-				onPress={onPressOnCard}
-				position='absolute'
-				top='0'
-				bottom='0'
-				left='0'
-				right='0'
-			/>
+			<View className="absolute top-0 bottom-0 left-0 right-0" />
 		</View>
 	)
 }

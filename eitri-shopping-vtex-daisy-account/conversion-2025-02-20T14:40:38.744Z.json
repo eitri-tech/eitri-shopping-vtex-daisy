@@ -1,0 +1,7251 @@
+{
+  "conversionDate": "2025-02-20T14:40:37.900Z",
+  "currentVersion": "1.76.0",
+  "targetVersion": "2.0.0-alpha.7",
+  "files": [
+    {
+      "fileName": "Alert.jsx",
+      "actions": [
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "position",
+              "value": "fixed",
+              "action": "converted to className: fixed"
+            },
+            {
+              "name": "padding",
+              "value": "display",
+              "action": "converted to className: "
+            },
+            {
+              "prop": "width",
+              "action": "added"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "display",
+              "value": "flex",
+              "action": "converted to className: flex"
+            },
+            {
+              "name": "justifyContent",
+              "value": "center",
+              "action": "converted to className: justify-center"
+            },
+            {
+              "name": "padding",
+              "value": "small",
+              "action": "converted to className: p-2"
+            },
+            {
+              "prop": "width",
+              "action": "added"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "block",
+              "action": "converted to className: block w-full"
+            },
+            {
+              "name": "fontWeight",
+              "value": "bold",
+              "action": "converted to className: font-bold"
+            },
+            {
+              "prop": "color",
+              "action": "added"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "prop": "bottomInset",
+              "action": "added"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fileName": "BigTitle.jsx",
+      "actions": [
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "display",
+              "value": "flex",
+              "action": "converted to className: flex"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "backgroundColor",
+              "value": "neutral-100",
+              "action": "converted to className: bg-neutral"
+            },
+            {
+              "name": "display",
+              "value": "flex",
+              "action": "converted to className: flex"
+            },
+            {
+              "name": "alignItems",
+              "value": "center",
+              "action": "converted to className: items-center"
+            },
+            {
+              "name": "borderRadius",
+              "value": "circular",
+              "action": "converted to className: "
+            },
+            {
+              "name": "borderColor",
+              "value": "neutral-300",
+              "action": "converted to className: border-neutral"
+            },
+            {
+              "name": "borderWidth",
+              "value": "hairline",
+              "action": "converted to className: border"
+            },
+            {
+              "name": "justifyContent",
+              "value": "center",
+              "action": "converted to className: justify-center"
+            },
+            {
+              "name": "marginRight",
+              "value": "display",
+              "action": "converted to className: "
+            },
+            {
+              "prop": "width",
+              "action": "added"
+            },
+            {
+              "prop": "height",
+              "action": "added"
+            },
+            {
+              "prop": "minHeight",
+              "action": "added"
+            },
+            {
+              "prop": "minWidth",
+              "action": "added"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "Touchable",
+              "action": "Replace name to View"
+            },
+            {
+              "prop": "onClick",
+              "action": "converted to onClick|added"
+            }
+          ]
+        },
+        {
+          "tag": "Image",
+          "process": [
+            {
+              "name": "Image",
+              "action": "Used same name"
+            },
+            {
+              "prop": "src",
+              "action": "added"
+            },
+            {
+              "prop": "width",
+              "action": "added"
+            },
+            {
+              "prop": "height",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "block",
+              "action": "converted to className: block w-full"
+            },
+            {
+              "name": "fontWeight",
+              "value": "bold",
+              "action": "converted to className: font-bold"
+            },
+            {
+              "name": "fontSize",
+              "value": "huge",
+              "action": "converted to className: "
+            },
+            {
+              "prop": "fontFamily",
+              "action": "added"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fileName": "CCheckbox.jsx",
+      "actions": [
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "display",
+              "value": "flex",
+              "action": "converted to className: flex"
+            },
+            {
+              "name": "direction",
+              "value": "row",
+              "action": "converted to className: flex flex-row"
+            },
+            {
+              "prop": "alignItems",
+              "action": "added"
+            },
+            {
+              "prop": "justifyItems",
+              "action": "added"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Checkbox",
+          "process": [
+            {
+              "name": "Checkbox",
+              "action": "Used same name"
+            },
+            {
+              "prop": "renderMode",
+              "action": "added"
+            },
+            {
+              "prop": "checked",
+              "action": "added"
+            },
+            {
+              "prop": "onChange",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "Touchable",
+              "action": "Replace name to View"
+            },
+            {
+              "name": "marginLeft",
+              "value": "nano",
+              "action": "converted to className: ml-1"
+            },
+            {
+              "prop": "onClick",
+              "action": "converted to onClick|added"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "block",
+              "action": "converted to className: block w-full"
+            },
+            {
+              "name": "fontSize",
+              "value": "extra-small",
+              "action": "converted to className: "
+            },
+            {
+              "name": "fontWeight",
+              "value": "medium",
+              "action": "converted to className: "
+            },
+            {
+              "prop": "paddinLeft",
+              "action": "added"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fileName": "ImageCard.jsx",
+      "actions": [
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "borderRadius",
+              "value": "default",
+              "action": "converted to className: "
+            },
+            {
+              "name": "display",
+              "value": "flex",
+              "action": "converted to className: flex"
+            },
+            {
+              "name": "justifyContent",
+              "value": "center",
+              "action": "converted to className: justify-center"
+            },
+            {
+              "name": "alignItems",
+              "value": "center",
+              "action": "converted to className: items-center"
+            },
+            {
+              "prop": "minWidth",
+              "action": "added"
+            },
+            {
+              "prop": "maxWidth",
+              "action": "added"
+            },
+            {
+              "prop": "minHeight",
+              "action": "added"
+            },
+            {
+              "prop": "maxHeight",
+              "action": "added"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Image",
+          "process": [
+            {
+              "name": "Image",
+              "action": "Used same name"
+            },
+            {
+              "prop": "src",
+              "action": "added"
+            },
+            {
+              "prop": "maxWidth",
+              "action": "added"
+            },
+            {
+              "prop": "maxHeight",
+              "action": "added"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fileName": "NoItem.jsx",
+      "actions": [
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "display",
+              "value": "flex",
+              "action": "converted to className: flex"
+            },
+            {
+              "name": "direction",
+              "value": "column",
+              "action": "converted to className: flex flex-col"
+            },
+            {
+              "name": "justifyContent",
+              "value": "center",
+              "action": "converted to className: justify-center"
+            },
+            {
+              "name": "alignItems",
+              "value": "center",
+              "action": "converted to className: items-center"
+            },
+            {
+              "name": "gap",
+              "value": "16px",
+              "action": "converted to className: "
+            },
+            {
+              "name": "padding",
+              "value": "large",
+              "action": "converted to className: p-8"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "Icon",
+              "action": "iconKey is not string, needs to manual handling",
+              "severity": "warning"
+            },
+            {
+              "prop": "No props",
+              "action": "Nothing to process"
+            },
+            {
+              "prop": "No props",
+              "action": "Nothing to process"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "block",
+              "action": "converted to className: block w-full"
+            },
+            {
+              "name": "textAlign",
+              "value": "center",
+              "action": "converted to className: text-center"
+            },
+            {
+              "name": "fontWeight",
+              "value": "bold",
+              "action": "converted to className: font-bold"
+            },
+            {
+              "name": "fontSize",
+              "value": "small",
+              "action": "converted to className: text-sm"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "block",
+              "action": "converted to className: block w-full"
+            },
+            {
+              "name": "textAlign",
+              "value": "center",
+              "action": "converted to className: text-center"
+            },
+            {
+              "name": "fontWeight",
+              "value": "medium",
+              "action": "converted to className: "
+            },
+            {
+              "name": "fontSize",
+              "value": "small",
+              "action": "converted to className: text-sm"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fileName": "OrderListButton.jsx",
+      "actions": [
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "Touchable",
+              "action": "Replace name to View"
+            },
+            {
+              "name": "borderWidth",
+              "value": "hairline",
+              "action": "converted to className: border"
+            },
+            {
+              "name": "borderRadius",
+              "value": "small",
+              "action": "converted to className: "
+            },
+            {
+              "name": "display",
+              "value": "flex",
+              "action": "converted to className: flex"
+            },
+            {
+              "name": "direction",
+              "value": "row",
+              "action": "converted to className: flex flex-row"
+            },
+            {
+              "name": "justifyContent",
+              "value": "center",
+              "action": "converted to className: justify-center"
+            },
+            {
+              "name": "alignItems",
+              "value": "center",
+              "action": "converted to className: items-center"
+            },
+            {
+              "name": "padding",
+              "value": "nano",
+              "action": "converted to className: p-1"
+            },
+            {
+              "prop": "borderColor",
+              "action": "added"
+            },
+            {
+              "prop": "backgroundColor",
+              "action": "added"
+            },
+            {
+              "prop": "onClick",
+              "action": "converted to onClick|added"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "block",
+              "action": "converted to className: block w-full"
+            },
+            {
+              "name": "fontWeight",
+              "value": "medium",
+              "action": "converted to className: "
+            },
+            {
+              "name": "color",
+              "value": "background-color",
+              "action": "converted to className: text-base-100"
+            },
+            {
+              "name": "fontSize",
+              "value": "nano",
+              "action": "converted to className: "
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fileName": "OrderListDetails.jsx",
+      "actions": [
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "padding",
+              "value": "small",
+              "action": "converted to className: p-2"
+            },
+            {
+              "name": "justifyContent",
+              "value": "between",
+              "action": "converted to className: justify-between"
+            },
+            {
+              "name": "display",
+              "value": "flex",
+              "action": "converted to className: flex"
+            },
+            {
+              "name": "direction",
+              "value": "column",
+              "action": "converted to className: flex flex-col"
+            },
+            {
+              "name": "borderColor",
+              "value": "neutral-300",
+              "action": "converted to className: border-neutral"
+            },
+            {
+              "prop": "borderBottomWidth",
+              "action": "added"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "display",
+              "value": "flex",
+              "action": "converted to className: flex"
+            },
+            {
+              "name": "direction",
+              "value": "row",
+              "action": "converted to className: flex flex-row"
+            },
+            {
+              "prop": "width",
+              "action": "added"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "display",
+              "value": "flex",
+              "action": "converted to className: flex"
+            },
+            {
+              "name": "direction",
+              "value": "column",
+              "action": "converted to className: flex flex-col"
+            },
+            {
+              "prop": "align",
+              "action": "added"
+            },
+            {
+              "prop": "width",
+              "action": "added"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "block",
+              "action": "converted to className: block w-full"
+            },
+            {
+              "name": "fontSize",
+              "value": "nano",
+              "action": "converted to className: "
+            },
+            {
+              "name": "marginBottom",
+              "value": "quark",
+              "action": "converted to className: "
+            },
+            {
+              "name": "fontWeight",
+              "value": "bold",
+              "action": "converted to className: font-bold"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "block",
+              "action": "converted to className: block w-full"
+            },
+            {
+              "name": "fontSize",
+              "value": "nano",
+              "action": "converted to className: "
+            },
+            {
+              "name": "marginBottom",
+              "value": "small",
+              "action": "converted to className: mb-2"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "display",
+              "value": "flex",
+              "action": "converted to className: flex"
+            },
+            {
+              "name": "direction",
+              "value": "column",
+              "action": "converted to className: flex flex-col"
+            },
+            {
+              "prop": "align",
+              "action": "added"
+            },
+            {
+              "prop": "width",
+              "action": "added"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "block",
+              "action": "converted to className: block w-full"
+            },
+            {
+              "name": "textAlign",
+              "value": "right",
+              "action": "converted to className: text-right"
+            },
+            {
+              "name": "marginBottom",
+              "value": "quark",
+              "action": "converted to className: "
+            },
+            {
+              "name": "fontSize",
+              "value": "nano",
+              "action": "converted to className: "
+            },
+            {
+              "name": "fontWeight",
+              "value": "bold",
+              "action": "converted to className: font-bold"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "block",
+              "action": "converted to className: block w-full"
+            },
+            {
+              "name": "textAlign",
+              "value": "right",
+              "action": "converted to className: text-right"
+            },
+            {
+              "name": "marginBottom",
+              "value": "quark",
+              "action": "converted to className: "
+            },
+            {
+              "name": "fontSize",
+              "value": "nano",
+              "action": "converted to className: "
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "display",
+              "value": "flex",
+              "action": "converted to className: flex"
+            },
+            {
+              "name": "direction",
+              "value": "row",
+              "action": "converted to className: flex flex-row"
+            },
+            {
+              "name": "alignItems",
+              "value": "center",
+              "action": "converted to className: items-center"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "paddingRight",
+              "value": "nano",
+              "action": "converted to className: pr-1"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "block",
+              "action": "converted to className: block w-full"
+            },
+            {
+              "name": "fontSize",
+              "value": "nano",
+              "action": "converted to className: "
+            },
+            {
+              "name": "marginBottom",
+              "value": "quark",
+              "action": "converted to className: "
+            },
+            {
+              "name": "fontWeight",
+              "value": "bold",
+              "action": "converted to className: font-bold"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "block",
+              "action": "converted to className: block w-full"
+            },
+            {
+              "name": "fontSize",
+              "value": "nano",
+              "action": "converted to className: "
+            },
+            {
+              "name": "marginBottom",
+              "value": "quark",
+              "action": "converted to className: "
+            },
+            {
+              "prop": "whiteSpace",
+              "action": "added"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "Touchable",
+              "action": "Replace name to View"
+            },
+            {
+              "prop": "onClick",
+              "action": "converted to onClick|added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "Icon",
+              "action": "iconKey is not string, needs to manual handling",
+              "severity": "warning"
+            },
+            {
+              "prop": "No props",
+              "action": "Nothing to process"
+            },
+            {
+              "prop": "No props",
+              "action": "Nothing to process"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "display",
+              "value": "flex",
+              "action": "converted to className: flex"
+            },
+            {
+              "name": "direction",
+              "value": "row",
+              "action": "converted to className: flex flex-row"
+            },
+            {
+              "name": "alignItems",
+              "value": "center",
+              "action": "converted to className: items-center"
+            },
+            {
+              "name": "justifyContent",
+              "value": "between",
+              "action": "converted to className: justify-between"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "prop": "No props",
+              "action": "Nothing to process"
+            },
+            {
+              "prop": "No props",
+              "action": "Nothing to process"
+            }
+          ]
+        },
+        {
+          "tag": "OrderStatusBadge",
+          "process": [
+            {
+              "name": "OrderStatusBadge",
+              "action": "Used same name"
+            },
+            {
+              "prop": "statusId",
+              "action": "added"
+            },
+            {
+              "prop": "statusDescription",
+              "action": "added"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fileName": "OrderProductCard.jsx",
+      "actions": [
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "position",
+              "value": "relative",
+              "action": "converted to className: relative"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "borderColor",
+              "value": "neutral-700",
+              "action": "converted to className: border-neutral-content"
+            },
+            {
+              "name": "direction",
+              "value": "row",
+              "action": "converted to className: flex flex-row"
+            },
+            {
+              "name": "padding",
+              "value": "extra-small",
+              "action": "converted to className: "
+            },
+            {
+              "name": "backgroundColor",
+              "value": "neutral-100",
+              "action": "converted to className: bg-neutral"
+            },
+            {
+              "prop": "borderTopWidth",
+              "action": "added"
+            },
+            {
+              "prop": "key",
+              "action": "added"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "ImageCard",
+          "process": [
+            {
+              "name": "ImageCard",
+              "action": "Used same name"
+            },
+            {
+              "prop": "imageUrl",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "paddingLeft",
+              "value": "nano",
+              "action": "converted to className: pl-1"
+            },
+            {
+              "name": "display",
+              "value": "flex",
+              "action": "converted to className: flex"
+            },
+            {
+              "name": "direction",
+              "value": "column",
+              "action": "converted to className: flex flex-col"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "direction",
+              "value": "column",
+              "action": "converted to className: flex flex-col"
+            },
+            {
+              "name": "justifyContent",
+              "value": "between",
+              "action": "converted to className: justify-between"
+            },
+            {
+              "name": "marginBottom",
+              "value": "quark",
+              "action": "converted to className: "
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "prop": "id",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "fontSize",
+              "value": "nano",
+              "action": "converted to className: "
+            },
+            {
+              "name": "color",
+              "value": "primary-700",
+              "action": "converted to className: text-primary-content"
+            },
+            {
+              "prop": "textOverflow",
+              "action": "added"
+            },
+            {
+              "prop": "whiteSpace",
+              "action": "added"
+            },
+            {
+              "prop": "lineHeight",
+              "action": "added"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "display",
+              "value": "flex",
+              "action": "converted to className: flex"
+            },
+            {
+              "name": "direction",
+              "value": "row",
+              "action": "converted to className: flex flex-row"
+            },
+            {
+              "name": "justifyContent",
+              "value": "between",
+              "action": "converted to className: justify-between"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "block",
+              "action": "converted to className: block w-full"
+            },
+            {
+              "name": "fontSize",
+              "value": "nano",
+              "action": "converted to className: "
+            },
+            {
+              "name": "marginBottom",
+              "value": "small",
+              "action": "converted to className: mb-2"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "fontSize",
+              "value": "nano",
+              "action": "converted to className: "
+            },
+            {
+              "name": "marginBottom",
+              "value": "small",
+              "action": "converted to className: mb-2"
+            },
+            {
+              "name": "fontWeight",
+              "value": "bold",
+              "action": "converted to className: font-bold"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "marginTop",
+              "value": "small",
+              "action": "converted to className: mt-2"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "OrderListButton",
+          "process": [
+            {
+              "name": "OrderListButton",
+              "action": "Used same name"
+            },
+            {
+              "name": "borderColor",
+              "value": "tertiary-700",
+              "action": "converted to className: border-info-content"
+            },
+            {
+              "name": "backgroundColor",
+              "value": "tertiary-700",
+              "action": "converted to className: bg-info-content"
+            },
+            {
+              "name": "color",
+              "value": "primary-500",
+              "action": "converted to className: text-primary-content"
+            },
+            {
+              "prop": "onClick",
+              "action": "converted to onClick|added"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fileName": "OrderStatusBadge.jsx",
+      "actions": [
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "borderRadius",
+              "value": "medium",
+              "action": "converted to className: "
+            },
+            {
+              "name": "borderWidth",
+              "value": "hairline",
+              "action": "converted to className: border"
+            },
+            {
+              "name": "padding",
+              "value": "nano",
+              "action": "converted to className: p-1"
+            },
+            {
+              "name": "display",
+              "value": "flex",
+              "action": "converted to className: flex"
+            },
+            {
+              "name": "justifyContent",
+              "value": "right",
+              "action": "converted to className: "
+            },
+            {
+              "name": "alignItems",
+              "value": "right",
+              "action": "converted to className: "
+            },
+            {
+              "name": "gap",
+              "value": "6px",
+              "action": "converted to className: "
+            },
+            {
+              "name": "View",
+              "action": "attribute without name",
+              "severity": "error"
+            },
+            {
+              "prop": "backgroundColor",
+              "action": "added"
+            },
+            {
+              "prop": "borderColor",
+              "action": "added"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "block",
+              "action": "converted to className: block w-full"
+            },
+            {
+              "name": "fontSize",
+              "value": "nano",
+              "action": "converted to className: "
+            },
+            {
+              "name": "fontWeight",
+              "value": "bold",
+              "action": "converted to className: font-bold"
+            },
+            {
+              "prop": "color",
+              "action": "added"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fileName": "ProductCardVertical.jsx",
+      "actions": [
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "position",
+              "value": "relative",
+              "action": "converted to className: relative"
+            },
+            {
+              "name": "borderRadius",
+              "value": "small",
+              "action": "converted to className: "
+            },
+            {
+              "name": "padding",
+              "value": "small",
+              "action": "converted to className: p-2"
+            },
+            {
+              "name": "borderColor",
+              "value": "neutral-500",
+              "action": "converted to className: border-neutral-content"
+            },
+            {
+              "name": "borderWidth",
+              "value": "hairline",
+              "action": "converted to className: border"
+            },
+            {
+              "prop": "minWidth",
+              "action": "added"
+            },
+            {
+              "prop": "maxWidth",
+              "action": "added"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "direction",
+              "value": "column",
+              "action": "converted to className: flex flex-col"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "borderRadius",
+              "value": "pill",
+              "action": "converted to className: "
+            },
+            {
+              "name": "backgroundColor",
+              "value": "positive-300",
+              "action": "converted to className: bg-success"
+            },
+            {
+              "name": "paddingHorizontal",
+              "value": "large",
+              "action": "converted to className: px-8"
+            },
+            {
+              "name": "paddingVertical",
+              "value": "quark",
+              "action": "converted to className: "
+            },
+            {
+              "prop": "maxHeight",
+              "action": "added"
+            },
+            {
+              "prop": "minHeight",
+              "action": "added"
+            },
+            {
+              "prop": "width",
+              "action": "added"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "block",
+              "action": "converted to className: block w-full"
+            },
+            {
+              "name": "fontWeight",
+              "value": "bold",
+              "action": "converted to className: font-bold"
+            },
+            {
+              "prop": "fontFamily",
+              "action": "added"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "prop": "height",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "display",
+              "value": "flex",
+              "action": "converted to className: flex"
+            },
+            {
+              "name": "justifyContent",
+              "value": "center",
+              "action": "converted to className: justify-center"
+            },
+            {
+              "name": "borderRadius",
+              "value": "micro",
+              "action": "converted to className: "
+            },
+            {
+              "name": "alignItems",
+              "value": "center",
+              "action": "converted to className: items-center"
+            },
+            {
+              "prop": "width",
+              "action": "added"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Image",
+          "process": [
+            {
+              "name": "Image",
+              "action": "Used same name"
+            },
+            {
+              "name": "borderRadius",
+              "value": "micro",
+              "action": "converted to className: "
+            },
+            {
+              "prop": "src",
+              "action": "added"
+            },
+            {
+              "prop": "maxWidth",
+              "action": "added"
+            },
+            {
+              "prop": "maxHeight",
+              "action": "added"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "marginTop",
+              "value": "small",
+              "action": "converted to className: mt-2"
+            },
+            {
+              "name": "display",
+              "value": "flex",
+              "action": "converted to className: flex"
+            },
+            {
+              "name": "justifyContent",
+              "value": "between",
+              "action": "converted to className: justify-between"
+            },
+            {
+              "name": "gap",
+              "value": 4,
+              "action": "converted to className: "
+            },
+            {
+              "prop": "maxHeight",
+              "action": "added"
+            },
+            {
+              "prop": "minHeight",
+              "action": "added"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "block",
+              "action": "converted to className: block w-full"
+            },
+            {
+              "name": "lineClamp",
+              "value": 3,
+              "action": "converted to className: line-clamp-3"
+            },
+            {
+              "name": "fontWeight",
+              "value": "medium",
+              "action": "converted to className: "
+            },
+            {
+              "name": "fontSize",
+              "value": "extra-small",
+              "action": "converted to className: "
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "Touchable",
+              "action": "Replace name to View"
+            },
+            {
+              "name": "zIndex",
+              "value": 99,
+              "action": "converted to className: z-99"
+            },
+            {
+              "prop": "onClick",
+              "action": "converted to onClick|added"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Image",
+          "process": [
+            {
+              "name": "Image",
+              "action": "Used same name"
+            },
+            {
+              "prop": "src",
+              "action": "added"
+            },
+            {
+              "prop": "width",
+              "action": "added"
+            },
+            {
+              "prop": "height",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "marginTop",
+              "value": "quark",
+              "action": "converted to className: "
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Rating",
+          "process": [
+            {
+              "name": "Rating",
+              "action": "Used same name"
+            },
+            {
+              "prop": "ratingValue",
+              "action": "added"
+            },
+            {
+              "prop": "ratingsCount",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "prop": "height",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "direction",
+              "value": "column",
+              "action": "converted to className: flex flex-col"
+            },
+            {
+              "name": "gap",
+              "value": 2,
+              "action": "converted to className: "
+            },
+            {
+              "name": "marginTop",
+              "value": "nano",
+              "action": "converted to className: mt-1"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "block",
+              "action": "converted to className: block w-full"
+            },
+            {
+              "name": "textDecoration",
+              "value": "line-through",
+              "action": "converted to className: line-through"
+            },
+            {
+              "name": "fontWeight",
+              "value": "bold",
+              "action": "converted to className: font-bold"
+            },
+            {
+              "name": "color",
+              "value": "neutral-500",
+              "action": "converted to className: text-neutral-content"
+            },
+            {
+              "name": "fontSize",
+              "value": "nano",
+              "action": "converted to className: "
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "prop": "height",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "block",
+              "action": "converted to className: block w-full"
+            },
+            {
+              "name": "fontWeight",
+              "value": "bold",
+              "action": "converted to className: font-bold"
+            },
+            {
+              "name": "color",
+              "value": "primary-700",
+              "action": "converted to className: text-primary-content"
+            },
+            {
+              "name": "fontSize",
+              "value": "small",
+              "action": "converted to className: text-sm"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "block",
+              "action": "converted to className: block w-full"
+            },
+            {
+              "name": "fontWeight",
+              "value": "bold",
+              "action": "converted to className: font-bold"
+            },
+            {
+              "name": "color",
+              "value": "neutral-500",
+              "action": "converted to className: text-neutral-content"
+            },
+            {
+              "name": "fontSize",
+              "value": "nano",
+              "action": "converted to className: "
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "prop": "height",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "Touchable",
+              "action": "Replace name to View"
+            },
+            {
+              "name": "position",
+              "value": "absolute",
+              "action": "converted to className: absolute"
+            },
+            {
+              "prop": "onClick",
+              "action": "converted to onClick|added"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fileName": "ProductCardWrapper.jsx",
+      "actions": [
+        {
+          "tag": "ProductCardVertical",
+          "process": [
+            {
+              "name": "ProductCardVertical",
+              "action": "Used same name"
+            },
+            {
+              "prop": "name",
+              "action": "added"
+            },
+            {
+              "prop": "image",
+              "action": "added"
+            },
+            {
+              "prop": "listPrice",
+              "action": "added"
+            },
+            {
+              "prop": "price",
+              "action": "added"
+            },
+            {
+              "prop": "installments",
+              "action": "added"
+            },
+            {
+              "prop": "onWishListPress",
+              "action": "added"
+            },
+            {
+              "prop": "width",
+              "action": "added"
+            },
+            {
+              "prop": "onClick",
+              "action": "converted to onClick|added"
+            },
+            {
+              "prop": "badge",
+              "action": "added"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fileName": "ProfileCardButton.jsx",
+      "actions": [
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "Touchable",
+              "action": "Replace name to View"
+            },
+            {
+              "name": "borderRadius",
+              "value": "micro",
+              "action": "converted to className: "
+            },
+            {
+              "name": "padding",
+              "value": "large",
+              "action": "converted to className: p-8"
+            },
+            {
+              "name": "display",
+              "value": "flex",
+              "action": "converted to className: flex"
+            },
+            {
+              "name": "justifyContent",
+              "value": "between",
+              "action": "converted to className: justify-between"
+            },
+            {
+              "prop": "elevation",
+              "action": "blocked"
+            },
+            {
+              "prop": "width",
+              "action": "added"
+            },
+            {
+              "prop": "onClick",
+              "action": "converted to onClick|added"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "display",
+              "value": "flex",
+              "action": "converted to className: flex"
+            },
+            {
+              "name": "alignItems",
+              "value": "center",
+              "action": "converted to className: items-center"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "Icon",
+              "action": "iconKey is not string, needs to manual handling",
+              "severity": "warning"
+            },
+            {
+              "prop": "No props",
+              "action": "Nothing to process"
+            },
+            {
+              "prop": "No props",
+              "action": "Nothing to process"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "color",
+              "value": "neutral-900",
+              "action": "converted to className: text-neutral-content"
+            },
+            {
+              "name": "fontSize",
+              "value": "small",
+              "action": "converted to className: text-sm"
+            },
+            {
+              "name": "marginLeft",
+              "value": "nano",
+              "action": "converted to className: ml-1"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "Icon",
+              "action": "iconKey is not string, needs to manual handling",
+              "severity": "warning"
+            },
+            {
+              "prop": "No props",
+              "action": "Nothing to process"
+            },
+            {
+              "prop": "No props",
+              "action": "Nothing to process"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fileName": "ProtectedView.jsx",
+      "actions": [
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "display",
+              "value": "flex",
+              "action": "converted to className: flex"
+            },
+            {
+              "name": "justifyContent",
+              "value": "center",
+              "action": "converted to className: justify-center"
+            },
+            {
+              "name": "alignItems",
+              "value": "center",
+              "action": "converted to className: items-center"
+            },
+            {
+              "prop": "minHeight",
+              "action": "added"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "block",
+              "action": "converted to className: block w-full"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fileName": "Rating.jsx",
+      "actions": [
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "display",
+              "value": "flex",
+              "action": "converted to className: flex"
+            },
+            {
+              "name": "alignItems",
+              "value": "center",
+              "action": "converted to className: items-center"
+            },
+            {
+              "name": "gap",
+              "value": "4px",
+              "action": "converted to className: "
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "View",
+              "action": "attribute without name",
+              "severity": "error"
+            },
+            {
+              "name": "direction",
+              "value": "row",
+              "action": "converted to className: flex flex-row"
+            },
+            {
+              "name": "alignItems",
+              "value": "center",
+              "action": "converted to className: items-center"
+            },
+            {
+              "name": "gap",
+              "value": 2,
+              "action": "converted to className: "
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "Touchable",
+              "action": "Replace name to View"
+            },
+            {
+              "name": "direction",
+              "value": "row",
+              "action": "converted to className: flex flex-row"
+            },
+            {
+              "name": "alignItems",
+              "value": "center",
+              "action": "converted to className: items-center"
+            },
+            {
+              "prop": "key",
+              "action": "added"
+            },
+            {
+              "prop": "onClick",
+              "action": "converted to onClick|added"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "prop": "width",
+              "action": "added"
+            },
+            {
+              "prop": "height",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "svg",
+          "action": "skipped"
+        },
+        {
+          "tag": "path",
+          "action": "skipped"
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "block",
+              "action": "converted to className: block w-full"
+            },
+            {
+              "name": "color",
+              "value": "secondary-700",
+              "action": "converted to className: text-secondary-content"
+            },
+            {
+              "name": "fontSize",
+              "value": "nano",
+              "action": "converted to className: "
+            },
+            {
+              "name": "fontWeight",
+              "value": "medium",
+              "action": "converted to className: "
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fileName": "WishlistItem.jsx",
+      "actions": [
+        {
+          "tag": "ProductCardWrapper",
+          "process": [
+            {
+              "name": "ProductCardWrapper",
+              "action": "Used same name"
+            },
+            {
+              "prop": "vtexProduct",
+              "action": "added"
+            },
+            {
+              "prop": "onRemoveFromWishList",
+              "action": "added"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fileName": "EditProfile.jsx",
+      "actions": [
+        {
+          "tag": "Page",
+          "process": [
+            {
+              "name": "Window",
+              "action": "Replace name to Page"
+            },
+            {
+              "prop": "bottomInset",
+              "action": "added"
+            },
+            {
+              "prop": "topInset",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "HeaderTemplate",
+          "process": [
+            {
+              "name": "HeaderTemplate",
+              "action": "Used same name"
+            },
+            {
+              "prop": "headerType",
+              "action": "added"
+            },
+            {
+              "prop": "viewBackButton",
+              "action": "added"
+            },
+            {
+              "prop": "contentText",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Loading",
+          "process": [
+            {
+              "name": "Loading",
+              "action": "Used same name"
+            },
+            {
+              "prop": "fullScreen",
+              "action": "added"
+            },
+            {
+              "prop": "isLoading",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "padding",
+              "value": "large",
+              "action": "converted to className: p-8"
+            },
+            {
+              "name": "direction",
+              "value": "column",
+              "action": "converted to className: flex flex-col"
+            },
+            {
+              "name": "gap",
+              "value": "16px",
+              "action": "converted to className: "
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "prop": "No props",
+              "action": "Nothing to process"
+            },
+            {
+              "prop": "No props",
+              "action": "Nothing to process"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "block",
+              "action": "converted to className: block w-full"
+            },
+            {
+              "name": "fontWeight",
+              "value": "bold",
+              "action": "converted to className: font-bold"
+            },
+            {
+              "name": "fontSize",
+              "value": "extra-small",
+              "action": "converted to className: "
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "marginTop",
+              "value": "nano",
+              "action": "converted to className: mt-1"
+            },
+            {
+              "name": "display",
+              "value": "flex",
+              "action": "converted to className: flex"
+            },
+            {
+              "name": "gap",
+              "value": "6px",
+              "action": "converted to className: "
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "CustomInput",
+          "process": [
+            {
+              "name": "CustomInput",
+              "action": "Used same name"
+            },
+            {
+              "name": "backgroundColor",
+              "value": "background-color",
+              "action": "converted to className: bg-base-100"
+            },
+            {
+              "prop": "placeholder",
+              "action": "added"
+            },
+            {
+              "prop": "value",
+              "action": "added"
+            },
+            {
+              "prop": "onChange",
+              "action": "added"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "CustomInput",
+          "process": [
+            {
+              "name": "CustomInput",
+              "action": "Used same name"
+            },
+            {
+              "name": "backgroundColor",
+              "value": "background-color",
+              "action": "converted to className: bg-base-100"
+            },
+            {
+              "prop": "placeholder",
+              "action": "added"
+            },
+            {
+              "prop": "value",
+              "action": "added"
+            },
+            {
+              "prop": "onChange",
+              "action": "added"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "prop": "No props",
+              "action": "Nothing to process"
+            },
+            {
+              "prop": "No props",
+              "action": "Nothing to process"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "block",
+              "action": "converted to className: block w-full"
+            },
+            {
+              "name": "marginBottom",
+              "value": "nano",
+              "action": "converted to className: mb-1"
+            },
+            {
+              "name": "fontWeight",
+              "value": "bold",
+              "action": "converted to className: font-bold"
+            },
+            {
+              "name": "fontSize",
+              "value": "extra-small",
+              "action": "converted to className: "
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "CustomInput",
+          "process": [
+            {
+              "name": "CustomInput",
+              "action": "Used same name"
+            },
+            {
+              "name": "backgroundColor",
+              "value": "background-color",
+              "action": "converted to className: bg-base-100"
+            },
+            {
+              "prop": "placeholder",
+              "action": "added"
+            },
+            {
+              "prop": "inputMode",
+              "action": "added"
+            },
+            {
+              "prop": "mask",
+              "action": "added"
+            },
+            {
+              "prop": "value",
+              "action": "added"
+            },
+            {
+              "prop": "onChange",
+              "action": "added"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "prop": "No props",
+              "action": "Nothing to process"
+            },
+            {
+              "prop": "No props",
+              "action": "Nothing to process"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "block",
+              "action": "converted to className: block w-full"
+            },
+            {
+              "name": "marginBottom",
+              "value": "nano",
+              "action": "converted to className: mb-1"
+            },
+            {
+              "name": "fontWeight",
+              "value": "bold",
+              "action": "converted to className: font-bold"
+            },
+            {
+              "name": "fontSize",
+              "value": "extra-small",
+              "action": "converted to className: "
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "CustomInput",
+          "process": [
+            {
+              "name": "CustomInput",
+              "action": "Used same name"
+            },
+            {
+              "name": "backgroundColor",
+              "value": "background-color",
+              "action": "converted to className: bg-base-100"
+            },
+            {
+              "prop": "placeholder",
+              "action": "added"
+            },
+            {
+              "prop": "value",
+              "action": "added"
+            },
+            {
+              "prop": "inputMode",
+              "action": "added"
+            },
+            {
+              "prop": "onChange",
+              "action": "added"
+            },
+            {
+              "prop": "mask",
+              "action": "added"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "prop": "No props",
+              "action": "Nothing to process"
+            },
+            {
+              "prop": "No props",
+              "action": "Nothing to process"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "block",
+              "action": "converted to className: block w-full"
+            },
+            {
+              "name": "marginBottom",
+              "value": "nano",
+              "action": "converted to className: mb-1"
+            },
+            {
+              "name": "fontWeight",
+              "value": "bold",
+              "action": "converted to className: font-bold"
+            },
+            {
+              "name": "fontSize",
+              "value": "extra-small",
+              "action": "converted to className: "
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "display",
+              "value": "flex",
+              "action": "converted to className: flex"
+            },
+            {
+              "name": "gap",
+              "value": "16px",
+              "action": "converted to className: "
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "direction",
+              "value": "row",
+              "action": "converted to className: flex flex-row"
+            },
+            {
+              "prop": "align",
+              "action": "added"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Radio",
+          "process": [
+            {
+              "name": "Radio",
+              "action": "Used same name"
+            },
+            {
+              "prop": "value",
+              "action": "added"
+            },
+            {
+              "prop": "checked",
+              "action": "added"
+            },
+            {
+              "prop": "onChange",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "block",
+              "action": "converted to className: block w-full"
+            },
+            {
+              "name": "marginLeft",
+              "value": "nano",
+              "action": "converted to className: ml-1"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "direction",
+              "value": "row",
+              "action": "converted to className: flex flex-row"
+            },
+            {
+              "prop": "align",
+              "action": "added"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Radio",
+          "process": [
+            {
+              "name": "Radio",
+              "action": "Used same name"
+            },
+            {
+              "prop": "value",
+              "action": "added"
+            },
+            {
+              "prop": "checked",
+              "action": "added"
+            },
+            {
+              "prop": "onChange",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "block",
+              "action": "converted to className: block w-full"
+            },
+            {
+              "name": "marginLeft",
+              "value": "nano",
+              "action": "converted to className: ml-1"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "prop": "No props",
+              "action": "Nothing to process"
+            },
+            {
+              "prop": "No props",
+              "action": "Nothing to process"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "block",
+              "action": "converted to className: block w-full"
+            },
+            {
+              "name": "marginBottom",
+              "value": "nano",
+              "action": "converted to className: mb-1"
+            },
+            {
+              "name": "fontWeight",
+              "value": "bold",
+              "action": "converted to className: font-bold"
+            },
+            {
+              "name": "fontSize",
+              "value": "extra-small",
+              "action": "converted to className: "
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "CustomInput",
+          "process": [
+            {
+              "name": "CustomInput",
+              "action": "Used same name"
+            },
+            {
+              "name": "backgroundColor",
+              "value": "background-color",
+              "action": "converted to className: bg-base-100"
+            },
+            {
+              "prop": "placeholder",
+              "action": "added"
+            },
+            {
+              "prop": "value",
+              "action": "added"
+            },
+            {
+              "prop": "inputMode",
+              "action": "added"
+            },
+            {
+              "prop": "onChange",
+              "action": "added"
+            },
+            {
+              "prop": "mask",
+              "action": "added"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "prop": "No props",
+              "action": "Nothing to process"
+            },
+            {
+              "prop": "No props",
+              "action": "Nothing to process"
+            }
+          ]
+        },
+        {
+          "tag": "CustomButton",
+          "process": [
+            {
+              "name": "CustomButton",
+              "action": "Used same name"
+            },
+            {
+              "prop": "width",
+              "action": "added"
+            },
+            {
+              "prop": "onClick",
+              "action": "converted to onClick|added"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fileName": "Home.jsx",
+      "actions": [
+        {
+          "tag": "Page",
+          "process": [
+            {
+              "name": "Window",
+              "action": "Replace name to Page"
+            },
+            {
+              "prop": "bottomInset",
+              "action": "added"
+            },
+            {
+              "prop": "topInset",
+              "action": "added"
+            },
+            {
+              "prop": "title",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Loading",
+          "process": [
+            {
+              "name": "Loading",
+              "action": "Used same name"
+            },
+            {
+              "prop": "fullScreen",
+              "action": "added"
+            },
+            {
+              "prop": "isLoading",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "HeaderTemplate",
+          "process": [
+            {
+              "name": "HeaderTemplate",
+              "action": "Used same name"
+            },
+            {
+              "prop": "headerType",
+              "action": "added"
+            },
+            {
+              "prop": "contentText",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "padding",
+              "value": "large",
+              "action": "converted to className: p-8"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "borderRadius",
+              "value": "micro",
+              "action": "converted to className: "
+            },
+            {
+              "name": "display",
+              "value": "flex",
+              "action": "converted to className: flex"
+            },
+            {
+              "name": "gap",
+              "value": 12,
+              "action": "converted to className: "
+            },
+            {
+              "name": "alignItems",
+              "value": "center",
+              "action": "converted to className: items-center"
+            },
+            {
+              "name": "padding",
+              "value": "large",
+              "action": "converted to className: p-8"
+            },
+            {
+              "prop": "elevation",
+              "action": "blocked"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "display",
+              "value": "flex",
+              "action": "converted to className: flex"
+            },
+            {
+              "name": "alignItems",
+              "value": "center",
+              "action": "converted to className: items-center"
+            },
+            {
+              "name": "justifyContent",
+              "value": "center",
+              "action": "converted to className: justify-center"
+            },
+            {
+              "name": "padding",
+              "value": "pill",
+              "action": "converted to className: "
+            },
+            {
+              "name": "borderRadius",
+              "value": "circular",
+              "action": "converted to className: "
+            },
+            {
+              "name": "backgroundColor",
+              "value": "primary-500",
+              "action": "converted to className: bg-primary-content"
+            },
+            {
+              "prop": "width",
+              "action": "added"
+            },
+            {
+              "prop": "height",
+              "action": "added"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "fontSize",
+              "value": "huge",
+              "action": "converted to className: "
+            },
+            {
+              "name": "color",
+              "value": "primary-500",
+              "action": "converted to className: text-primary-content"
+            },
+            {
+              "prop": "contentColor",
+              "action": "added"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "display",
+              "value": "flex",
+              "action": "converted to className: flex"
+            },
+            {
+              "name": "direction",
+              "value": "column",
+              "action": "converted to className: flex flex-col"
+            },
+            {
+              "name": "gap",
+              "value": 2,
+              "action": "converted to className: "
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "fontWeight",
+              "value": "bold",
+              "action": "converted to className: font-bold"
+            },
+            {
+              "name": "fontSize",
+              "value": "small",
+              "action": "converted to className: text-sm"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "fontSize",
+              "value": "small",
+              "action": "converted to className: text-sm"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "padding",
+              "value": "large",
+              "action": "converted to className: p-8"
+            },
+            {
+              "name": "direction",
+              "value": "column",
+              "action": "converted to className: flex flex-col"
+            },
+            {
+              "name": "gap",
+              "value": 12,
+              "action": "converted to className: "
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "fontWeight",
+              "value": "bold",
+              "action": "converted to className: font-bold"
+            },
+            {
+              "name": "fontSize",
+              "value": "large",
+              "action": "converted to className: text-lg"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "ProfileCardButton",
+          "process": [
+            {
+              "name": "ProfileCardButton",
+              "action": "Used same name"
+            },
+            {
+              "prop": "icon",
+              "action": "added"
+            },
+            {
+              "prop": "onClick",
+              "action": "converted to onClick|added"
+            }
+          ]
+        },
+        {
+          "tag": "ProfileCardButton",
+          "process": [
+            {
+              "name": "ProfileCardButton",
+              "action": "Used same name"
+            },
+            {
+              "prop": "icon",
+              "action": "added"
+            },
+            {
+              "prop": "onClick",
+              "action": "converted to onClick|added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "padding",
+              "value": "large",
+              "action": "converted to className: p-8"
+            },
+            {
+              "name": "direction",
+              "value": "column",
+              "action": "converted to className: flex flex-col"
+            },
+            {
+              "name": "gap",
+              "value": 12,
+              "action": "converted to className: "
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "fontWeight",
+              "value": "bold",
+              "action": "converted to className: font-bold"
+            },
+            {
+              "name": "fontSize",
+              "value": "large",
+              "action": "converted to className: text-lg"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "ProfileCardButton",
+          "process": [
+            {
+              "name": "ProfileCardButton",
+              "action": "Used same name"
+            },
+            {
+              "prop": "icon",
+              "action": "added"
+            },
+            {
+              "prop": "onClick",
+              "action": "converted to onClick|added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "padding",
+              "value": "large",
+              "action": "converted to className: p-8"
+            },
+            {
+              "name": "marginTop",
+              "value": "display",
+              "action": "converted to className: "
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "CustomButton",
+          "process": [
+            {
+              "name": "CustomButton",
+              "action": "Used same name"
+            },
+            {
+              "prop": "variant",
+              "action": "added"
+            },
+            {
+              "prop": "iconKey",
+              "action": "added"
+            },
+            {
+              "prop": "icon",
+              "action": "added"
+            },
+            {
+              "prop": "iconPosition",
+              "action": "added"
+            },
+            {
+              "prop": "iconJustify",
+              "action": "added"
+            },
+            {
+              "prop": "onClick",
+              "action": "converted to onClick|added"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fileName": "PasswordReset.jsx",
+      "actions": [
+        {
+          "tag": "Page",
+          "process": [
+            {
+              "name": "Window",
+              "action": "Replace name to Page"
+            },
+            {
+              "prop": "topInset",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Loading",
+          "process": [
+            {
+              "name": "Loading",
+              "action": "Used same name"
+            },
+            {
+              "prop": "isLoading",
+              "action": "added"
+            },
+            {
+              "prop": "fullScreen",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "HeaderTemplate",
+          "process": [
+            {
+              "name": "HeaderTemplate",
+              "action": "Used same name"
+            },
+            {
+              "prop": "headerType",
+              "action": "added"
+            },
+            {
+              "prop": "contentText",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "padding",
+              "value": "large",
+              "action": "converted to className: p-8"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "BigTitle",
+          "process": [
+            {
+              "name": "BigTitle",
+              "action": "Used same name"
+            },
+            {
+              "prop": "title",
+              "action": "added"
+            },
+            {
+              "prop": "withBackAction",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "marginTop",
+              "value": "display",
+              "action": "converted to className: "
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "CustomInput",
+          "process": [
+            {
+              "name": "CustomInput",
+              "action": "Used same name"
+            },
+            {
+              "prop": "icon",
+              "action": "added"
+            },
+            {
+              "prop": "placeholder",
+              "action": "added"
+            },
+            {
+              "prop": "value",
+              "action": "added"
+            },
+            {
+              "prop": "onChange",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "marginTop",
+              "value": "large",
+              "action": "converted to className: mt-8"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "block",
+              "action": "converted to className: block w-full"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "marginTop",
+              "value": "giant",
+              "action": "converted to className: "
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "CustomButton",
+          "process": [
+            {
+              "name": "CustomButton",
+              "action": "Used same name"
+            },
+            {
+              "prop": "width",
+              "action": "added"
+            },
+            {
+              "prop": "onClick",
+              "action": "converted to onClick|added"
+            }
+          ]
+        },
+        {
+          "tag": "Alert",
+          "process": [
+            {
+              "name": "Alert",
+              "action": "Used same name"
+            },
+            {
+              "prop": "type",
+              "action": "added"
+            },
+            {
+              "prop": "show",
+              "action": "added"
+            },
+            {
+              "prop": "onDismiss",
+              "action": "added"
+            },
+            {
+              "prop": "duration",
+              "action": "added"
+            },
+            {
+              "prop": "message",
+              "action": "added"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fileName": "PasswordResetCode.jsx",
+      "actions": [
+        {
+          "tag": "Page",
+          "process": [
+            {
+              "name": "Window",
+              "action": "Replace name to Page"
+            },
+            {
+              "prop": "topInset",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "HeaderTemplate",
+          "process": [
+            {
+              "name": "HeaderTemplate",
+              "action": "Used same name"
+            },
+            {
+              "prop": "headerType",
+              "action": "added"
+            },
+            {
+              "prop": "contentText",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "padding",
+              "value": "large",
+              "action": "converted to className: p-8"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "BigTitle",
+          "process": [
+            {
+              "name": "BigTitle",
+              "action": "Used same name"
+            },
+            {
+              "prop": "title",
+              "action": "added"
+            },
+            {
+              "prop": "withBackAction",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "marginTop",
+              "value": "large",
+              "action": "converted to className: mt-8"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "block",
+              "action": "converted to className: block w-full"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "marginLeft",
+              "value": "small",
+              "action": "converted to className: ml-2"
+            },
+            {
+              "name": "fontWeight",
+              "value": "bold",
+              "action": "converted to className: font-bold"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "marginTop",
+              "value": "large",
+              "action": "converted to className: mt-8"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "CodeInput",
+          "process": [
+            {
+              "name": "CodeInput",
+              "action": "Used same name"
+            },
+            {
+              "prop": "autoSubmit",
+              "action": "added"
+            },
+            {
+              "prop": "maxLength",
+              "action": "added"
+            },
+            {
+              "prop": "onChange",
+              "action": "added"
+            },
+            {
+              "prop": "accept",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "marginTop",
+              "value": "giant",
+              "action": "converted to className: "
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "CustomButton",
+          "process": [
+            {
+              "name": "CustomButton",
+              "action": "Used same name"
+            },
+            {
+              "prop": "disabled",
+              "action": "added"
+            },
+            {
+              "prop": "onClick",
+              "action": "converted to onClick|added"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fileName": "PasswordResetNewPass.jsx",
+      "actions": [
+        {
+          "tag": "Page",
+          "process": [
+            {
+              "name": "Window",
+              "action": "Replace name to Page"
+            },
+            {
+              "prop": "topInset",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Loading",
+          "process": [
+            {
+              "name": "Loading",
+              "action": "Used same name"
+            },
+            {
+              "prop": "isLoading",
+              "action": "added"
+            },
+            {
+              "prop": "fullScreen",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "HeaderTemplate",
+          "process": [
+            {
+              "name": "HeaderTemplate",
+              "action": "Used same name"
+            },
+            {
+              "prop": "headerType",
+              "action": "added"
+            },
+            {
+              "prop": "contentText",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "padding",
+              "value": "large",
+              "action": "converted to className: p-8"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "BigTitle",
+          "process": [
+            {
+              "name": "BigTitle",
+              "action": "Used same name"
+            },
+            {
+              "prop": "title",
+              "action": "added"
+            },
+            {
+              "prop": "withBackAction",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "marginTop",
+              "value": "large",
+              "action": "converted to className: mt-8"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "CustomInput",
+          "process": [
+            {
+              "name": "CustomInput",
+              "action": "Used same name"
+            },
+            {
+              "prop": "autoFocus",
+              "action": "added"
+            },
+            {
+              "prop": "icon",
+              "action": "added"
+            },
+            {
+              "prop": "type",
+              "action": "added"
+            },
+            {
+              "prop": "placeholder",
+              "action": "added"
+            },
+            {
+              "prop": "value",
+              "action": "added"
+            },
+            {
+              "prop": "onChange",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "marginTop",
+              "value": "large",
+              "action": "converted to className: mt-8"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "CustomInput",
+          "process": [
+            {
+              "name": "CustomInput",
+              "action": "Used same name"
+            },
+            {
+              "prop": "icon",
+              "action": "added"
+            },
+            {
+              "prop": "type",
+              "action": "added"
+            },
+            {
+              "prop": "placeholder",
+              "action": "added"
+            },
+            {
+              "prop": "value",
+              "action": "added"
+            },
+            {
+              "prop": "onChange",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "marginTop",
+              "value": "large",
+              "action": "converted to className: mt-8"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "fontWeight",
+              "value": "bold",
+              "action": "converted to className: font-bold"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "marginTop",
+              "value": "quark",
+              "action": "converted to className: "
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "display",
+              "value": "flex",
+              "action": "converted to className: flex"
+            },
+            {
+              "name": "alignItems",
+              "value": "center",
+              "action": "converted to className: items-center"
+            },
+            {
+              "name": "gap",
+              "value": 6,
+              "action": "converted to className: "
+            },
+            {
+              "prop": "key",
+              "action": "added"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "Icon",
+              "action": "iconKey is not string, needs to manual handling",
+              "severity": "warning"
+            },
+            {
+              "prop": "No props",
+              "action": "Nothing to process"
+            },
+            {
+              "prop": "No props",
+              "action": "Nothing to process"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "prop": "key",
+              "action": "added"
+            },
+            {
+              "prop": "color",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "marginTop",
+              "value": "large",
+              "action": "converted to className: mt-8"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "CustomButton",
+          "process": [
+            {
+              "name": "CustomButton",
+              "action": "Used same name"
+            },
+            {
+              "prop": "width",
+              "action": "added"
+            },
+            {
+              "prop": "disabled",
+              "action": "added"
+            },
+            {
+              "prop": "onClick",
+              "action": "converted to onClick|added"
+            }
+          ]
+        },
+        {
+          "tag": "Alert",
+          "process": [
+            {
+              "name": "Alert",
+              "action": "Used same name"
+            },
+            {
+              "prop": "type",
+              "action": "added"
+            },
+            {
+              "prop": "show",
+              "action": "added"
+            },
+            {
+              "prop": "onDismiss",
+              "action": "added"
+            },
+            {
+              "prop": "duration",
+              "action": "added"
+            },
+            {
+              "prop": "message",
+              "action": "added"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fileName": "SignIn.jsx",
+      "actions": [
+        {
+          "tag": "Page",
+          "process": [
+            {
+              "name": "Window",
+              "action": "Replace name to Page"
+            },
+            {
+              "prop": "topInset",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Loading",
+          "process": [
+            {
+              "name": "Loading",
+              "action": "Used same name"
+            },
+            {
+              "prop": "isLoading",
+              "action": "added"
+            },
+            {
+              "prop": "fullScreen",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "HeaderTemplate",
+          "process": [
+            {
+              "name": "HeaderTemplate",
+              "action": "Used same name"
+            },
+            {
+              "prop": "headerType",
+              "action": "added"
+            },
+            {
+              "prop": "contentText",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "padding",
+              "value": "large",
+              "action": "converted to className: p-8"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "block",
+              "action": "converted to className: block w-full"
+            },
+            {
+              "name": "fontWeight",
+              "value": "bold",
+              "action": "converted to className: font-bold"
+            },
+            {
+              "name": "fontSize",
+              "value": "huge",
+              "action": "converted to className: "
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "marginTop",
+              "value": "display",
+              "action": "converted to className: "
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "CustomInput",
+          "process": [
+            {
+              "name": "CustomInput",
+              "action": "Used same name"
+            },
+            {
+              "prop": "icon",
+              "action": "added"
+            },
+            {
+              "prop": "value",
+              "action": "added"
+            },
+            {
+              "prop": "placeholder",
+              "action": "added"
+            },
+            {
+              "prop": "onChange",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "marginTop",
+              "value": "large",
+              "action": "converted to className: mt-8"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "CustomInput",
+          "process": [
+            {
+              "name": "CustomInput",
+              "action": "Used same name"
+            },
+            {
+              "prop": "placeholder",
+              "action": "added"
+            },
+            {
+              "prop": "icon",
+              "action": "added"
+            },
+            {
+              "prop": "value",
+              "action": "added"
+            },
+            {
+              "prop": "type",
+              "action": "added"
+            },
+            {
+              "prop": "onChange",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "marginTop",
+              "value": "large",
+              "action": "converted to className: mt-8"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "CustomButton",
+          "process": [
+            {
+              "name": "CustomButton",
+              "action": "Used same name"
+            },
+            {
+              "prop": "width",
+              "action": "added"
+            },
+            {
+              "prop": "onClick",
+              "action": "converted to onClick|added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "marginTop",
+              "value": "large",
+              "action": "converted to className: mt-8"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "CustomButton",
+          "process": [
+            {
+              "name": "CustomButton",
+              "action": "Used same name"
+            },
+            {
+              "prop": "width",
+              "action": "added"
+            },
+            {
+              "prop": "variant",
+              "action": "added"
+            },
+            {
+              "prop": "onClick",
+              "action": "converted to onClick|added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "marginTop",
+              "value": "display",
+              "action": "converted to className: "
+            },
+            {
+              "name": "display",
+              "value": "flex",
+              "action": "converted to className: flex"
+            },
+            {
+              "name": "justifyContent",
+              "value": "center",
+              "action": "converted to className: justify-center"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "Touchable",
+              "action": "Replace name to View"
+            },
+            {
+              "prop": "onClick",
+              "action": "converted to onClick|added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "block",
+              "action": "converted to className: block w-full"
+            },
+            {
+              "name": "color",
+              "value": "primary-500",
+              "action": "converted to className: text-primary-content"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "marginTop",
+              "value": "large",
+              "action": "converted to className: mt-8"
+            },
+            {
+              "name": "display",
+              "value": "flex",
+              "action": "converted to className: flex"
+            },
+            {
+              "name": "justifyContent",
+              "value": "center",
+              "action": "converted to className: justify-center"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "Touchable",
+              "action": "Replace name to View"
+            },
+            {
+              "prop": "onClick",
+              "action": "converted to onClick|added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "block",
+              "action": "converted to className: block w-full"
+            },
+            {
+              "name": "color",
+              "value": "primary-500",
+              "action": "converted to className: text-primary-content"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "marginTop",
+              "value": "display",
+              "action": "converted to className: "
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "CustomInput",
+          "process": [
+            {
+              "name": "CustomInput",
+              "action": "Used same name"
+            },
+            {
+              "prop": "icon",
+              "action": "added"
+            },
+            {
+              "prop": "value",
+              "action": "added"
+            },
+            {
+              "prop": "type",
+              "action": "added"
+            },
+            {
+              "prop": "placeholder",
+              "action": "added"
+            },
+            {
+              "prop": "onChange",
+              "action": "added"
+            },
+            {
+              "prop": "showClearInput",
+              "action": "added"
+            },
+            {
+              "prop": "required",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "marginTop",
+              "value": "large",
+              "action": "converted to className: mt-8"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "CustomInput",
+          "process": [
+            {
+              "name": "CustomInput",
+              "action": "Used same name"
+            },
+            {
+              "prop": "placeholder",
+              "action": "added"
+            },
+            {
+              "prop": "inputMode",
+              "action": "added"
+            },
+            {
+              "prop": "value",
+              "action": "added"
+            },
+            {
+              "prop": "onChange",
+              "action": "added"
+            },
+            {
+              "prop": "height",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "marginTop",
+              "value": "large",
+              "action": "converted to className: mt-8"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "CustomButton",
+          "process": [
+            {
+              "name": "CustomButton",
+              "action": "Used same name"
+            },
+            {
+              "prop": "onClick",
+              "action": "converted to onClick|added"
+            },
+            {
+              "prop": "disabled",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "marginTop",
+              "value": "large",
+              "action": "converted to className: mt-8"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "CustomButton",
+          "process": [
+            {
+              "name": "CustomButton",
+              "action": "Used same name"
+            },
+            {
+              "prop": "disabled",
+              "action": "added"
+            },
+            {
+              "prop": "onClick",
+              "action": "converted to onClick|added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "marginTop",
+              "value": "large",
+              "action": "converted to className: mt-8"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "CustomButton",
+          "process": [
+            {
+              "name": "CustomButton",
+              "action": "Used same name"
+            },
+            {
+              "prop": "variant",
+              "action": "added"
+            },
+            {
+              "prop": "onClick",
+              "action": "converted to onClick|added"
+            }
+          ]
+        },
+        {
+          "tag": "Alert",
+          "process": [
+            {
+              "name": "Alert",
+              "action": "Used same name"
+            },
+            {
+              "prop": "type",
+              "action": "added"
+            },
+            {
+              "prop": "show",
+              "action": "added"
+            },
+            {
+              "prop": "onDismiss",
+              "action": "added"
+            },
+            {
+              "prop": "duration",
+              "action": "added"
+            },
+            {
+              "prop": "message",
+              "action": "added"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fileName": "SignUp.jsx",
+      "actions": [
+        {
+          "tag": "Page",
+          "process": [
+            {
+              "name": "Window",
+              "action": "Replace name to Page"
+            },
+            {
+              "prop": "topInset",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Loading",
+          "process": [
+            {
+              "name": "Loading",
+              "action": "Used same name"
+            },
+            {
+              "prop": "isLoading",
+              "action": "added"
+            },
+            {
+              "prop": "fullScreen",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "HeaderTemplate",
+          "process": [
+            {
+              "name": "HeaderTemplate",
+              "action": "Used same name"
+            },
+            {
+              "prop": "headerType",
+              "action": "added"
+            },
+            {
+              "prop": "contentText",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "padding",
+              "value": "large",
+              "action": "converted to className: p-8"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "block",
+              "action": "converted to className: block w-full"
+            },
+            {
+              "name": "fontWeight",
+              "value": "bold",
+              "action": "converted to className: font-bold"
+            },
+            {
+              "name": "fontSize",
+              "value": "huge",
+              "action": "converted to className: "
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "marginTop",
+              "value": "display",
+              "action": "converted to className: "
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "CustomInput",
+          "process": [
+            {
+              "name": "CustomInput",
+              "action": "Used same name"
+            },
+            {
+              "prop": "icon",
+              "action": "added"
+            },
+            {
+              "prop": "value",
+              "action": "added"
+            },
+            {
+              "prop": "type",
+              "action": "added"
+            },
+            {
+              "prop": "placeholder",
+              "action": "added"
+            },
+            {
+              "prop": "onChange",
+              "action": "added"
+            },
+            {
+              "prop": "showClearInput",
+              "action": "added"
+            },
+            {
+              "prop": "required",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "marginTop",
+              "value": "large",
+              "action": "converted to className: mt-8"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "CCheckbox",
+          "process": [
+            {
+              "name": "CCheckbox",
+              "action": "Used same name"
+            },
+            {
+              "prop": "checked",
+              "action": "added"
+            },
+            {
+              "prop": "onChange",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "marginTop",
+              "value": "large",
+              "action": "converted to className: mt-8"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "CustomInput",
+          "process": [
+            {
+              "name": "CustomInput",
+              "action": "Used same name"
+            },
+            {
+              "prop": "placeholder",
+              "action": "added"
+            },
+            {
+              "prop": "inputMode",
+              "action": "added"
+            },
+            {
+              "prop": "value",
+              "action": "added"
+            },
+            {
+              "prop": "onChange",
+              "action": "added"
+            },
+            {
+              "prop": "height",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "marginTop",
+              "value": "large",
+              "action": "converted to className: mt-8"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "CustomButton",
+          "process": [
+            {
+              "name": "CustomButton",
+              "action": "Used same name"
+            },
+            {
+              "prop": "onClick",
+              "action": "converted to onClick|added"
+            },
+            {
+              "prop": "disabled",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "marginTop",
+              "value": "large",
+              "action": "converted to className: mt-8"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "CustomButton",
+          "process": [
+            {
+              "name": "CustomButton",
+              "action": "Used same name"
+            },
+            {
+              "prop": "width",
+              "action": "added"
+            },
+            {
+              "prop": "disabled",
+              "action": "added"
+            },
+            {
+              "prop": "onClick",
+              "action": "converted to onClick|added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "marginTop",
+              "value": "large",
+              "action": "converted to className: mt-8"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "CustomButton",
+          "process": [
+            {
+              "name": "CustomButton",
+              "action": "Used same name"
+            },
+            {
+              "prop": "variant",
+              "action": "added"
+            },
+            {
+              "prop": "onClick",
+              "action": "converted to onClick|added"
+            }
+          ]
+        },
+        {
+          "tag": "Alert",
+          "process": [
+            {
+              "name": "Alert",
+              "action": "Used same name"
+            },
+            {
+              "prop": "type",
+              "action": "added"
+            },
+            {
+              "prop": "show",
+              "action": "added"
+            },
+            {
+              "prop": "onDismiss",
+              "action": "added"
+            },
+            {
+              "prop": "duration",
+              "action": "added"
+            },
+            {
+              "prop": "message",
+              "action": "added"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fileName": "OrderDetails.jsx",
+      "actions": [
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "display",
+              "value": "flex",
+              "action": "converted to className: flex"
+            },
+            {
+              "name": "justifyContent",
+              "value": "between",
+              "action": "converted to className: justify-between"
+            },
+            {
+              "prop": "width",
+              "action": "added"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "block",
+              "action": "converted to className: block w-full"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "Touchable",
+              "action": "Replace name to View"
+            },
+            {
+              "prop": "onClick",
+              "action": "converted to onClick|added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "block",
+              "action": "converted to className: block w-full"
+            },
+            {
+              "name": "color",
+              "value": "primary-500",
+              "action": "converted to className: text-primary-content"
+            },
+            {
+              "name": "fontWeight",
+              "value": "bold",
+              "action": "converted to className: font-bold"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "prop": "No props",
+              "action": "Nothing to process"
+            },
+            {
+              "prop": "No props",
+              "action": "Nothing to process"
+            }
+          ]
+        },
+        {
+          "tag": "ProtectedView",
+          "process": [
+            {
+              "name": "ProtectedView",
+              "action": "Used same name"
+            },
+            {
+              "prop": "afterLoginRedirectTo",
+              "action": "added"
+            },
+            {
+              "prop": "redirectState",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Page",
+          "process": [
+            {
+              "name": "Window",
+              "action": "Replace name to Page"
+            },
+            {
+              "prop": "bottomInset",
+              "action": "added"
+            },
+            {
+              "prop": "topInset",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "HeaderTemplate",
+          "process": [
+            {
+              "name": "HeaderTemplate",
+              "action": "Used same name"
+            },
+            {
+              "prop": "headerType",
+              "action": "added"
+            },
+            {
+              "prop": "viewBackButton",
+              "action": "added"
+            },
+            {
+              "prop": "contentText",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "prop": "No props",
+              "action": "Nothing to process"
+            },
+            {
+              "prop": "No props",
+              "action": "Nothing to process"
+            }
+          ]
+        },
+        {
+          "tag": "Loading",
+          "process": [
+            {
+              "name": "Loading",
+              "action": "Used same name"
+            },
+            {
+              "prop": "fullScreen",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "padding",
+              "value": "small",
+              "action": "converted to className: p-2"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "marginTop",
+              "value": "medium",
+              "action": "converted to className: mt-4"
+            },
+            {
+              "name": "borderRadius",
+              "value": "medium",
+              "action": "converted to className: "
+            },
+            {
+              "name": "borderWidth",
+              "value": "hairline",
+              "action": "converted to className: border"
+            },
+            {
+              "name": "borderColor",
+              "value": "neutral-500",
+              "action": "converted to className: border-neutral-content"
+            },
+            {
+              "prop": "justify",
+              "action": "added"
+            },
+            {
+              "prop": "align",
+              "action": "added"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "direction",
+              "value": "column",
+              "action": "converted to className: flex flex-col"
+            },
+            {
+              "name": "gap",
+              "value": "16px",
+              "action": "converted to className: "
+            },
+            {
+              "name": "padding",
+              "value": "small",
+              "action": "converted to className: p-2"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "display",
+              "value": "flex",
+              "action": "converted to className: flex"
+            },
+            {
+              "name": "direction",
+              "value": "row",
+              "action": "converted to className: flex flex-row"
+            },
+            {
+              "name": "alignItems",
+              "value": "center",
+              "action": "converted to className: items-center"
+            },
+            {
+              "name": "justifyContent",
+              "value": "between",
+              "action": "converted to className: justify-between"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "direction",
+              "value": "column",
+              "action": "converted to className: flex flex-col"
+            },
+            {
+              "name": "gap",
+              "value": "5px",
+              "action": "converted to className: "
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "block",
+              "action": "converted to className: block w-full"
+            },
+            {
+              "name": "fontSize",
+              "value": "small",
+              "action": "converted to className: text-sm"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "block",
+              "action": "converted to className: block w-full"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "OrderStatusBadge",
+          "process": [
+            {
+              "name": "OrderStatusBadge",
+              "action": "Used same name"
+            },
+            {
+              "prop": "statusId",
+              "action": "added"
+            },
+            {
+              "prop": "statusDescription",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "direction",
+              "value": "column",
+              "action": "converted to className: flex flex-col"
+            },
+            {
+              "name": "gap",
+              "value": "5px",
+              "action": "converted to className: "
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "block",
+              "action": "converted to className: block w-full"
+            },
+            {
+              "name": "fontSize",
+              "value": "small",
+              "action": "converted to className: text-sm"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "block",
+              "action": "converted to className: block w-full"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "direction",
+              "value": "column",
+              "action": "converted to className: flex flex-col"
+            },
+            {
+              "name": "gap",
+              "value": "5px",
+              "action": "converted to className: "
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "block",
+              "action": "converted to className: block w-full"
+            },
+            {
+              "name": "fontSize",
+              "value": "small",
+              "action": "converted to className: text-sm"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "prop": "No props",
+              "action": "Nothing to process"
+            },
+            {
+              "prop": "No props",
+              "action": "Nothing to process"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "block",
+              "action": "converted to className: block w-full"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "direction",
+              "value": "column",
+              "action": "converted to className: flex flex-col"
+            },
+            {
+              "name": "display",
+              "value": "flex",
+              "action": "converted to className: flex"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "block",
+              "action": "converted to className: block w-full"
+            },
+            {
+              "name": "fontSize",
+              "value": "extra-small",
+              "action": "converted to className: "
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "block",
+              "action": "converted to className: block w-full"
+            },
+            {
+              "name": "fontSize",
+              "value": "extra-small",
+              "action": "converted to className: "
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "direction",
+              "value": "column",
+              "action": "converted to className: flex flex-col"
+            },
+            {
+              "name": "gap",
+              "value": "5px",
+              "action": "converted to className: "
+            },
+            {
+              "prop": "width",
+              "action": "added"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "fontSize",
+              "value": "small",
+              "action": "converted to className: text-sm"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "display",
+              "value": "flex",
+              "action": "converted to className: flex"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "direction",
+              "value": "column",
+              "action": "converted to className: flex flex-col"
+            },
+            {
+              "name": "gap",
+              "value": "5px",
+              "action": "converted to className: "
+            },
+            {
+              "prop": "width",
+              "action": "added"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "fontSize",
+              "value": "small",
+              "action": "converted to className: text-sm"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "display",
+              "value": "flex",
+              "action": "converted to className: flex"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "block",
+              "action": "converted to className: block w-full"
+            },
+            {
+              "name": "fontSize",
+              "value": "extra-small",
+              "action": "converted to className: "
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "block",
+              "action": "converted to className: block w-full"
+            },
+            {
+              "name": "fontSize",
+              "value": "extra-small",
+              "action": "converted to className: "
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "direction",
+              "value": "column",
+              "action": "converted to className: flex flex-col"
+            },
+            {
+              "name": "gap",
+              "value": "5px",
+              "action": "converted to className: "
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "block",
+              "action": "converted to className: block w-full"
+            },
+            {
+              "name": "fontSize",
+              "value": "small",
+              "action": "converted to className: text-sm"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "direction",
+              "value": "column",
+              "action": "converted to className: flex flex-col"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "block",
+              "action": "converted to className: block w-full"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "block",
+              "action": "converted to className: block w-full"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "display",
+              "value": "flex",
+              "action": "converted to className: flex"
+            },
+            {
+              "name": "alignItems",
+              "value": "center",
+              "action": "converted to className: items-center"
+            },
+            {
+              "prop": "width",
+              "action": "added"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "prop": "No props",
+              "action": "Nothing to process"
+            },
+            {
+              "prop": "No props",
+              "action": "Nothing to process"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "block",
+              "action": "converted to className: block w-full"
+            },
+            {
+              "name": "fontSize",
+              "value": "small",
+              "action": "converted to className: text-sm"
+            },
+            {
+              "name": "fontWeight",
+              "value": "bold",
+              "action": "converted to className: font-bold"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Dropdown",
+          "process": [
+            {
+              "name": "Dropdown",
+              "action": "Used same name"
+            },
+            {
+              "prop": "value",
+              "action": "added"
+            },
+            {
+              "prop": "placeholder",
+              "action": "added"
+            },
+            {
+              "prop": "onChange",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "process": [
+            {
+              "prop": "value",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "process": [
+            {
+              "prop": "value",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "process": [
+            {
+              "prop": "value",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "process": [
+            {
+              "prop": "value",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "process": [
+            {
+              "prop": "value",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "process": [
+            {
+              "prop": "value",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "display",
+              "value": "flex",
+              "action": "converted to className: flex"
+            },
+            {
+              "name": "justifyContent",
+              "value": "between",
+              "action": "converted to className: justify-between"
+            },
+            {
+              "name": "marginTop",
+              "value": "small",
+              "action": "converted to className: mt-2"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "Touchable",
+              "action": "Replace name to View"
+            },
+            {
+              "prop": "onClick",
+              "action": "converted to onClick|added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "block",
+              "action": "converted to className: block w-full"
+            },
+            {
+              "name": "color",
+              "value": "primary-700",
+              "action": "converted to className: text-primary-content"
+            },
+            {
+              "name": "fontSize",
+              "value": "small",
+              "action": "converted to className: text-sm"
+            },
+            {
+              "name": "fontWeight",
+              "value": "bold",
+              "action": "converted to className: font-bold"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "Touchable",
+              "action": "Replace name to View"
+            },
+            {
+              "prop": "onClick",
+              "action": "converted to onClick|added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "block",
+              "action": "converted to className: block w-full"
+            },
+            {
+              "name": "fontSize",
+              "value": "small",
+              "action": "converted to className: text-sm"
+            },
+            {
+              "name": "fontWeight",
+              "value": "bold",
+              "action": "converted to className: font-bold"
+            },
+            {
+              "prop": "color",
+              "action": "added"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "Touchable",
+              "action": "Replace name to View"
+            },
+            {
+              "prop": "onClick",
+              "action": "converted to onClick|added"
+            }
+          ]
+        },
+        {
+          "tag": "Text",
+          "process": [
+            {
+              "name": "Text",
+              "action": "Used same name"
+            },
+            {
+              "name": "block",
+              "action": "converted to className: block w-full"
+            },
+            {
+              "name": "color",
+              "value": "negative-700",
+              "action": "converted to className: text-error-content"
+            },
+            {
+              "name": "fontWeight",
+              "value": "bold",
+              "action": "converted to className: font-bold"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "backgroundColor",
+              "value": "neutral-100",
+              "action": "converted to className: bg-neutral"
+            },
+            {
+              "name": "borderColor",
+              "value": "neutral-500",
+              "action": "converted to className: border-neutral-content"
+            },
+            {
+              "name": "padding",
+              "value": "nano",
+              "action": "converted to className: p-1"
+            },
+            {
+              "prop": "borderTopWidth",
+              "action": "added"
+            },
+            {
+              "prop": "borderRadiusRightBottom",
+              "action": "added"
+            },
+            {
+              "prop": "borderRadiusLeftBottom",
+              "action": "added"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "OrderProductCard",
+          "process": [
+            {
+              "name": "OrderProductCard",
+              "action": "Used same name"
+            },
+            {
+              "prop": "orderId",
+              "action": "added"
+            },
+            {
+              "prop": "productItems",
+              "action": "added"
+            },
+            {
+              "prop": "key",
+              "action": "added"
+            },
+            {
+              "prop": "delivery",
+              "action": "added"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fileName": "OrderList.jsx",
+      "actions": [
+        {
+          "tag": "ProtectedView",
+          "process": [
+            {
+              "name": "ProtectedView",
+              "action": "Used same name"
+            },
+            {
+              "prop": "afterLoginRedirectTo",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Page",
+          "process": [
+            {
+              "name": "Window",
+              "action": "Replace name to Page"
+            },
+            {
+              "prop": "bottomInset",
+              "action": "added"
+            },
+            {
+              "prop": "topInset",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "HeaderTemplate",
+          "process": [
+            {
+              "name": "HeaderTemplate",
+              "action": "Used same name"
+            },
+            {
+              "prop": "headerType",
+              "action": "added"
+            },
+            {
+              "prop": "viewBackButton",
+              "action": "added"
+            },
+            {
+              "prop": "contentText",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "padding",
+              "value": "small",
+              "action": "converted to className: p-2"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Loading",
+          "process": [
+            {
+              "name": "Loading",
+              "action": "Used same name"
+            },
+            {
+              "prop": "fullScreen",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "marginTop",
+              "value": "medium",
+              "action": "converted to className: mt-4"
+            },
+            {
+              "name": "borderRadius",
+              "value": "medium",
+              "action": "converted to className: "
+            },
+            {
+              "name": "borderWidth",
+              "value": "hairline",
+              "action": "converted to className: border"
+            },
+            {
+              "name": "borderColor",
+              "value": "neutral-300",
+              "action": "converted to className: border-neutral"
+            },
+            {
+              "prop": "justify",
+              "action": "added"
+            },
+            {
+              "prop": "align",
+              "action": "added"
+            },
+            {
+              "prop": "key",
+              "action": "added"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "OrderListDetails",
+          "process": [
+            {
+              "name": "OrderListDetails",
+              "action": "Used same name"
+            },
+            {
+              "prop": "creationDate",
+              "action": "added"
+            },
+            {
+              "prop": "order",
+              "action": "added"
+            },
+            {
+              "prop": "totalItems",
+              "action": "added"
+            },
+            {
+              "prop": "totalValue",
+              "action": "added"
+            },
+            {
+              "prop": "statusId",
+              "action": "added"
+            },
+            {
+              "prop": "statusDescription",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "prop": "No props",
+              "action": "Nothing to process"
+            },
+            {
+              "prop": "No props",
+              "action": "Nothing to process"
+            }
+          ]
+        },
+        {
+          "tag": "OrderProductCard",
+          "process": [
+            {
+              "name": "OrderProductCard",
+              "action": "Used same name"
+            },
+            {
+              "prop": "productItems",
+              "action": "added"
+            },
+            {
+              "prop": "isLoading",
+              "action": "added"
+            },
+            {
+              "prop": "delivery",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "marginTop",
+              "value": "small",
+              "action": "converted to className: mt-2"
+            },
+            {
+              "name": "padding",
+              "value": "small",
+              "action": "converted to className: p-2"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "CustomButton",
+          "process": [
+            {
+              "name": "CustomButton",
+              "action": "Used same name"
+            },
+            {
+              "prop": "width",
+              "action": "added"
+            },
+            {
+              "prop": "onClick",
+              "action": "converted to onClick|added"
+            }
+          ]
+        },
+        {
+          "tag": "NoItem",
+          "process": [
+            {
+              "name": "NoItem",
+              "action": "Used same name"
+            },
+            {
+              "prop": "title",
+              "action": "added"
+            },
+            {
+              "prop": "subtitle",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Loading",
+          "process": [
+            {
+              "name": "Loading",
+              "action": "Used same name"
+            },
+            {
+              "prop": "inline",
+              "action": "added"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "fileName": "Wishlist.jsx",
+      "actions": [
+        {
+          "tag": "Page",
+          "process": [
+            {
+              "name": "Window",
+              "action": "Replace name to Page"
+            },
+            {
+              "prop": "bottomInset",
+              "action": "added"
+            },
+            {
+              "prop": "topInset",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "HeaderTemplate",
+          "process": [
+            {
+              "name": "HeaderTemplate",
+              "action": "Used same name"
+            },
+            {
+              "prop": "headerType",
+              "action": "added"
+            },
+            {
+              "prop": "viewBackButton",
+              "action": "added"
+            },
+            {
+              "prop": "contentText",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "Loading",
+          "process": [
+            {
+              "name": "Loading",
+              "action": "Used same name"
+            },
+            {
+              "prop": "isLoading",
+              "action": "added"
+            },
+            {
+              "prop": "fullScreen",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "paddingVertical",
+              "value": "large",
+              "action": "converted to className: py-8"
+            },
+            {
+              "name": "direction",
+              "value": "column",
+              "action": "converted to className: flex flex-col"
+            },
+            {
+              "name": "gap",
+              "value": "16px",
+              "action": "converted to className: "
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "display",
+              "value": "flex",
+              "action": "converted to className: flex"
+            },
+            {
+              "prop": "key",
+              "action": "added"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "paddingRight",
+              "value": "nano",
+              "action": "converted to className: pr-1"
+            },
+            {
+              "name": "paddingLeft",
+              "value": "large",
+              "action": "converted to className: pl-8"
+            },
+            {
+              "prop": "width",
+              "action": "added"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "WishlistItem",
+          "process": [
+            {
+              "name": "WishlistItem",
+              "action": "Used same name"
+            },
+            {
+              "prop": "productId",
+              "action": "added"
+            },
+            {
+              "prop": "onRemoveFromWishlist",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "View",
+          "process": [
+            {
+              "name": "View",
+              "action": "Used same name"
+            },
+            {
+              "name": "paddingLeft",
+              "value": "nano",
+              "action": "converted to className: pl-1"
+            },
+            {
+              "name": "paddingRight",
+              "value": "large",
+              "action": "converted to className: pr-8"
+            },
+            {
+              "prop": "width",
+              "action": "added"
+            },
+            {
+              "prop": "className",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "WishlistItem",
+          "process": [
+            {
+              "name": "WishlistItem",
+              "action": "Used same name"
+            },
+            {
+              "prop": "productId",
+              "action": "added"
+            },
+            {
+              "prop": "onRemoveFromWishlist",
+              "action": "added"
+            }
+          ]
+        },
+        {
+          "tag": "NoItem",
+          "process": [
+            {
+              "name": "NoItem",
+              "action": "Used same name"
+            },
+            {
+              "prop": "title",
+              "action": "added"
+            },
+            {
+              "prop": "subtitle",
+              "action": "added"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

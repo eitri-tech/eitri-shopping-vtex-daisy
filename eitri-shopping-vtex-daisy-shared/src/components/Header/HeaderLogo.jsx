@@ -1,16 +1,12 @@
+import { Image, View} from "eitri-luminus";
 export default function HeaderLogo(props) {
 	const { src, height } = props
 
 	return (
-		<View
-			height={50}
-			width={150}
-			display='flex'
-			alignItems='center'>
+		<View className="h-[50px] w-[150px] flex items-center">
 			<Image
 				src={src}
-				maxWidth='100%'
-				maxHeight={'100%'}
+				className="w-full h-full"
 			/>
 		</View>
 	)

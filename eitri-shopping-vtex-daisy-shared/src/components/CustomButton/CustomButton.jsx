@@ -21,29 +21,24 @@ export default function CustomButton(props) {
 	})()
 
 	return (
-		<Touchable
+		<Button
 			onPress={_onPress}
-			display='flex'
-			height='48px'
-			width={width || '100%'}
-			maxWidth='100%'
-			backgroundColor={_backgroundColor}
-			justifyContent='center'
-			alignItems='center'
-			borderRadius={borderRadius || 'small'}
-			borderWidth={variant === 'outlined' ? 'hairline' : ''}
-			borderColor={_borderColor}
-			{...rest}>
+			className={`
+				flex items-center justify-center 
+				w-full
+				${_backgroundColor ? `bg-${_backgroundColor}` : ""}
+				rounded-full
+				${variant === "outlined" ? "border border-[1px]" : ""}
+				${_borderColor ? `border-${_borderColor} text-${_borderColor}` : ""}
+			`}
+			{...rest}
+			>
 			{isLoading ? (
 				<Loading />
 			) : (
-				<Text
-					contentColor={variant !== 'outlined'}
-					fontWeight='bold'
-					color={_borderColor}>
-					{label}
-				</Text>
+				<Text className="font-bold">{label}</Text>
 			)}
-		</Touchable>
+		</Button>
+
 	)
 }

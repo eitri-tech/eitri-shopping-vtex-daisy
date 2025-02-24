@@ -14,7 +14,7 @@ module.exports = {
   "eitri-app-dependencies": {
     "eitri-shopping-vtex-daisy-shared": {
       "isEitriAppShared": true,
-      "version": "0.1.0"
+      "version": "0.3.10"
     },
     "eitri-shopping-vtex-shared": {
       "isEitriAppShared": true,

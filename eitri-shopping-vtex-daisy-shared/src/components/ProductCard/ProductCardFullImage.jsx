@@ -1,5 +1,6 @@
 import WishlistIcon from './components/WishlistIcon'
 import Loading from '../Loading/Loading'
+import { Text, View, Image} from "eitri-luminus";
 
 export default function ProductCardFullImage(props) {
 	const {
@@ -7,7 +8,7 @@ export default function ProductCardFullImage(props) {
 		image,
 		name,
 		price,
-		width,
+		width = 148,
 		installments,
 		loadingCartOp,
 		loadingWishlistOp,
@@ -21,146 +22,79 @@ export default function ProductCardFullImage(props) {
 
 	return (
 		<View
-			position='relative'
-			backgroundColor={'accent-100'}
-			minWidth={width || 'auto'}
-			maxWidth={width || 'auto'}
-			borderRadius='small'
-			elevation='low'>
-			<View direction='column'>
-				<View
-					position='relative'
-					display='flex'
-					direction='column'
-					width='100%'
-					justifyContent='center'
-					borderRadius='micro'
-					alignItems='center'
-					height='240px'
-					minHeight='240px'
-					maxHeight='240px'>
-					<View
-						width='100%'
-						height='100%'
-						backgroundImage={image}
-						backgroundSize='cover'
-						backgroundPositionY='center'
-						backgroundPositionX='center'
-						borderRadiusRightTop='micro'
-						borderRadiusLeftTop='micro'
-					/>
-					<View
-						position='absolute'
-						top='5px'
-						right='5px'
-						width='30px'
-						height='30px'
-						display='flex'
-						alignItems='center'
-						justifyContent='center'
-						borderRadius='circular'
-						backgroundColor='accent-100'>
-						<Touchable
-							disabled={loadingWishlistOp}
-							onPress={onPressOnWishlist}
-							zIndex={98}>
-							<WishlistIcon checked={isOnWishlist} />
-						</Touchable>
+			className={`
+				relative bg-accent-100 
+				${width ? `min-w-[${width}px] max-w-[${width}px]` : 'min-w-auto max-w-auto'} 
+			`}
+			>
+			<View className={`flex flex-col w-full shadow-md rounded-lg`}>
+				<View className={`relative flex flex-col w-full justify-center items-center rounded-lg  h-[240px] w-full min-h-[240px] max-h-[240px]`}>
+					<View className={`w-full h-[240px] rounded-lg flex items-center justify-center`}>
+						<Image className={`object-contain h-[240px] rounded-lg`} src={image} />
+					</View>
+
+					<View className="absolute top-[8px] right-[5px] flex items-center justify-center rounded-full bg-accent-100 z-[99] ">
+						<View className="w-[30px] h-[30px] flex justify-center items-center">
+						<WishlistIcon checked={isOnWishlist} />
+						</View>
 					</View>
 				</View>
 
-				<View padding='small'>
-					<View
-						marginTop='small'
-						display='flex'
-						justifyContent='between'
-						maxHeight='36px'
-						minHeight='36px'
-						gap={4}>
-						<Text
-							lineClamp={2}
-							fontWeight='medium'
-							fontSize='extra-small'>
+					<View className={`w-full p-2`}>
+						<View className="mt-2 w-full flex justify-between gap-4">
+							<Text className="line-clamp-2 font-medium text-xs break-words">
 							{name}
 						</Text>
 					</View>
 
-					<View
-						direction='column'
-						gap={2}
-						marginTop='nano'>
+					<View className="flex flex-col gap-2 mt-1" >
 						{showListItem && (
 							<>
 								{listPrice ? (
-									<Text
-										textDecoration='line-through'
-										fontWeight='bold'
-										color='neutral-500'
-										fontSize='nano'>
+									<Text className="line-through font-bold text-neutral-500 text-xs">
 										{listPrice}
 									</Text>
 								) : (
-									<View height='16px' />
+									<View className="h-[16px]" />
 								)}
 							</>
 						)}
 
-						<Text
-							fontWeight='bold'
-							color='primary-700'
-							fontSize='small'>
-							{price}
+						<Text className="font-bold text-primary-700 text-sm">
+						{price}
 						</Text>
 
 						{installments ? (
-							<Text
-								fontWeight='bold'
-								color='neutral-500'
-								fontSize='nano'>
+							<Text className="font-bold text-neutral-500 text-xs">
 								{installments}
 							</Text>
 						) : (
-							<View height='16px' />
+							<View className="h-[16px]" />
 						)}
 					</View>
-
-					<View>{}</View>
 				</View>
 
-				<Touchable
-					height='36px'
-					width='100%'
-					display='flex'
-					justifyContent='center'
-					alignItems='center'
-					borderColor='primary-700'
-					borderWidth='hairline'
-					borderRadiusRightBottom='micro'
-					borderRadiusLeftBottom='micro'
-					backgroundColor={loadingCartOp ? 'neutral-100' : 'primary-700'}
-					zIndex={99}
-					onPress={onPressCartButton}>
+				<View
+					className={`
+						h-[36px] flex justify-center items-center 
+						border border-primary-700 border-[0.5px] 
+						rounded-lg
+						${loadingCartOp ? 'bg-neutral-100' : 'bg-primary-700'}
+						mx-2 mb-2
+					`}
+					onClick={onPressOnCard}
+				>
 					{loadingCartOp ? (
 						<Loading width='36px' />
 					) : (
-						<Text
-							color='background-color'
-							fontWeight='medium'
-							fontSize='extra-small'>
+						<Text className="text-background font-medium text-xs">
 							{actionLabel}
 						</Text>
 					)}
-				</Touchable>
+				</View>
 			</View>
 
-			<Touchable
-				onPress={onPressOnCard}
-				position='absolute'
-				top='0'
-				bottom='0'
-				left='0'
-				right='0'
-			/>
+			<View className="absolute top-0 bottom-0 left-0 right-0" />
 		</View>
 	)
 }

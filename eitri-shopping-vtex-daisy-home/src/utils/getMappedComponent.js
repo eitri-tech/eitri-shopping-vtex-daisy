@@ -6,6 +6,8 @@ import CategoryTree from '../components/CmsComponents/CategoryTree/CategoryTree'
 import CategoryTiles from '../components/CmsComponents/CategoryTiles/CategoryTiles'
 import LastSeenProducts from '../components/CmsComponents/LastSeenProducts/LastSeenProducts'
 import CategoryListSwipe from '../components/CmsComponents/CategoryListSwipe/CategoryListSwipe'
+import ProductInfiniteScroll from '../components/CmsComponents/ProductInfiniteScroll/ProductInfiniteScroll'
+import BlogPostShelf from '../components/CmsComponents/Blog/BlogPostShelf'
 
 const componentMap = {
 	MultipleImageBanner: Banner,
@@ -15,7 +17,9 @@ const componentMap = {
 	CategoryTree: CategoryTree,
 	CategoryTiles: CategoryTiles,
 	LastSeenProducts: LastSeenProducts,
-	CategoryListSwipe: CategoryListSwipe
+	CategoryListSwipe: CategoryListSwipe,
+	ProductInfiniteScroll: ProductInfiniteScroll,
+	WordPressCardList: BlogPostShelf
 }
 
 const shouldReloadOnResume = componentName => {
@@ -25,7 +29,7 @@ const shouldReloadOnResume = componentName => {
 
 export const getMappedComponent = (content, reloadKey) => {
 	const Component = componentMap[content.name]
-
+	console.log(content.name)
 	if (!Component) {
 		console.error(`Component ${content.name} does not exist in the component map.`)
 		return null

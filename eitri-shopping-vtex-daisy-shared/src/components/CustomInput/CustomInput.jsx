@@ -7,51 +7,33 @@ export default function CustomInput(props) {
 	const [showPassword, setShowPassword] = useState(false)
 
 	return (
-		<View width={width || '100%'}>
+		<View className={`${width ? `w-[${width}]` : "w-full"}`}>
 			{label && (
-				<View marginBottom='nano'>
-					<Text
-						fontSize='extra-small'
-						fontWeight={'bold'}>
-						{label}
-					</Text>
+				<View className="mb-1">
+				<Text className="text-xs font-bold">{label}</Text>
 				</View>
 			)}
 			<View
-				backgroundColor={backgroundColor || 'neutral-100'}
-				borderColor='neutral-300'
-				borderWidth='hairline'
-				height={height || '48px'}
-				display='flex'
-				alignItems='center'
-				color='neutral-500'
-				paddingHorizontal='small'
-				width='100%'
-				borderRadius='small'>
+				className={`bg-${backgroundColor || "neutral-100"} border border-neutral-300 h-${height || "12"} flex items-center text-neutral-500 px-2 w-full rounded-full`}
+			>
 				{icon && (
-					<View>
-						<Image src={icon} />
-					</View>
+				<View>
+					<Image src={icon} />
+				</View>
 				)}
 				{mask ? (
-					<MaskedInput
-						borderHidden={true}
-						mask={mask}
-						width='100%'
-						{...rest}
-					/>
+				<TextInput className="w-full" {...rest} />
 				) : (
-					<Input
-						borderHidden={true}
-						type={showPassword ? 'text' : type || 'text'}
-						width='100%'
-						{...rest}
-					/>
+				<TextInput
+					className="w-full border-none bg-neutral-100 rounded-full"
+					type={showPassword ? "text" : type || "text"}
+					{...rest}
+				/>
 				)}
-				{type === 'password' && (
-					<Touchable onPress={() => setShowPassword(!showPassword)}>
-						<Image src={showPassword ? eyeOn : eyeOff} />
-					</Touchable>
+				{type === "password" && (
+				<View>
+					<Image src={showPassword ? eyeOn : eyeOff} />
+				</View>
 				)}
 			</View>
 		</View>

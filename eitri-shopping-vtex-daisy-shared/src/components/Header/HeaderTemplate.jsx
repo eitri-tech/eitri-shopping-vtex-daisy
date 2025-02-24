@@ -9,6 +9,7 @@ import HeaderSearchIcon from './HeaderSearchIcon'
 import HeaderShare from './HeaderShare'
 import HeaderFilter from './HeaderFilter'
 import { HEADER_TYPE } from '../../utils/constants'
+import { View} from "eitri-luminus";
 
 export default function HeaderTemplate(props) {
 	const {
@@ -176,12 +177,11 @@ export default function HeaderTemplate(props) {
 			{headerType === HEADER_TYPE.RETURN_SHARE_AND_CART && (
 				<>
 					<HeaderReturn
+						width='40px'
 						iconColor={contentColor}
 						backgroundColor={backgroundColor}
 					/>
-					<View
-						display='flex'
-						gap={16}>
+					<View className="bg-primary-100 border border-green-300">
 						<HeaderShare
 							iconColor={contentColor}
 							handleShare={handleShare}

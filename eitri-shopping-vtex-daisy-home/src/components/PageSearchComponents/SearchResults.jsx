@@ -1,38 +1,35 @@
-import { Loading } from "eitri-shopping-vtex-daisy-shared";
-import ProductCard from "../ProductCard/ProductCard";
+import { Loading } from 'eitri-shopping-vtex-daisy-shared'
+import {View} from "eitri-luminus";
+import ProductCard from '../ProductCard/ProductCard'
 import { useTranslation } from 'eitri-i18n'
-
 export default function SearchResults(props) {
-  const { searchResults, isLoading } = props;
-
+  const { searchResults, isLoading } = props
   const { t } = useTranslation()
-
   if (searchResults.length === 0 && !isLoading) {
-    return <Text>{t('searchResults.resultNotFound')}</Text>;
+    return <Text>{t('searchResults.resultNotFound')}</Text>
   }
-
   return (
-      <View direction="column" gap={16}>
-        {searchResults.map(
-          (product, index) =>
-            index % 2 === 0 && (
-              <View key={searchResults[index].productId} display="flex">
-                <View width="50%" paddingRight="nano">
-                  <ProductCard product={searchResults[index]} />
-                </View>
-                {searchResults[index + 1] && (
-                  <View width="50%" paddingLeft="nano">
-                    <ProductCard product={searchResults[index + 1]} />
-                  </View>
-                )}
+    <View className="flex flex-col">
+      {searchResults.map(
+        (product, index) =>
+          index % 2 === 0 && (
+            <View key={searchResults[index].productId} className="flex">
+              <View className="pr-1 w-[50%]">
+                <ProductCard product={searchResults[index]} /> 
               </View>
-            )
-        )}
-        {isLoading && (
-          <View display="flex" alignItems="center" justifyContent="center">
-            <Loading />
-          </View>
-        )}
-      </View>
-  );
+              {searchResults[index + 1] && (
+                <View  className="pl-1 w-[50%]">
+                  <ProductCard product={searchResults[index + 1]} />
+                </View>
+              )}
+            </View>
+          ),
+      )}
+      {isLoading && (
+        <View className="flex items-center justify-center">
+          <Loading />
+        </View>
+      )}
+    </View>
+  )
 }

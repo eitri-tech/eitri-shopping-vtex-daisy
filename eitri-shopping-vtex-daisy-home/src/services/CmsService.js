@@ -1,11 +1,10 @@
 import { Vtex, App } from 'eitri-shopping-vtex-shared'
+import { getFbRemoteConfig } from './RemoteConfigService'
 import Eitri from 'eitri-bifrost'
 
 export const getCmsContent = async (contentType, pageName) => {
 	try {
-
 		const { faststore } = Vtex.configs
-
 		const cachedPage = await loadPageFromCache(faststore, contentType, pageName)
 
 		if (cachedPage) {
@@ -36,7 +35,8 @@ export const getCmsContent = async (contentType, pageName) => {
 
 export const loadVtexCmsPage = async (faststore, contentType, pageName) => {
 	const result = await Vtex.cms.getPagesByContentTypes(faststore, contentType)
-	return result.data.find(item => item.name?.toLowerCase() === pageName?.toLowerCase())
+	const page = result.data.find(item => item.name?.toLowerCase() === pageName?.toLowerCase())
+	return filterRemoteConfigContent(page)
 }
 
 export const loadPageFromCache = async (faststore, contentType, pageName) => {
@@ -67,4 +67,70 @@ export const savePageInCache = async (faststore, contentType, pageName, page) =>
 	} catch (error) {
 		console.error('Error trying save in cache', error)
 	}
+}
+
+export const filterRemoteConfigContent = async cmsPageContent => {
+	if (!cmsPageContent) return null
+
+	try {
+		const remoteConfigKeys = extractRemoteConfigKeys(cmsPageContent)
+		const remoteConfigMap = await fetchRemoteConfigs(remoteConfigKeys)
+
+		return {
+			...cmsPageContent,
+			sections: filterSectionsByRemoteConfig(cmsPageContent.sections, remoteConfigMap)
+		}
+	} catch (error) {
+		console.error('Error filtering remote config content:', error)
+		return cmsPageContent
+	}
+}
+
+const extractRemoteConfigKeys = cmsPageContent => {
+	const keys = new Set()
+
+	cmsPageContent.sections.forEach(section => {
+		if (section.data?.remoteConfigKey) {
+			keys.add(section.data.remoteConfigKey)
+		}
+
+		if (section.name === 'MultipleImageBanner') {
+			section.data.images?.forEach(image => {
+				if (image?.remoteConfigKey) {
+					keys.add(image.remoteConfigKey)
+				}
+			})
+		}
+	})
+
+	return Array.from(keys)
+}
+
+const fetchRemoteConfigs = async keys => {
+	try {
+		const results = await Promise.all(keys.map(getFbRemoteConfig))
+		return results.reduce((acc, result, index) => {
+			acc[keys[index]] = result ?? false
+			return acc
+		}, {})
+	} catch (error) {
+		console.error('Error fetching remote configs:', error)
+		return {}
+	}
+}
+
+const filterSectionsByRemoteConfig = (sections, remoteConfigMap) => {
+	return sections.filter(section => {
+		if (section.data?.remoteConfigKey && !remoteConfigMap[section.data.remoteConfigKey]) {
+			return false
+		}
+
+		if (section.name === 'MultipleImageBanner') {
+			section.data.images = section.data.images?.filter(
+				image => !(image?.remoteConfigKey && !remoteConfigMap[image.remoteConfigKey])
+			)
+		}
+
+		return true
+	})
 }

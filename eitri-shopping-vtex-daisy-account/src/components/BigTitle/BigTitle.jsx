@@ -1,45 +1,22 @@
 import arrowLeft from '../../assets/icons/arrow-left.svg'
 import Eitri from 'eitri-bifrost'
-
 export default function BigTitle(props) {
-	const { title, withBackAction } = props
-
-	const goBack = () => {
-		Eitri.navigation.back()
-	}
-
-	return (
-		<View display='flex'>
-			{withBackAction && (
-				<View
-					backgroundColor='neutral-100'
-					width='40px'
-					height='40px'
-					minHeight='40px'
-					minWidth='40px'
-					display='flex'
-					alignItems='center'
-					borderRadius='circular'
-					borderColor='neutral-300'
-					borderWidth='hairline'
-					justifyContent='center'
-					marginRight='display'>
-					<Touchable onPress={goBack}>
-						<Image
-							src={arrowLeft}
-							width='16px'
-							height='16px'
-						/>
-					</Touchable>
-				</View>
-			)}
-			<Text
-				block
-				fontWeight='bold'
-				fontFamily='Baloo 2'
-				fontSize='huge'>
-				{title}
-			</Text>
-		</View>
-	)
+  const { title, withBackAction } = props
+  const goBack = () => {
+    Eitri.navigation.back()
+  }
+  return (
+    <View className="flex w-full justify-between"> 
+      {withBackAction && (
+        <View className="w-[40px] h-[40px] min-w-[40px] min-h-[40px] rounded-full bg-neutral flex items-center justify-center border border-neutral">
+          <View onClick={goBack}>
+            <Image src={arrowLeft} className="w-[16px] h-[16px]" />
+          </View>
+        </View>
+      )}
+      <Text fontFamily="Baloo 2" className="block font-bold text-3xl">
+        {title}
+      </Text>
+    </View>
+  )
 }

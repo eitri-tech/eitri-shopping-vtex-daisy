@@ -12,17 +12,12 @@ export default function HeaderMenu(props) {
 
 	return (
 		<>
-			<Touchable onPress={onPressOpenButton}>
-				<Icon
-					width={24}
-					height={24}
-					color={iconColor || 'neutral-900'}
-					iconKey='menu'
-				/>
-			</Touchable>
+			<View>
+			<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 6H20M4 12H20M4 18H20" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path> </g></svg>
+			</View>
 			<>
 				{showDrawer && (
-					<Touchable
+					<View
 						onPress={onCloseDrawer}
 						position='fixed'
 						customColor='#000000'
