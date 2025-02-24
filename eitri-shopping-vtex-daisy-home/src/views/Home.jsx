@@ -8,7 +8,7 @@ import { setLanguage, startConfigure } from '../services/AppService'
 import { useTranslation } from 'eitri-i18n'
 import HomeSkeleton from '../components/HomeSkeleton/HomeSkeleton'
 import CmsContentRender from '../components/CmsContentRender/CmsContentRender'
-import PoweredBy from '../components/PoweredBy/PoweredBy'
+import PoweredBy from '../../../eitri-shopping-vtex-daisy-shared/src/components/PoweredBy/PoweredBy'
 export default function Home() {
   const { cart, startCart } = useLocalShoppingCart()
   const { i18n } = useTranslation()
@@ -81,9 +81,6 @@ export default function Home() {
       <View className="pt-[50px]" />
       <HomeSkeleton show={!cmsContent} />
       <CmsContentRender cmsContent={cmsContent} />
-      <PoweredBy
-					spacing={'20px'}
-      />
     </Page>
   )
 }
