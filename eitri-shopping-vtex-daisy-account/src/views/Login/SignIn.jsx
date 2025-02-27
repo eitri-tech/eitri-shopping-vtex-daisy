@@ -78,6 +78,7 @@ export default function SignIn(props) {
   const handleLogin = async () => {
     setLoading(true)
     try {
+      console.log('handleLogin', username, password)
       await doLogin(username, password)
       const customerData = await getCustomerData()
       if (redirectTo) {
@@ -100,6 +101,7 @@ export default function SignIn(props) {
     setLoading(false)
   }
   const loginWithEmailAndAccessKey = async () => {
+    console.log('loginWithEmailAndAccessKey', username, verificationCode)
     const loggedIn = await loginWithEmailAndKey(username, verificationCode)
     const customerData = await getCustomerData()
     if (loggedIn === 'WrongCredentials') {
@@ -138,7 +140,7 @@ export default function SignIn(props) {
                 icon={userIcon}
                 value={username}
                 placeholder={t('signIn.formName')}
-                onChange={(value) => setUsername(value)}
+                onChange={(e) => setUsername(e.target.value)}
               />
             </View>
             <View className="mt-4">
@@ -147,7 +149,7 @@ export default function SignIn(props) {
                 icon={lockIcon}
                 value={password}
                 type="password"
-                onChange={(value) => setPassword(value)}
+                onChange={(e) => setPassword(e.target.value)}
               />
             </View>
             <View className="mt-4">
@@ -181,16 +183,15 @@ export default function SignIn(props) {
           </>
         )}
         {loginMode === LOGIN_WITH_EMAIL_AND_ACCESS_KEY && (
-          <View className="px-8">
+          <View className="mt-8">
             <CustomInput
               icon={userIcon}
               value={username}
               type="email"
               placeholder={t('signIn.formEmail')}
-              onChange={(value) => {
-                setUsername(value)
+              onChange={(e) => {
+                setUsername(e.target.value)
               }}
-              showClearInput={false}
               required={true}
             />
             {emailCodeSent && (
@@ -201,7 +202,7 @@ export default function SignIn(props) {
                     placeholder={t('signIn.formCodeVerification')}
                     inputMode="numeric"
                     value={verificationCode}
-                    onChange={(text) => setVerificationCode(text)}
+                    onChange={(e) => setVerificationCode(e.target.value)}
                     height="45px"
                   />
                 </View>

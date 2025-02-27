@@ -6,7 +6,7 @@ export default function BigTitle(props) {
     Eitri.navigation.back()
   }
   return (
-    <View className="flex w-full justify-between"> 
+    <View className="flex w-full gap-4"> 
       {withBackAction && (
         <View className="w-[40px] h-[40px] min-w-[40px] min-h-[40px] rounded-full bg-neutral flex items-center justify-center border border-neutral">
           <View onClick={goBack}>

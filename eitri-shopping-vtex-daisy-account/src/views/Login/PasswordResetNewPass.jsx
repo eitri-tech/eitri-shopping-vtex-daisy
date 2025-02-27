@@ -50,7 +50,6 @@ export default function PasswordResetNewPass(props) {
   return (
     <Page topInset>
       <Loading isLoading={loading} fullScreen={true} />
-      {/* <HeaderTemplate headerType={HEADER_TYPE.TEXT} contentText={`${t('passwordResetNewPass.headerText')}`} /> */}
       <View className="p-8">
         <BigTitle title={t('passwordResetNewPass.forgotPass')} withBackAction />
         <View className="mt-8">
@@ -60,7 +59,7 @@ export default function PasswordResetNewPass(props) {
             type="password"
             placeholder={t('passwordResetNewPass.newPass')}
             value={newPassword}
-            onChange={setNewPassword}
+            onChange={(e) => setNewPassword(e.target.value)}
           />
         </View>
         <View className="mt-8">
@@ -69,7 +68,7 @@ export default function PasswordResetNewPass(props) {
             type="password"
             placeholder={t('passwordResetNewPass.confirmPass')}
             value={confirmPassword}
-            onChange={setConfirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
           />
         </View>
         <View className="mt-8">

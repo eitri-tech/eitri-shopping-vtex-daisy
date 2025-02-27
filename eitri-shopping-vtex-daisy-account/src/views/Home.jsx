@@ -7,6 +7,7 @@ import iconLogout from '../assets/icons/logout.svg'
 import Eitri from 'eitri-bifrost'
 import ProfileCardButton from '../components/ProfileCardButton/ProfileCardButton'
 import { setLanguage, startConfigure } from '../services/AppService'
+import BigTitle from '../components/BigTitle/BigTitle'
 export default function Home(props) {
   const PAGE = 'Minha Conta'
   const [isLoading, setIsLoading] = useState(true)
@@ -63,11 +64,13 @@ export default function Home(props) {
   return (
     <Page bottomInset topInset title={PAGE}>
       <Loading fullScreen isLoading={isLoading} />
-      <HeaderTemplate headerType={HEADER_TYPE.TEXT} contentText="Minha conta" />
-      <View className="p-8">
-        <View className="flex items-center p-8">
-          <View width={50} height={50} className="flex items-center justify-center bg-primary-content">
-            <Text contentColor className="text-primary-content">
+      <View className="px-8 pt-12">
+        <BigTitle title="Minha conta" withBackAction />
+      </View>
+      <View className="px-8 flex gap-4 mt-12">
+        <View className="flex items-center p-4 gap-4  w-full shadow-md rounded-md bg-neutral-50">
+          <View width={50} height={50} className="flex items-center justify-center rounded-full bg-orange-300">
+            <Text contentColor className="text-primary-content text-neutral-50 text-2xl">
               {(customerData?.firstName ?? customerData?.email)?.charAt(0)?.toLocaleUpperCase()}
             </Text>
           </View>
@@ -79,29 +82,31 @@ export default function Home(props) {
           </View>
         </View>
       </View>
-      <View className="p-8 flex flex-col">
+      <View className="px-8 py-4 flex flex-col gap-2">
         <Text className="font-bold text-lg">Dados pessoais</Text>
         <ProfileCardButton
           icon={'user'}
+          label="Minha conta"
           onClick={() =>
             navigate(PAGES.EDIT_PROFILE, {
               customerData,
             })
           }
         />
-        <ProfileCardButton icon={'bookmark'} onClick={() => navigate(PAGES.WISH_LIST)} />
+        <ProfileCardButton icon={'bookmark'} label="Meus Favoritos" onClick={() => navigate(PAGES.WISH_LIST)} />
       </View>
-      <View className="p-8 flex flex-col">
+      <View className="px-8 py-4 flex flex-col gap-2">
         <Text className="font-bold text-lg">Pedidos</Text>
-        <ProfileCardButton icon={'package'} onClick={() => navigate(PAGES.ORDER_LIST)} />
+        <ProfileCardButton icon={'package'} label="Meus pedidos" onClick={() => navigate(PAGES.ORDER_LIST)} />
       </View>
-      <View className="p-8">
+      <View className="px-8 py-4" >
         <CustomButton
           variant="outlined"
-          iconKey="log-out"
+          // iconKey="log-out"
           icon={iconLogout}
-          iconPosition="right"
-          iconJustify="between"
+          // iconPosition="right"
+          // iconJustify="between"
+          label="Sair"
           onClick={_doLogout}
         />
       </View>

@@ -91,23 +91,23 @@ export default function EditProfile(props) {
   }
   return (
     <Page bottomInset topInset>
-      <HeaderTemplate headerType={HEADER_TYPE.RETURN_AND_TEXT} viewBackButton={true} contentText={'Editar perfil'} />
+      <View className="px-8 pt-12">
+          <BigTitle title='Editar perfil' withBackAction />
+      </View>
       <Loading fullScreen isLoading={isLoading} />
-      <View className="p-8 flex flex-col">
+      <View className="px-8 flex flex-col gap-4 mt-12">
         <View>
           <Text className="block w-full font-bold">Nome</Text>
-          <View className="mt-1 flex">
+          <View className="mt-1 flex gap-2">
             <CustomInput
               placeholder="Nome"
               value={user?.firstName || ''}
-              onChange={(value) => handleInputChange('firstName', value)}
-              className="bg-base-100"
+              onChange={(e) => handleInputChange('firstName', e.target.value)}
             />
             <CustomInput
               placeholder="Sobrenome"
               value={user?.lastName || ''}
-              onChange={(value) => handleInputChange('lastName', value)}
-              className="bg-base-100"
+              onChange={(e) => handleInputChange('lastName', e.target.value)}
             />
           </View>
         </View>
@@ -118,8 +118,7 @@ export default function EditProfile(props) {
             inputMode="numeric"
             mask="99/99/9999"
             value={user?.birthDate || ''}
-            onChange={(value) => handleInputChange('birthDate', value)}
-            className="bg-base-100"
+            onChange={(e) => handleInputChange('birthDate', e.target.value)}
           />
         </View>
         <View>
@@ -128,29 +127,32 @@ export default function EditProfile(props) {
             placeholder="(99) 99999-9999"
             value={user?.homePhone?.replace('+55', '') || ''}
             inputMode="numeric"
-            onChange={(value) => handleInputChange('homePhone', value)}
+            onChange={(e) => handleInputChange('homePhone', e.target.value)}
             mask="(99) 99999-9999"
-            className="bg-base-100"
           />
         </View>
         <View>
           <Text className="block w-full mb-1 font-bold">Sexo</Text>
-          <View className="flex">
+          <View className="flex gap-2">
             <View align="center" className="flex flex-row">
               <Radio
                 value={'male'}
                 checked={user?.gender === 'male'}
-                onChange={(value) => handleInputChange('gender', value)}
+                onChange={(value) => handleInputChange('gender', 'male')}
               />
-              <Text className="block w-full ml-1">Masculino</Text>
+              <View onClick={() => handleInputChange('gender', 'male')}>
+                <Text className="block w-full ml-1">Masculino</Text>
+              </View>
             </View>
             <View align="center" className="flex flex-row">
               <Radio
                 value={'female'}
                 checked={user?.gender === 'female'}
-                onChange={(value) => handleInputChange('gender', value)}
+                onChange={() => handleInputChange('gender', 'female')}
               />
-              <Text className="block w-full ml-1">Feminino</Text>
+              <View onClick={() => handleInputChange('gender', 'female')}>
+                <Text className="block w-full ml-1">Feminino</Text>
+              </View>
             </View>
           </View>
         </View>
@@ -160,13 +162,12 @@ export default function EditProfile(props) {
             placeholder="000.000.000-00"
             value={user.document || ''}
             inputMode="numeric"
-            onChange={(value) => handleInputChange('document', value)}
+            onChange={(e) => handleInputChange('document', e.target.value)}
             mask="999.999.999-99"
-            className="bg-base-100"
           />
         </View>
-        <View>
-          <CustomButton width="100%" onClick={handleSave} />
+        <View className="pt-8">
+          <CustomButton width="100%" label="Salvar" onClick={handleSave} />
         </View>
       </View>
     </Page>

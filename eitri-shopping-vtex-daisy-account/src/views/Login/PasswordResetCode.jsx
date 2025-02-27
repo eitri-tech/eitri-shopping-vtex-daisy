@@ -21,8 +21,7 @@ export default function PasswordResetCode(props) {
   }
   return (
     <Page topInset>
-      {/* <HeaderTemplate headerType={HEADER_TYPE.TEXT} contentText={`${t('passwordResetCode.headerText')}`} /> */}
-      <View className="p-8">
+      <View className="px-8 py-12">
         <BigTitle title={t('passwordResetCode.forgotPass')} withBackAction />
         <View className="mt-8">
           <Text className="block w-full">
@@ -34,7 +33,7 @@ export default function PasswordResetCode(props) {
           {/* <CodeInput autoSubmit maxLength={6} onChange={onCodeFilled} accept="numbers" /> */}
         </View>
         <View>
-          <CustomButton disabled={recoveryCode.length !== RECOVERY_CODE_LENGTH} onClick={goToPasswordNewPass} />
+          <CustomButton disabled={recoveryCode.length !== RECOVERY_CODE_LENGTH} onClick={goToPasswordNewPass} label={t('passwordResetCode.sendButton')}/>
         </View>
       </View>
     </Page>

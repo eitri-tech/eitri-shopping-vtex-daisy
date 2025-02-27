@@ -18,14 +18,13 @@ export default function Alert(props) {
     return null
   }
   return (
-    <View className="fixed w-full">
-      <View className="w-full flex justify-center p-2">
-        <Text className={`block w-full font-bold text-${type || 'negative'}-700`}>
-          {message}
-        </Text>
-      </View>
-      <View bottomInset />
-    </View>
-
+    <View className="fixed w-full bottom-0 px-4 py-6">
+			<View className="w-full flex justify-center p-2 border border-red-500 bg-red-100 rounded-md">
+				<Text className={`block font-bold text-${type || 'negative'}-700 text-red-500`}>
+				{message}
+				</Text>
+			</View> 
+			<View bottomInset/>
+		</View>
   )
 }

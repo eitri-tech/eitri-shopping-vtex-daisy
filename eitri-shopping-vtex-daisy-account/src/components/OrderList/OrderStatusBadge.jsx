@@ -66,11 +66,11 @@ export default function OrderStatusBadge(props) {
   }
   return (
     <View
-      backgroundColor={STATUS_PARAMS[statusId]?.backgroundColor || 'accent-light'}
-      borderColor={STATUS_PARAMS[statusId]?.color || 'accent-light'}
-      className="border p-1 flex"
+      className={`border px-2 py-1 flex rounded-full 
+        bg-${STATUS_PARAMS[statusId]?.backgroundColor || 'accent-light'} 
+        border-${STATUS_PARAMS[statusId]?.color || 'accent-light'}`}
     >
-      <Text color={STATUS_PARAMS[statusId]?.color || 'accent-light'} className="block w-full font-bold">
+     <Text className={`block w-full font-bold text-sm text-${STATUS_PARAMS[statusId]?.color || 'accent-light'}`}>
         {statusDescription}
       </Text>
     </View>

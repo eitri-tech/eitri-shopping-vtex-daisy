@@ -32,21 +32,23 @@ export default function Wishlist(props) {
   }
   return (
     <Page bottomInset topInset>
-      <HeaderTemplate headerType={HEADER_TYPE.RETURN_AND_TEXT} viewBackButton={true} contentText={'Meus favoritos'} />
+      <View className="px-8 pt-12">
+          <BigTitle title='Meus favoritos' withBackAction />
+      </View>
       <Loading isLoading={isLoading} fullScreen />
-      <View className="py-8 flex flex-col">
+      <View className="py-12 px-4 flex flex-col gap-4">
         {wishlistItems?.map(
           (item, index) =>
             index % 2 === 0 && (
-              <View key={item.id} className="flex">
-                <View width="50%" className="pr-1 pl-8">
+              <View key={item.id} className="flex gap-4">
+                <View width="50%" className="">
                   <WishlistItem
                     productId={wishlistItems[index].productId}
                     onRemoveFromWishlist={() => onRemoveFromWishList(wishlistItems[index].id)}
                   />
                 </View>
                 {wishlistItems[index + 1] && (
-                  <View width="50%" className="pl-1 pr-8">
+                  <View width="50%" className="">
                     <WishlistItem
                       productId={wishlistItems[index + 1].productId}
                       onRemoveFromWishlist={() => onRemoveFromWishList(wishlistItems[index + 1].id)}
