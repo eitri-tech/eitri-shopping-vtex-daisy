@@ -29,8 +29,15 @@ export default function PasswordResetCode(props) {
             <Text className="ml-2 font-bold">{email}</Text>
           </Text>
         </View>
-        <View className="mt-8">
-          {/* <CodeInput autoSubmit maxLength={6} onChange={onCodeFilled} accept="numbers" /> */}
+        <View className="mt-8 mb-4">
+          <TextInput
+            placeholder="enter code"
+            value={recoveryCode}
+            mask="999999"
+            variant="mask"
+            type="number"
+            onChange={(e) => onCodeFilled(e.target.value)}
+          />
         </View>
         <View>
           <CustomButton disabled={recoveryCode.length !== RECOVERY_CODE_LENGTH} onClick={goToPasswordNewPass} label={t('passwordResetCode.sendButton')}/>
