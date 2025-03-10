@@ -37,22 +37,21 @@ export default function PasswordReset(props) {
   return (
     <Page topInset>
       <Loading isLoading={loading} fullScreen={true} />
-      {/* <HeaderTemplate headerType={HEADER_TYPE.TEXT} contentText={`${t('passwordReset.headerText')}`} /> */}
-      <View className="p-8">
+      <View className="p-8 py-12">
         <BigTitle title={t('passwordReset.forgotPass')} withBackAction />
-        <View>
+        <View className="mt-8">
           <CustomInput
             icon={mailIcon}
             placeholder={t('passwordReset.setEmail')}
             value={username}
-            onChange={setUsername}
+            onChange={(e) => setUsername(e.target.value)}
           />
         </View>
-        <View className="mt-8">
-          <Text className="block w-full">{t('passwordReset.messageRecovery')}</Text>
+        <View className="mt-4">
+          <Text className="block w-full text-sm" >{t('passwordReset.messageRecovery')}</Text>
         </View>
-        <View>
-          <CustomButton width="100%" onClick={goToPasswordResetCode} />
+        <View className="mt-8">
+          <CustomButton width="100%" label={t('passwordReset.sendButton')} onClick={goToPasswordResetCode} />
         </View>
       </View>
       <Alert

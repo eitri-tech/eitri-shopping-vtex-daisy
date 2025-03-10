@@ -79,17 +79,18 @@ export default function OrderDetails(props) {
     if (!payment) return null
     if (payment.paymentSystem === '6') {
       return (
-        <View width="100%" className="flex justify-between">
-          <Text className="block w-full">{payment.paymentSystemName} </Text>
+        <View width="100%" className="flex justify-between align-center">
+          <Text className="block w-full  text-xs">{payment.paymentSystemName} </Text>
           {order.status === 'payment-pending' && (
             <View
+              className="text-nowrap"
               onClick={() =>
                 Eitri.openBrowser({
                   url: payment.url,
                 })
               }
             >
-              <Text className="block w-full text-primary-content font-bold">Ver boleto</Text>
+              <Text className=" text-sky-600 font-bold text-sm text-nowrap">Ver boleto</Text>
             </View>
           )}
         </View>
@@ -110,69 +111,71 @@ export default function OrderDetails(props) {
       }}
     >
       <Page bottomInset topInset>
-        <HeaderTemplate headerType={HEADER_TYPE.RETURN_AND_TEXT} viewBackButton={true} contentText={'Meus Pedidos'} />
+        <View className="px-8 pt-12">
+          <BigTitle title='Meus Pedidos' withBackAction />
+        </View>
         <View>
           {isLoading ? (
             <Loading fullScreen />
           ) : (
-            <View className="p-2">
-              <View justify="center" align="left" className="mt-4 border border-neutral-content">
+            <View className="px-8 py-12">
+              <View justify="center" align="left" className="mt-4 border border-neutral-300 rounded-md">
                 <View className="flex flex-col p-2">
                   <View className="flex flex flex-row items-center justify-between">
                     <View className="flex flex-col">
-                      <Text className="block w-full text-sm">[b]Pedido:[/b]</Text>
-                      <Text className="block w-full">{order.orderId}</Text>
+                      <Text className="block w-full text-sm font-bold">{order.orderId}</Text>
+                      <Text className="block w-full text-xs">{order.orderId}</Text>
                     </View>
                     <OrderStatusBadge statusId={order.status} statusDescription={order.statusDescription} />
                   </View>
                   <View className="flex flex-col">
-                    <Text className="block w-full text-sm">[b]Data do pedido:[/b]</Text>
-                    <Text className="block w-full">{formatDateDaysMonthYear(order.creationDate)}</Text>
+                    <Text className="block w-full text-sm font-bold">Data do pedido:</Text>
+                    <Text className="block w-full text-xs">{formatDateDaysMonthYear(order.creationDate)}</Text>
                   </View>
                   <View className="flex flex-col">
-                    <Text className="block w-full text-sm">[b]Endereço[/b]</Text>
+                    <Text className="block w-full text-sm font-bold">Endereço</Text>
                     <View>
-                      <Text className="block w-full">[b]{adress.receiverName}[/b]</Text>
+                      <Text className="block w-full text-xs">{adress.receiverName}</Text>
                       <View className="flex flex-col flex">
-                        <Text className="block w-full">
+                        <Text className="block w-full text-xs">
                           {`${adress.street}, ${adress.number} ${adress.complement ? ' - ' + adress.complement : ''}`}
                         </Text>
-                        <Text className="block w-full">
+                        <Text className="block w-full text-xs">
                           {`${adress.city} - ${adress.state} - ${adress.neighborhood} - ${adress.postalCode}`}
                         </Text>
                       </View>
                     </View>
                   </View>
                   <View width="100%" className="flex flex-col">
-                    <Text className="text-sm">[b]Forma de pagamento[/b]</Text>
-                    <View className="flex">
+                    <Text className="text-sm font-bold">Forma de pagamento</Text>
+                    <View className="flex text-xs">
                       {order?.paymentData?.transactions[0]?.payments?.map((payment) =>
                         getFormattedPaymentSystem(payment),
                       )}
                     </View>
                   </View>
                   <View width="100%" className="flex flex-col">
-                    <Text className="text-sm">[b]Entrega[/b]</Text>
+                    <Text className="text-sm font-bold">Entrega</Text>
                     <View className="flex">
                       {order?.shippingData?.logisticsInfo[0]?.shippingEstimateDate ? (
-                        <Text className="block w-full">{`Entrega até ${formatDate(order?.shippingData?.logisticsInfo[0]?.shippingEstimateDate)}`}</Text>
+                        <Text className="block w-full text-xs">{`Entrega até ${formatDate(order?.shippingData?.logisticsInfo[0]?.shippingEstimateDate)}`}</Text>
                       ) : (
-                        <Text className="block w-full">{`Prazo de ${handleShippingEstimate(order?.shippingData?.logisticsInfo[0]?.shippingEstimate)} dias úteis após aprovação do pagamento`}</Text>
+                        <Text className="block w-full text-xs">{`Prazo de ${handleShippingEstimate(order?.shippingData?.logisticsInfo[0]?.shippingEstimate)} dias úteis após aprovação do pagamento`}</Text>
                       )}
                     </View>
                   </View>
                   <View className="flex flex-col">
-                    <Text className="block w-full text-sm">[b]Resumo[/b]</Text>
+                    <Text className="block w-full text-sm font-bold">Resumo</Text>
                     <View className="flex flex-col">
                       {order &&
                         order?.totals?.map((total) => (
                           <>
                             {total.value > 0 && (
-                              <Text className="block w-full">{`${total?.name}: ${formatAmountInCents(total.value)}`}</Text>
+                              <Text className="block w-full text-xs">{`${total?.name}: ${formatAmountInCents(total.value)}`}</Text>
                             )}
                           </>
                         ))}
-                      <Text className="block w-full">
+                      <Text className="block w-full text-xs">
                         {`Total: ${orderSumary && formatAmountInCents(orderSumary.map((item) => item.value).reduce((acc, curr) => acc + curr, 0))}`}
                       </Text>
                     </View>
@@ -181,27 +184,59 @@ export default function OrderDetails(props) {
                     <View width="100%" className="flex items-center">
                       {cancelConfirmation ? (
                         <View>
-                          <Text className="block w-full text-sm font-bold">Selecione o motivo para o cancelamento</Text>
+                          <Text className="block w-full text-sm font-bold font-bold">Selecione o motivo para o cancelamento</Text>
                           <Dropdown
                             value={cancelReason}
                             placeholder="Selecione o motivo"
                             onChange={(value) => setCancelReason(value)}
                           >
-                            <Dropdown.Item value="Não quero mais este produto." />
-                            <Dropdown.Item value="Comprei sem querer." />
-                            <Dropdown.Item value="A entrega vai demorar demais." />
-                            <Dropdown.Item value="Encontrei um preço melhor em outro lugar." />
-                            <Dropdown.Item value="Prefiro não informar." />
-                            <Dropdown.Item value="Outro" />
+                            <Dropdown.Button className="flex items-center">
+                              <Text className=" text-sm font-bold">
+                                {cancelReason == '' ? "Selecione o motivo" : cancelReason} 
+                              </Text>
+                              <Image src={arrowRight} className="w-[16px] h-[16px]" />
+                            </Dropdown.Button>
+                            <Dropdown.Items>
+                              <Dropdown.Item value="Não quero mais este produto.">
+                                <Text>
+                                Não quero mais este produto.
+                                </Text>
+                              </Dropdown.Item>
+                              <Dropdown.Item value="Comprei sem querer." >
+                                <Text>
+                                Comprei sem querer.
+                                </Text>
+                              </Dropdown.Item>
+                              <Dropdown.Item value="A entrega vai demorar demais." >
+                                <Text>
+                                A entrega vai demorar demais.
+                                </Text>
+                              </Dropdown.Item>
+                              <Dropdown.Item value="Encontrei um preço melhor em outro lugar.">
+                                <Text>
+                                Encontrei um preço melhor em outro lugar.
+                                </Text>
+                              </Dropdown.Item>
+                              <Dropdown.Item value="Prefiro não informar." >
+                                <Text>
+                                Prefiro não informar.
+                                </Text>
+                              </Dropdown.Item>
+                              <Dropdown.Item value="Outro" >
+                                <Text>
+                                Outro
+                                </Text>
+                              </Dropdown.Item>
+                            </Dropdown.Items>
                           </Dropdown>
                           <View className="flex justify-between mt-2">
                             <View onClick={() => setCancelConfirmation(false)}>
-                              <Text className="block w-full text-primary-content text-sm font-bold">Voltar</Text>
+                              <Text className="block w-full text-primary-content text-xs font-bold">Voltar</Text>
                             </View>
                             <View onClick={cancelOrder}>
                               <Text
                                 color={cancelReason ? 'negative-700' : ''}
-                                className="block w-full text-sm font-bold"
+                                className="block w-full text-xs font-bold"
                               >
                                 Continuar cancelamento
                               </Text>

@@ -1,7 +1,6 @@
 import Eitri from 'eitri-bifrost'
 import { CustomButton, CustomInput, HEADER_TYPE, HeaderTemplate, Loading } from 'eitri-shopping-vtex-daisy-shared'
 import userIcon from '../../assets/icons/user.svg'
-import CCheckbox from '../../components/CCheckbox/CCheckbox'
 import { sendPageView } from '../../services/TrackingService'
 import { getStorePreferences } from '../../services/StoreService'
 import { getSavedUser, loginWithEmailAndKey, sendAccessKeyByEmail } from '../../services/CustomerService'
@@ -27,6 +26,7 @@ export default function SignUp(props) {
         }
         setLoadingSendingCode(true)
         await sendAccessKeyByEmail(email)
+        console.log('sendAccessKeyByEmail', email)
         setEmailCodeSent(true)
         setTimeOutToResentEmail(TIME_TO_RESEND_EMAIL)
         setLoadingSendingCode(false)
@@ -44,10 +44,11 @@ export default function SignUp(props) {
     }
   }
   const loginWithEmailAndAccessKey = async () => {
+    console.log('loginWithEmailAndAccessKey', email, verificationCode)
     const loggedIn = await loginWithEmailAndKey(email, verificationCode).catch((e) => {
       const status = e?.response?.status || 400
       if (status >= 500) return 'ServerError'
-      return 'ExpiredCredentials'
+      return 'ExpiredCredentials' 
     })
     if (loggedIn === 'WrongCredentials') {
       setAlertMessage('Token incorreto')
@@ -56,7 +57,9 @@ export default function SignUp(props) {
       setAlertMessage('Ocorreu uma falha no serviço, tente novamente')
       setShowLoginErrorAlert(true)
     } else if (loggedIn === 'Success') {
-      navigate(PAGES.HOME)
+      setTimeout(() => {
+        navigate(PAGES.HOME)
+      }, 5000);
     } else {
       setAlertMessage('Verifique as informaçoes e tente novamente')
       setShowLoginErrorAlert(true)
@@ -88,45 +91,59 @@ export default function SignUp(props) {
   return (
     <Page topInset>
       <Loading isLoading={loading} fullScreen={true} />
-      {/* <HeaderTemplate headerType={HEADER_TYPE.TEXT} contentText={'Registrar'} /> */}
-      <View className="p-8">
-        <Text className="block w-full font-bold">Acessar com o seu email</Text>
-        <View>
+      <View className="px-8 py-12">
+        <BigTitle title={"Registrar"} withBackAction />
+        <View className="mt-8">
           <CustomInput
             icon={userIcon}
             value={email}
             type="email"
             placeholder="Email"
-            onChange={(value) => {
-              setEmail(value)
+            onChange={(e) => {
+              setEmail(e.target.value)
             }}
-            showClearInput={false}
             required={true}
           />
-          <View className="mt-8">
-            <CCheckbox checked={termsChecked} onChange={setTermsChecked} />
+          <View className="mt-4 flex items-center gap-4">
+            <Checkbox checked={termsChecked} onChange={(e) => setTermsChecked(e.target.checked)} />
+              <Text className="text-neutral-500 !text-sm">
+                Ao clicar em "Registrar", você concorda com os termos de uso do Eitri.
+              </Text>
           </View>
           {emailCodeSent && (
             <>
-              <View className="mt-8">
+              <View className="mt-4">
                 <CustomInput
                   placeholder="Código de verificação"
                   inputMode="numeric"
                   value={verificationCode}
-                  onChange={(text) => setVerificationCode(text)}
+                  onChange={(e) => setVerificationCode(e.target.value)}
                   height="45px"
                 />
               </View>
-              <View className="mt-8">
-                <CustomButton onClick={loginWithEmailAndAccessKey} disabled={!email || !verificationCode} />
+              <View className="mt-4">
+                <CustomButton onClick={loginWithEmailAndAccessKey} label='Login' disabled={!email || !verificationCode} />
               </View>
             </>
           )}
-          <View className="mt-8">
-            <CustomButton width="100%" disabled={resendCode || !email || loadingSendingCode} onClick={sendAccessKey} />
+          <View className="mt-4">
+            <CustomButton 
+              width="100%" 
+              disabled={resendCode || !email || loadingSendingCode} 
+              onClick={sendAccessKey} 
+              label={
+                !emailCodeSent
+                  ? `Enviar código`
+                  : `Reenviar código${resendCode ? ` (${timeOutToResentEmail})` : ''
+                  }`
+              } 
+            />
           </View>
-          <View className="mt-8">
-            <CustomButton variant="outlined" onClick={back} />
+          <View className="mt-4">
+            <CustomButton 
+              variant="outlined" 
+              onClick={back} 
+              label='Voltar'/>
           </View>
         </View>
       </View>

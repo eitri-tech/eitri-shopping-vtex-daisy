@@ -1,4 +1,4 @@
-import Loading from '../Loading/Loading'
+import Loading from '../Loading/LoadingComponent'
 
 export default function CustomButton(props) {
 	const { disabled, color, backgroundColor, variant, label, onPress, isLoading, width, borderRadius, ...rest } = props
@@ -22,7 +22,6 @@ export default function CustomButton(props) {
 
 	return (
 		<Button
-			onPress={_onPress}
 			className={`
 				flex items-center justify-center 
 				w-full

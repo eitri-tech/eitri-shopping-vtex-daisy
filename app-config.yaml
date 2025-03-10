@@ -12,7 +12,7 @@ eitri-apps:
 - path: ./eitri-shopping-vtex-daisy-home
   workspace: eitri-shopping-vtex-daisy-home
   alias: home
-  focus: true
+  focus: false
   shared: false
 - path: ./eitri-shopping-vtex-daisy-checkout
   workspace: eitri-shopping-vtex-daisy-checkout
@@ -22,11 +22,11 @@ eitri-apps:
 - path: ./eitri-shopping-vtex-daisy-account
   workspace: eitri-shopping-vtex-daisy-account
   alias: account
-  focus: false
+  focus: true
   shared: false
 - path: ./eitri-shopping-vtex-daisy-cart
   workspace: eitri-shopping-vtex-daisy-cart
   alias: cart
   focus: false
   shared: false
-application-id: 190f8c0c-4247-403f-b020-668c059201d2
+application-id: b8165780-e7e6-4283-af8c-fe3dce502117

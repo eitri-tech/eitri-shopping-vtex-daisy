@@ -10,7 +10,7 @@ export { default as CustomInput } from './components/CustomInput/CustomInput'
 export { default as HeaderTemplate } from './components/Header/HeaderTemplate'
 export { HEADER_TYPE } from './utils/constants'
 
-export { default as Loading } from './components/Loading/Loading'
+export { default as Loading } from './components/Loading/LoadingComponent' 
 export { default as Spacing } from './components/Spacing/Spacing'
 export { default as Divisor } from './components/Divisor/Divisor'
 export { default as ProductCardDefault } from './components/ProductCard/ProductCardDefault'

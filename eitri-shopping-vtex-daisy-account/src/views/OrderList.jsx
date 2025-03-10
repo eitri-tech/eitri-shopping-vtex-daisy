@@ -85,15 +85,17 @@ export default function OrderList(props) {
   return (
     <ProtectedView afterLoginRedirectTo={'OrderList'}>
       <Page bottomInset topInset>
-        <HeaderTemplate headerType={HEADER_TYPE.RETURN_AND_TEXT} viewBackButton={true} contentText={'Meus Pedidos'} />
-        <View className="p-2">
+        <View className="px-8 pt-12">
+          <BigTitle title='Meus Pedidos' withBackAction />
+        </View>
+        <View className="px-8 py-12">
           {loading ? (
             <Loading fullScreen />
           ) : (
             <>
               {orders && orders.length >= 1 ? (
                 orders.map((item, key) => (
-                  <View justify="center" align="left" key={item.orderId} className="mt-4 border border-neutral">
+                  <View justify="center" align="left" key={item.orderId} className="mt-4 border border-neutral-300 rounded-md">
                     <OrderListDetails
                       creationDate={formatDateDaysMonthYear(item.creationDate)}
                       order={item.orderId}
@@ -113,6 +115,7 @@ export default function OrderList(props) {
                       <View className="mt-2 p-2">
                         <CustomButton
                           width="100%"
+                          label={'Ver detalhes do pedido'}
                           onClick={() =>
                             Eitri.navigation.navigate({
                               path: '/OrderDetails',
