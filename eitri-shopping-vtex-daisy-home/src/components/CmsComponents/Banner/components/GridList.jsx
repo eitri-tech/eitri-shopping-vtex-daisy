@@ -1,5 +1,5 @@
 import { Text, View} from "eitri-luminus";
-export default function FitOnScreen(props) {
+export default function GridList(props) {
   const { data, onPress } = props
   const imagesList = data?.images
   return (

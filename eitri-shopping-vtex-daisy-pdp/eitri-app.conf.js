@@ -2,7 +2,7 @@ module.exports = {
   "name": "eitri-shopping-vtex-daisy-pdp",
   "title": "eitri-shopping-vtex-daisy-pdp",
   "slug": "eitri-shopping-vtex-daisy-pdp",
-  "eitri-luminus": "2.0.0-alpha.7",
+  "eitri-luminus": "2.0.0-alpha.31",
   "eitri-bifrost": "3.2.0",
   "eitri-commons": "2.1.2",
   "version": "0.1.0",
