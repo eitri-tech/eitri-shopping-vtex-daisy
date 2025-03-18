@@ -29,9 +29,11 @@ export default function Description(props) {
   return (
     <View>
       <View onClick={() => toggleCollapsedState()}>
-        <View width="100%" className="flex items-center justify-between">
+        <View className="flex items-center justify-between w-full">
           <Text className="text-lg font-bold">{t('description.txtDescription')}</Text>
-          <View>{/* <Icon iconKey={collapsed ? 'chevron-down' : 'chevron-up'} width={26} /> */}</View>
+          <View>
+            {/* <Icon iconKey={collapsed ? 'chevron-down' : 'chevron-up'} width={26} /> */}
+          </View>
         </View>
       </View>
       {!collapsed && (

@@ -18,7 +18,8 @@ export default function RichContent(props) {
   }, [product])
   if (!richContent) return null
   return (
-    <View className="w-full h-full"></View>
-    // <Webview htmlString={richContent} autoHeight />
+    <View className="w-full h-full">
+      <Webview htmlString={richContent} />
+    </View>
   )
 }

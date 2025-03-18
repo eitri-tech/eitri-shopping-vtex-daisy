@@ -20,7 +20,7 @@ export default function Reviews(props) {
   return (
     <View>
       <View onClick={() => toggleCollapsedState()}>
-        <View width="100%" className="flex items-center justify-between">
+        <View className="flex items-center justify-between w-full">
           <Text className="text-lg font-bold">{`Avaliações (${ratingsCount})`}</Text>
           <View>{/* <Icon iconKey={collapsed ? 'chevron-down' : 'chevron-up'} width={26} /> */}</View>
         </View>
@@ -33,11 +33,7 @@ export default function Reviews(props) {
           {!disableReviewButton && (
             <View className="py-2">
               <View onClick={() => setReviews()}>
-                <View
-                  height="40px"
-                  width="50vw"
-                  className="flex bg-accent border border-primary-content justify-center items-center"
-                >
+                <View className="flex h-40 w-50vw bg-accent border border-primary-content justify-center items-center">
                   {buttomIsLoading ? (
                     <Loading />
                   ) : (
