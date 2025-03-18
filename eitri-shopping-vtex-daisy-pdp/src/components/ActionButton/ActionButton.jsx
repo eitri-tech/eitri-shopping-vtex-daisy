@@ -27,7 +27,7 @@ export default function ActionButton(props) {
     setLoading(false)
   }
   return (
-    <View maxWidth="100%" className="flex px-8 items-center justify-center">
+    <View className="flex px-8 items-center justify-center max-w-full">
       <View>
         <Text className="font-bold text-sm">{formatAmount(currentSku?.sellers[0]?.commertialOffer?.Price)}</Text>
       </View>

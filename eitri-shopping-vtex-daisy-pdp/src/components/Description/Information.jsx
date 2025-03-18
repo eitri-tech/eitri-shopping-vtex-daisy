@@ -12,7 +12,7 @@ export default function Information(props) {
       {specifications && (
         <View>
           <View onClick={() => toggleCollapsedState()}>
-            <View width="100%" className="flex items-center justify-between">
+            <View className="flex items-center justify-between w-full">
               <Text className="text-lg font-bold">{t('information.txtInformation')}</Text>
               <View>{/* <Icon iconKey={collapsed ? 'chevron-down' : 'chevron-up'} width={26} /> */}</View>
             </View>
@@ -29,7 +29,7 @@ export default function Information(props) {
                       {value.length > 1 ? (
                         <View>
                           {value.map((item, index) => (
-                            <View key={index} className="flex flex flex-col">
+                            <View key={index} className="flex flex-col">
                               <Text className="mr-1">{item}</Text>
                             </View>
                           ))}

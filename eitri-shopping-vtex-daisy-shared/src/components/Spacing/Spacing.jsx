@@ -3,9 +3,6 @@ export default function Spacing(props) {
     const { height, width } = props
 
     return (
-        <View
-            width={width || '100%'}
-            height={height || '50px'}
-        ></View>
+        <View className={`h-${height || '50'} w-${width || 'full'}`}></View>
     )
 }

@@ -21,7 +21,7 @@ export default function ProductCarousel(props) {
     <View>
       <Carousel beforeChange={beforeChange}>
         {pairItems(products).map((group, index) => (
-          <View key={index} width="100%" className="flex flex flex-row justify-between p-2 items-center">
+          <View key={index} className="flex flex flex-row justify-between p-2 items-center w-full">
             {group.map((product) => (
               <ProductCard key={product?.productId} product={product} />
             ))}
@@ -33,12 +33,7 @@ export default function ProductCarousel(props) {
         <View className="flex justify-center">
           {pairedItems?.map((item, index) => {
             return (
-              <View
-                key={index}
-                width="32px"
-                height="6px"
-                backgroundColor={currentSlide === index ? 'primary-700' : 'neutral-300'}
-              />
+              <View key={index} className={`w-32 h-6 ${currentSlide === index ? 'bg-primary-700' : 'bg-neutral-300'}`} />
             )
           })}
         </View>

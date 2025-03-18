@@ -35,7 +35,7 @@ export default function BottomFixed(props) {
         {children}
         <View bottomInset />
       </View>
-      <View height={bottomHeight} width="100%" />
+      <View className={`h-${bottomHeight} w-full`}/>
     </>
   )
 }

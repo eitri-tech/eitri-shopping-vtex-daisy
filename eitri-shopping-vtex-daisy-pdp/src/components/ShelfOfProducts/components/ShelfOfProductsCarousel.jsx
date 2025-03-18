@@ -27,15 +27,15 @@ export default function ShelfOfProductsCarousel(props) {
             productsPage
               .map((page) => (
                 <View key={page?.[0]?.productId} className="flex justify-center">
-                  <View width="50%" paddingLeft={paddingHorizontal || 'large'} className="pr-1">
+                  <View className={`w-[50%] pl-${paddingHorizontal || '36'} pr-1`}>
                     <ProductCard product={page[0]} locale={locale} currency={currency} />
                   </View>
                   {page.length > 1 ? (
-                    <View width="50%" paddingRight={paddingHorizontal || 'large'} className="pl-1">
+                    <View className={`w-[50%] pl-${paddingHorizontal || '36'} pr-1`}>
                       <ProductCard product={page[1]} locale={locale} currency={currency} />
                     </View>
                   ) : (
-                    <View height="1px" width="50%" />
+                    <View className='h-1 w-[50%]'/>
                   )}
                 </View>
               ))
@@ -50,10 +50,8 @@ export default function ShelfOfProductsCarousel(props) {
             },
             (_, index) => (
               <View
+                className={`w-32 h-6 bg-${currentSlide === index ? 'primary-700' : 'neutral-300'}`}
                 key={index}
-                backgroundColor={currentSlide === index ? 'primary-700' : 'neutral-300'}
-                width="32px"
-                height="6px"
               />
             ),
           )}

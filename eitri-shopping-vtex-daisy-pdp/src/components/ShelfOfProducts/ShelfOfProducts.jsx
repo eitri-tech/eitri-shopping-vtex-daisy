@@ -18,10 +18,10 @@ export default function ShelfOfProducts(props) {
   return (
     <View>
       {title && (
-        <View paddingHorizontal={paddingHorizontal || 'large'} className="flex justify-between items-center">
+        <View className={`flex justify-between items-center px-${paddingHorizontal || '36'}`}>
           <Text className="font-bold">{isLoading ? t('shelfOfProducts.loading') : title}</Text>
           {searchParams && (
-            <View onClick={seeMore} minWidth="fit-content" className="flex items-center">
+            <View onClick={seeMore} className="flex items-center min-w-fit">
               <Text className="font-bold text-primary-content">{t('shelfOfProducts.seeMore')}</Text>
               <View>{/* <Icon iconKey="chevron-right" color="primary-900" width={18} height={18} /> */}</View>
             </View>
@@ -37,16 +37,17 @@ export default function ShelfOfProducts(props) {
         />
       )}
       {mode !== 'carousel' && (
-        <Stack gap={gap} scrollSnapType="x mandatory" className="flex flex-row overflow-x-scroll">
-          {gap && <View width={gap} height="1px" />}
+        <Stack className={`flex flex-row overflow-x-scroll gap-${gap} snap-x snap-mandatory`}>
+          {gap && <View className={`w-${gap} h-1`}/>}
+          {/*  */}
           {isLoading && (
-            <View gap={gap} className="flex flex-row flex">
-              <View width="188px" minHeight="288px" className="border-info-content border bg-neutral">
+            <View className={`flex flex-row flex gap-${gap}`}>
+              <View className="w-188 min-h-288 border-info-content border bg-neutral">
                 <View className="flex flex-col justify-center items-center p-2">
                   <Loading inline width="80px" />
                 </View>
               </View>
-              <View width="188px" minHeight="288px" className="border-info-content border bg-neutral">
+              <View className="w-188 min-h-288 border-info-content border bg-neutral">
                 <View className="flex flex-col justify-center items-center p-2">
                   <Loading inline width="80px" />
                 </View>
@@ -56,11 +57,11 @@ export default function ShelfOfProducts(props) {
           {!isLoading &&
             products &&
             products.map((product) => (
-              <View scrollSnapAlign="start" scrollMarginLeft={gap}>
+              <View className={`snap-start scroll-ml-${gap}`}>
                 <ProductCard product={product} key={product?.productId} width="188px" />
               </View>
             ))}
-          {gap && <View width={gap} height="1px" />}
+          {gap && <View className={`w-${gap} h-1`}/>}
         </Stack>
       )}
     </View>
