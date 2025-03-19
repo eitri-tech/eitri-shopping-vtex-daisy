@@ -140,20 +140,20 @@ export default function Home() {
       />
       <Loading isLoading={isLoading} fullScreen />
       {product && (
-        <View>
+        <View className="my-24" width="100vw">
           <ImageCarousel currentSku={currentSku} />
-          <View className="p-8">
+          <View className="p-4 flex flex-col gap-8">
             <MainDescription product={product} currentSku={currentSku} />
+
+            <ActionButton currentSku={currentSku} />
             <SkuSelector currentSku={currentSku} product={product} onSkuChange={onSkuChange} className="mt-8" />
+
             <Freight currentSku={currentSku} />
-            {/* <RichContent product={product} /> */}
+            <RichContent product={product} />
             <DescriptionComponent product={product} className="mt-2" />
             <Reviews />
           </View>
           <View className="mb-8">{configLoaded && <RelatedProducts product={product} />}</View>
-          <BottomFixed className="bg-accent">
-            <ActionButton currentSku={currentSku} />
-          </BottomFixed>
         </View>
       )}
     </Page>

@@ -27,7 +27,7 @@ export default function Description(props) {
   }
   const result = removeTags(description)
   return (
-    <View>
+    <View className='w-full overflow-x-hidden'>
       <View onClick={() => toggleCollapsedState()}>
         <View className="flex items-center justify-between w-full">
           <Text className="text-lg font-bold">{t('description.txtDescription')}</Text>

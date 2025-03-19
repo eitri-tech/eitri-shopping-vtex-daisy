@@ -18,7 +18,6 @@ export default function Supplier(props) {
       {!collapsed && (
         <View>
           <Text>{supplier}</Text>
-          <Spacing height="20" />
         </View>
       )}
       <Divisor />

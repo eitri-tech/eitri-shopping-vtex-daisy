@@ -7,6 +7,7 @@ export default function ImageCarousel(props) {
   }
   const containerHeight = window.screen.width * 0.8;
   const imageHeight = containerHeight * 0.8;
+  console.log(currentSku?.images.length)
 
   return (
     <View>
@@ -14,14 +15,14 @@ export default function ImageCarousel(props) {
         {currentSku?.images?.slice(0, 8).map((item, index) => {
           return (
             <Carousel.Item key={index}>
-              <View className={`flex justify-center items-center h-[${containerHeight}px]`}>
-                <Image src={item.imageUrl} className={`max-w-[80%] h-[${imageHeight}px]`} />
+              <View className={`flex justify-center items-center`}>
+                <Image src={item.imageUrl} width="100vw" />
               </View>
             </Carousel.Item>
           )
         })}
       </Carousel>
-      {currentSku?.images?.length > 1 && (
+      {/* {currentSku?.images?.length > 1 && (
         <View className="flex justify-center">
           {currentSku?.images?.slice(0, 8).map((item, index) => {
             return (
@@ -32,7 +33,7 @@ export default function ImageCarousel(props) {
             )
           })}
         </View>
-      )}
+      )} */}
     </View>
   )
 }

@@ -4,8 +4,8 @@ export default function SkuSelector(props) {
   const [skuVariations, setSkuVariations] = useState([])
   useEffect(() => {
     const selectedVariations = product?.items?.reduce((acc, item) => {
-      item.variations.length > 0 &&
-        item.variations.forEach((variation) => {
+      item?.variations?.length > 0 &&
+        item?.variations?.forEach((variation) => {
           const accVar = acc.find((foundVariation) => foundVariation?.field?.name === variation.name)
           if (accVar) {
             if (!accVar.values.some((value) => value.name === variation.values?.[0])) {
@@ -81,11 +81,11 @@ export default function SkuSelector(props) {
     )
   }
   return (
-    <View className={`flex flex-col mt-[${marginTop}px]`}>
+    <View className={`flex flex-col mt-[${marginTop}px] gap-2`}>
       {skuVariations?.map((sku, index) => (
         <View>
           <Text className="font-bold text-base">{`${sku?.field?.name}`}</Text>
-          <View className="flex flex-wrap mt-1">{sku?.values?.map((value) => renderOption(sku, value))}</View>
+          <View className="flex flex-wrap mt-1 gap-2">{sku?.values?.map((value) => renderOption(sku, value))}</View>
         </View>
       ))}
     </View>
