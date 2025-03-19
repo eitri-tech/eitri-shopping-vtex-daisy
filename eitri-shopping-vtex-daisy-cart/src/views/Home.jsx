@@ -54,7 +54,7 @@ export default function Home(props) {
 	}
 
 	return (
-		<Window
+		<Page
 			bottomInset
 			topInset>
 			<Loading
@@ -76,6 +76,6 @@ export default function Home(props) {
 			<Coupon />
 
 			<CartSummary />
-		</Window>
+		</Page>
 	)
 }

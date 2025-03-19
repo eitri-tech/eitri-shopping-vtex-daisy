@@ -1,10 +1,11 @@
+import {View, Text, Button} from "eitri-luminus";
 export default function Quantity(props) {
 
     const { quantity, handleItemQuantity, disable } = props
 
     return (
-        <View display='flex' borderWidth='hairline' borderColor="neutral-300" borderRadius="small" width='50%' height='35px' justifyContent='between' alignItems='center' paddingLeft="nano">
-            <View width='33%' alignItems='center' justifyContent='center'>
+        <View className="flex border border-neutral-300 rounded-sm w-1/2 h-[35px] justify-between items-center pl-1">
+            <View className="w-1/3 flex items-center justify-center">
                 {quantity === 1 || disable ?
                     <Icon iconKey="minus" width={16} height={16} color={'neutral-300'} />
                     :
@@ -13,16 +14,22 @@ export default function Quantity(props) {
                     </Touchable>
                 }
             </View>
-            <View width='33%' alignItems='center' justifyContent='center' paddingLeft="nano">
-                <Text fontWeight='bold'>{quantity}</Text>
+            <View className="w-1/3 items-center justify-center pl-1">
+                <Text className="font-bold">{quantity}</Text>
             </View>
-            <View width='33%' alignItems='center' justifyContent='center' paddingLeft="nano">
+            <View className="w-1/3 items-center justify-center pl-1">
                 {disable ?
-                    <Icon iconKey="plus" width={16} height={16} color={'neutral-300'} />
+                <View className="w-[16px] h-[16px]">
+                    <svg width="16px" height="16px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 12H18M12 6V18" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                </View>
                     :
-                    <Touchable onPress={() => handleItemQuantity(1)}>
-                        <Icon iconKey="plus" width={16} height={16} color={'primary-700'} />
-                    </Touchable>
+                    <Button onPress={() => handleItemQuantity(1)}>
+                         <svg width="16px" height="16px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 12H18M12 6V18" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                    </Button>
                 }
             </View>
         </View>
