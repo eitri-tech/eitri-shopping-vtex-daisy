@@ -28,14 +28,12 @@ export default function ActionButton(props) {
   }
   return (
     <View className="flex px-8 items-center justify-center max-w-full">
-      <View>
-        <Text className="font-bold text-sm">{formatAmount(currentSku?.sellers[0]?.commertialOffer?.Price)}</Text>
-      </View>
       <CustomButton
         onClick={handleButtonClick}
         isLoading={isLoading}
         backgroundColor={isAvailable ? 'primary-700' : 'neutral-300'}
-        className="rounded-none"
+        className="rounded-pill w-full"
+        label={getButtonLabel()}
       />
     </View>
   )

@@ -51,17 +51,20 @@ export default function Freight(props) {
       {!collapsed && (
         <View>
           <Text>{t('freight.txtCalculateDeadline')}</Text>
-          <View className="mt-2 flex justify-between items-center w-full">
-            <CustomInput
-              placeholder={t('freight.labelZipCode')}
-              value={zipCode}
-              maxLength={9}
-              mask="99999-999"
-              inputMode="numeric"
-              onChange={onInputZipCode}
-              width="70%"
-            />
-            <CustomButton variant="outlined" width="30%" onClick={() => handleFreight(zipCode)} />
+          <View className="flex justify-between items-center w-full gap-2">
+            <View className="w-[70%]">
+              <CustomInput
+                placeholder={t('freight.labelZipCode')}
+                value={zipCode}
+                maxLength={9}
+                mask="99999-999"
+                inputMode="numeric"
+                onChange={onInputZipCode}
+              />
+            </View>
+            <View className="w-[30%]">
+              <CustomButton label="calcular" variant="outlined" onClick={() => handleFreight(zipCode)} />
+            </View>
           </View>
           {loading && <Skeleton className="w-full h-full"/>}
           {

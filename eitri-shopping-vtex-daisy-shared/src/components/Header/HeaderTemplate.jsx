@@ -181,7 +181,7 @@ export default function HeaderTemplate(props) {
 						iconColor={contentColor}
 						backgroundColor={backgroundColor}
 					/>
-					<View className="bg-primary-100 border border-green-300">
+					<View className="bg-primary-100 flex flex-row gap-2">
 						<HeaderShare
 							iconColor={contentColor}
 							handleShare={handleShare}

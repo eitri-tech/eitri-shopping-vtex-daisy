@@ -22,6 +22,7 @@ export default function ProductCardFullImage(props) {
 
 	return (
 		<View
+			onClick={onPressOnCard}
 			className={`
 				relative bg-accent-100 
 				${width ? `min-w-[${width}px] max-w-[${width}px]` : 'min-w-auto max-w-auto'} 
@@ -75,6 +76,10 @@ export default function ProductCardFullImage(props) {
 				</View>
 
 				<View
+					onClick={(e) => {
+						e.stopPropagation();
+						onPressCartButton();
+					}}
 					className={`
 						h-[36px] flex justify-center items-center 
 						border border-primary-700 border-[0.5px] 
@@ -82,7 +87,6 @@ export default function ProductCardFullImage(props) {
 						${loadingCartOp ? 'bg-neutral-100' : 'bg-primary-700'}
 						mx-2 mb-2
 					`}
-					onClick={onPressOnCard}
 				>
 					{loadingCartOp ? (
 						<Loading width='36px' />

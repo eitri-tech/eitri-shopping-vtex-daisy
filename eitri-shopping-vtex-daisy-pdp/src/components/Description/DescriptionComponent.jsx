@@ -25,7 +25,7 @@ export default function DescriptionComponent(props) {
   }
   const especifications = buildSpecifications(product)
   return (
-    <View>
+    <View className="flex flex-col gap-1">
       {product?.description && <Description description={product?.description} />}
       {especifications && <Information specifications={especifications} />}
       {(product?.Fornecedor || product?.brand) && <Supplier supplier={product?.Fornecedor?.[0] || product?.brand} />}

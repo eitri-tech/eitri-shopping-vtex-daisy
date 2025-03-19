@@ -29,14 +29,13 @@ export default function MainDescription(props) {
   return (
     <View className="flex flex flex-col">
       <View className="h-10" />
-      <Text className="text-lg font-bold">{currentSku?.nameComplete || currentSku?.name}</Text>
+      <Text className="text-xl font-bold">{currentSku?.nameComplete || currentSku?.name}</Text>
       {product?.productReference && (
         <>
-          <Text className="text-neutral-content"> {`ref ${product?.productReference}`}</Text>
-          <View className="h-8" />
+          <Text className="text-neutral-content pt-1 text-gray-400"> {`ref ${product?.productReference}`}</Text>
+          <View className="h-4" />
         </>
       )}
-      <View className="h-8" />
       {currentSku?.sellers[0]?.commertialOffer?.Price < currentSku?.sellers[0]?.commertialOffer?.ListPrice && (
         <Text className="text-sm text-neutral-content line-through font-bold">
           
@@ -47,7 +46,7 @@ export default function MainDescription(props) {
         
         {formatAmount(currentSku?.sellers[0]?.commertialOffer?.Price, locale, currency)}
       </Text>
-      <View className="h-8" />
+      <View className="h-1" />
       <Text className="text-sm text-neutral-content"> {discoverInstallments(currentSku)}</Text>
     </View>
   )

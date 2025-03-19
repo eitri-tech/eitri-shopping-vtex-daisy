@@ -1,5 +1,5 @@
 import { getProductById } from '../../services/productService'
-import {View} from "eitri-luminus";
+import {View, Webview} from "eitri-luminus";
 export default function RichContent(props) {
   const { product } = props
   const [richContent, setRichContent] = useState(null)

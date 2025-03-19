@@ -152,7 +152,7 @@ export default function ProductCardWrapper(props) {
       loadingWishlistOp={loadingWishlistOp}
       loadingCartOp={loadingCartOp}
       width={150}
-      onPressOnCard={() => {console.log('onPressOnCard')}}
+      onPressOnCard={onPressOnCard}
         onPressCartButton={() => {console.log('onPressCartButton')}}
         onPressOnWishlist={() => {console.log('onPressOnWishlist')}}
     />
