@@ -1,3 +1,4 @@
+import { View, Text, Button, Image } from 'eitri-luminus'
 import trash from '../../assets/images/trash-01.svg'
 import Quantity from '../Quantity/Quantity'
 import SaveButton from '../SaveButton/SaveButton'
@@ -75,44 +76,24 @@ export default function CartItem(props) {
 	return (
 		<View>
 			<View
-				marginTop='extra-small'
-				backgroundColor='neutral-100'
-				display='flex'
-				padding='small'
-				direction='column'>
+				className="mt-2 bg-neutral-100 flex flex-col p-4">
 				<View
-					display='flex'
-					justifyContent='center'
-					alignItems='start'>
+					className="flex justify-center items-start">
 					<View
-						display='flex'
-						alignItems='center'
-						justifyContent='center'
-						maxWidth='30%'>
+						className="flex items-center justify-center max-w-[30%]">
 						<Image
-							borderRadius='small'
-							maxHeight='100px'
-							maxWidth='100%'
+							className="rounded-lg max-h-[100px] max-w-full"
 							src={resizedImageUrl}
 						/>
 					</View>
 					<View
-						display='flex'
-						direction='column'
-						justifyContent='between'
-						width='55%'
-						gap={9}
-						paddingLeft='nano'>
+						className="flex flex-col justify-between w-[55%] gap-2 pl-2">
 						<Text
-							color='neutral-900'
-							fontWeight='medium'
-							fontSize='nano'>
+							className="text-neutral-900 font-medium text-sm">
 							{item.name}
 						</Text>
 						<Text
-							color='primary-700'
-							fontWeight='bold'
-							fontSize='medium'>
+							className="text-primary-700 font-bold text-base">
 							{formatAmountInCents(item.price, locale, currency)}
 						</Text>
 						{item?.offerings?.length > 0 &&
@@ -120,29 +101,18 @@ export default function CartItem(props) {
 							item?.offerings
 								?.filter(o => !o.isBundled)
 								.map((offering, index) => (
-									<Touchable
+									<Button
 										key={offering.id + index}
-										onPress={() => onAddOfferingToCart(item.itemIndex, offering.id)}
-										borderWidth='hairline'
-										borderRadius='small'
-										padding='nano'
-										display='flex'
-										justifyContent='center'
-										alignItems='center'
-										borderColor='primary-700'>
+										onClick={() => onAddOfferingToCart(item.itemIndex, offering.id)}
+										className="border border-primary-700 rounded-lg p-2 flex justify-center items-center">
 										<Text
-											fontSize='nano'
-											color='primary-700'
-											fontWeight='medium'>
+											className="text-sm text-primary-700 font-medium">
 											{`${t('cartItem.txtAdd')} ${offering?.name} ${offering?.price ? formatAmountInCents(offering.price, locale, currency) : ''}`}
 										</Text>
-									</Touchable>
+									</Button>
 								))}
 						<View
-							display='flex'
-							justifyContent='between'
-							height='30%'
-							alignItems='center'>
+							className="flex justify-between h-[30%] items-center">
 							{!message && (
 								<Quantity
 									quantity={item.quantity}
@@ -162,28 +132,21 @@ export default function CartItem(props) {
 						</View>
 					</View>
 					<View
-						display='flex'
-						width='15%'
-						justifyContent='center'
-						height='130px'>
-						<Touchable onPress={handleModalRemoveItem}>
+						className="flex w-[15%] justify-center h-[130px]">
+						<Button onClick={handleModalRemoveItem}>
 							<Image
+								className="h-5"
 								src={trash}
-								height='20px'
 							/>
-						</Touchable>
+						</Button>
 					</View>
 				</View>
 				{message && (
 					<View
-						display='flex'
-						direction='column'
-						justifyContent='center'
-						alignItems='center'>
+						className="flex flex-col justify-center items-center">
 						<Spacing height={'10px'} />
 						<Text
-							textAlign='center'
-							color='tertiary-500'>
+							className="text-center text-tertiary-500">
 							{message.text || t('cartItem.txtMessageUnavailable')}
 						</Text>
 						<Spacing height={'10px'} />
@@ -196,29 +159,22 @@ export default function CartItem(props) {
 					.map((offering, index) => (
 						<View
 							key={offering.id + index}
-							backgroundColor='neutral-100'>
+							className="bg-neutral-100">
 							<View
-								backgroundColor='background-color'
-								width='100%'
-								height='2px'
+								className="bg-background-color w-full h-0.5"
 							/>
 							<View
-								paddingVertical='nano'
-								paddingHorizontal='large'
-								display='flex'
-								justifyContent='between'
-								alignItems='center'>
+								className="py-2 px-6 flex justify-between items-center">
 								<Text
-									fontSize='nano'
-									fontWeight='medium'>
+									className="text-sm font-medium">
 									{`${offering?.name}: ${offering?.price ? formatAmountInCents(offering.price, locale, currency) : ''}`}
 								</Text>
-								<Touchable onPress={() => onRemoveOfferingFromCart(item.itemIndex, offering.id)}>
+								<Button onClick={() => onRemoveOfferingFromCart(item.itemIndex, offering.id)}>
 									<Image
+										className="h-4"
 										src={trash}
-										height='16px'
 									/>
-								</Touchable>
+								</Button>
 							</View>
 						</View>
 					))}

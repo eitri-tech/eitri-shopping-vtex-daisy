@@ -1,4 +1,5 @@
 import Eitri from 'eitri-bifrost'
+import { View, Text, Button, Icon } from 'eitri-luminus'
 import { Spacing, Loading, CustomInput, CustomButton } from 'eitri-shopping-vtex-daisy-shared'
 import { useTranslation } from 'eitri-i18n'
 import {useLocalShoppingCart} from "../../providers/LocalCart";
@@ -61,41 +62,23 @@ export default function Coupon(props) {
   if (!cart) return null
 
   return (
-		<View
-			paddingHorizontal='medium'>
-			<Text
-				fontSize='medium'
-				fontWeight='bold'>
+		<View className="px-4">
+			<Text className="text-base font-bold">
 				{t('coupon.txtCoupon')}
 			</Text>
-			<View
-				marginTop='extra-small'
-				display='flex'
-				gap={8}
-				justifyContent='between'
-				alignItems='center'>
+			<View className="mt-2 flex gap-8 justify-between items-center">
 				{appliedCoupon ? (
 					<>
-						<View
-							display='flex'
-							marginVertical='small'
-							paddingVertical='medium'
-							paddingHorizontal='small'
-							borderWidth='hairline'
-							borderColor='neutral-300'
-							borderRadius='small'
-							width='90%'>
+						<View className="flex my-2 py-4 px-2 border border-neutral-300 rounded-lg w-[90%]">
 							<Text>{appliedCoupon}</Text>
 						</View>
-						<Touchable onPress={onPressRemoveCoupon}>
-							<View paddingHorizontal='medium'>
-								<Icon
-									iconKey='trash-2'
-									color={'tertiary-500'}
-									width={30}
-								/>
-							</View>
-						</Touchable>
+						<Button onClick={onPressRemoveCoupon} className="px-4">
+							<Icon
+								iconKey='trash-2'
+								color={'tertiary-500'}
+								width={30}
+							/>
+						</Button>
 					</>
 				) : (
 					<>
@@ -117,8 +100,8 @@ export default function Coupon(props) {
 				)}
 			</View>
 			{couponTextAlert && (
-				<View paddingHorizontal='medium'>
-					<Text color={invalidCoupon ? 'tertiary-500' : 'secondary-700'}>{couponTextAlert}</Text>
+				<View className="px-4">
+					<Text className={invalidCoupon ? "text-error" : "text-success"}>{couponTextAlert}</Text>
 				</View>
 			)}
 			<Spacing />
