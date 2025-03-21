@@ -49,11 +49,35 @@ export default function CartSummary(props) {
 				<Button
 					onClick={() => setCollapsed(!collapsed)}
 					className="flex justify-center">
-					<Icon
-						iconKey={collapsed ? 'chevron-up' : 'chevron-down'}
-						width={24}
-						height={24}
-					/>
+					{collapsed ?
+						<svg
+							width="24px"
+							height="24px"
+							viewBox="0 0 16 16"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M13.4454 10.4455L8.71747 5.71758C8.32694 5.32705 7.69378 5.32705 7.30325 5.71758L2.57532 10.4455"
+								stroke="#707070"
+								strokeLinecap="round"
+							/>
+						</svg>
+						:
+						<svg
+							width="24px"
+							height="24px"
+							viewBox="0 0 16 16"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M2.57535 5.42468L7.30328 10.1526C7.69381 10.5431 8.32697 10.5431 8.7175 10.1526L13.4454 5.42468"
+								stroke="#707070"
+								strokeLinecap="round"
+							/>
+						</svg>}
+
 				</Button>
 
 				{!collapsed && (
