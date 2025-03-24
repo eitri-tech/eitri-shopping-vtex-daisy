@@ -1,4 +1,4 @@
-import { View, Text, Button, Icon } from 'eitri-luminus'
+import { View, Text, Button } from 'eitri-luminus'
 import { CustomButton, Spacing, Divisor } from 'eitri-shopping-vtex-daisy-shared'
 import { useTranslation } from 'eitri-i18n'
 import { formatAmountInCents } from '../../utils/utils'
@@ -136,7 +136,6 @@ export default function CartSummary(props) {
 				<View
 					className="flex w-screen justify-center px-6 items-center">
 					<CustomButton
-						marginTop='large'
 						borderRadius='small'
 						label={t('cartSummary.labelFinish')}
 						onPress={goToCheckout}

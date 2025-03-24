@@ -9,7 +9,7 @@ import CartSummary from '../components/CartSummary/CartSummary'
 import InstallmentsMsg from '../components/InstallmentsMsg/InstallmentsMsg'
 import CartItemsContent from '../components/CartItemsContent/CartItemsContent'
 import { setLanguage, startConfigure } from '../services/AppService'
-
+import { Page } from "eitri-luminus";
 export default function Home(props) {
 	const openWithBottomBar = !!props?.location?.state?.tabIndex
 
@@ -52,7 +52,7 @@ export default function Home(props) {
 	}
 
 	return (
-		<View
+		<Page
 			bottomInset
 			topInset>
 			<Loading
@@ -74,6 +74,6 @@ export default function Home(props) {
 			<Coupon />
 
 			<CartSummary />
-		</View>
+		</Page>
 	)
 }

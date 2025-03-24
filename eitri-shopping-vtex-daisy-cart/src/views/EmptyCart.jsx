@@ -33,7 +33,6 @@ export default function EmptyCart(props) {
 					</View>
 					{showCloseButton && (
 						<CustomButton
-							wide
 							label={t('emptyCart.labelButton')}
 							onPress={closeEitriApp}
 						/>

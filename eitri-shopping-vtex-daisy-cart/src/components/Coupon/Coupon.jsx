@@ -1,5 +1,5 @@
 import Eitri from 'eitri-bifrost'
-import { View, Text, Button, Icon } from 'eitri-luminus'
+import { View, Text, Button } from 'eitri-luminus'
 import { Spacing, Loading, CustomInput, CustomButton } from 'eitri-shopping-vtex-daisy-shared'
 import { useTranslation } from 'eitri-i18n'
 import { useLocalShoppingCart } from "../../providers/LocalCart";

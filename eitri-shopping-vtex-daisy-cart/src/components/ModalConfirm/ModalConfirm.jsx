@@ -1,4 +1,4 @@
-import { Spacing, CustomButton } from 'eitri-shopping-vtex-daisy-shared'
+import { CustomButton } from 'eitri-shopping-vtex-daisy-shared'
 import {View, Text} from "eitri-luminus";
 export default function ModalConfirm(props) {
 	const { text, showModal, removeItem, closeModal } = props
@@ -16,14 +16,12 @@ export default function ModalConfirm(props) {
 					</Text>
 					<View className="w-full">
 						<CustomButton
-							marginTop='large'
 							label={'Excluir'}
 							onPress={() => removeItem(true)}
 							block
 						/>
 						<CustomButton
 							variant='outlined'
-							marginTop='small'
 							label={'Cancelar'}
 							onPress={() => removeItem(false)}
 							block
