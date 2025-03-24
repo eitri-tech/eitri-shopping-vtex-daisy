@@ -3,18 +3,16 @@ import { sendPageView } from '../services/trackingService'
 import { useLocalShoppingCart } from '../providers/LocalCart'
 import { HEADER_TYPE, HeaderTemplate, Loading } from 'eitri-shopping-vtex-daisy-shared'
 import { saveCartIdOnStorage } from '../services/cartService'
-import { useTranslation } from 'eitri-i18n'
 import Freight from '../components/Freight/Freight'
 import Coupon from '../components/Coupon/Coupon'
 import CartSummary from '../components/CartSummary/CartSummary'
 import InstallmentsMsg from '../components/InstallmentsMsg/InstallmentsMsg'
 import CartItemsContent from '../components/CartItemsContent/CartItemsContent'
 import { setLanguage, startConfigure } from '../services/AppService'
-
+import { Page } from "eitri-luminus";
 export default function Home(props) {
 	const openWithBottomBar = !!props?.location?.state?.tabIndex
 
-	const { t, i18n } = useTranslation()
 	const { cart, startCart } = useLocalShoppingCart()
 
 	const [appIsLoading, setAppIsLoading] = useState(true)
@@ -54,7 +52,7 @@ export default function Home(props) {
 	}
 
 	return (
-		<Window
+		<Page
 			bottomInset
 			topInset>
 			<Loading
@@ -64,7 +62,7 @@ export default function Home(props) {
 
 			<HeaderTemplate
 				headerType={openWithBottomBar ? HEADER_TYPE.TEXT : HEADER_TYPE.RETURN_AND_TEXT}
-				contentText={t('home.title')}
+				contentText="Cart"
 			/>
 
 			<InstallmentsMsg />
@@ -76,6 +74,6 @@ export default function Home(props) {
 			<Coupon />
 
 			<CartSummary />
-		</Window>
+		</Page>
 	)
 }

@@ -2,6 +2,7 @@ import Eitri from 'eitri-bifrost'
 import { CustomButton, CustomInput, Loading } from 'eitri-shopping-vtex-daisy-shared'
 import { useTranslation } from 'eitri-i18n'
 import { useLocalShoppingCart } from '../../providers/LocalCart'
+import {View, Text, Radio} from "eitri-luminus";
 
 export default function Freight(props) {
 	const { cart, changeCartAddress, updateCartFreight } = useLocalShoppingCart()
@@ -93,14 +94,10 @@ export default function Freight(props) {
 	const getMessageError = label => {
 		const message = messagesError.find(item => item.code === 'cannotBeDelivered')
 		return (
-			<View
-				width='100%'
-				paddingHorizontal='small'>
-				<Text fontWeight='bold'>{label}</Text>
+			<View className="w-full px-2">
+				<Text className="font-bold">{label}</Text>
 				{message && (
-					<Text
-						fontSize='nano'
-						color='tertiary-700'>
+					<Text className="text-xs text-tertiary-700">
 						{message.fields.skuName}
 					</Text>
 				)}
@@ -111,20 +108,13 @@ export default function Freight(props) {
 	if (!cart) return null
 
 	return (
-		<View padding='medium'>
-			<Text
-				fontSize='medium'
-				fontWeight='bold'>
+		<View className="p-4">
+			<Text className="text-base font-bold">
 				{t('freight.txtDelivery')}
 			</Text>
 
 			{cart?.canEditData ? (
-				<View
-					display='flex'
-					justifyContent='between'
-					marginTop='extra-small'
-					gap={8}
-					alignItems='center'>
+				<View className="flex justify-between mt-2 gap-2 items-center">
 					<CustomInput
 						width='60%'
 						placeholder={t('freight.labelZipCode')}
@@ -143,51 +133,31 @@ export default function Freight(props) {
 					/>
 				</View>
 			) : (
-				<View marginTop='nano'>
-					<Text fontWeight='medium'>{`[b]${t('freight.labelZipCode')}[/b]: ${shipping?.address?.postalCode}`}</Text>
+				<View className="mt-2">
+					<Text className="text-base font-medium">{`[b]${t('freight.labelZipCode')}[/b]: ${shipping?.address?.postalCode}`}</Text>
 				</View>
 			)}
 
 			{error && (
-				<View paddingBottom='small'>
-					<Text color={'tertiary-700'}>{error}</Text>
+				<View className="mt-2" paddingBottom='small'>
+					<Text className="text-xs text-tertiary-700">{error}</Text>
 				</View>
 			)}
 			{shipping && (
-				<View
-					display='flex'
-					direction='column'
-					marginVertical='small'
-					paddingVertical='small'
-					borderWidth='hairline'
-					borderColor='neutral-300'
-					borderRadius='small'
-					alignItems='center'
-					justifyContent='between'>
+				<View className="flex flex-col my-2 py-2 border border-neutral-300 rounded-sm items-center justify-between">
 					{shipping?.options.map((item, index) => (
-						<View
-							key={index}
-							display='flex'
-							direction='row'
-							alignItems='center'
-							width='100%'>
+						<View key={index} className="flex flex-row items-center w-full">
 							{isUnavailable ? (
 								getMessageError(item?.label)
 							) : (
 								<>
 									{isLoading ? (
-										<View
-											width='100%'
-											display='flex'
-											alignItems='center'
-											justifyContent='center'>
+										<View className="w-full flex items-center justify-center">
 											<Loading />
 										</View>
 									) : (
 										<>
-											<View
-												width='25%'
-												padding='small'>
+											<View className="w-1/4 p-2">
 												<Radio
 													name='shippingOptions'
 													value={item?.slas[0]?.id}
@@ -195,29 +165,19 @@ export default function Freight(props) {
 													onChange={() => onSetCartFreight(item)}
 												/>
 											</View>
-											<View
-												width='100%'
-												display='flex'
-												direction='column'>
-												<Text fontWeight='bold'>{item?.label}</Text>
-												<Text
-													fontSize='nano'
-													color='neutral-500'>
+											<View className="w-full flex flex-col">
+												<Text className="font-bold"
+												>{item?.label}</Text>
+												<Text className="text-xs text-neutral-500">
 													{item?.shippingEstimate}
 												</Text>
 												{item.isPickupInPoint && (
-													<Text
-														fontSize='nano'
-														color='neutral-500'>
+													<Text className="text-xs text-neutral-500">
 														{item?.pickUpAddress}
 													</Text>
 												)}
 											</View>
-											<View
-												display='flex'
-												width='30%'
-												justifyContent='end'
-												padding='small'>
+											<View className="flex w-3/10 justify-end p-2">
 												<Text>{item?.price}</Text>
 											</View>
 										</>

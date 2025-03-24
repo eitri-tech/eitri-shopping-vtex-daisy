@@ -2,7 +2,7 @@ module.exports = {
   "name": "eitri-shopping-vtex-daisy-cart",
   "title": "eitri-shopping-vtex-daisy-cart",
   "slug": "eitri-shopping-vtex-daisy-cart",
-  "eitri-luminus": "1.76.0",
+  "eitri-luminus": "2.0.0-alpha.7",
   "eitri-bifrost": "3.2.0",
   "eitri-commons": "2.1.2",
   "version": "0.1.0",
@@ -14,7 +14,7 @@ module.exports = {
   "eitri-app-dependencies": {
     "eitri-shopping-vtex-daisy-shared": {
       "isEitriAppShared": true,
-      "version": "0.3.10"
+      "version": "0.3.17"
     },
     "eitri-shopping-vtex-shared": {
       "isEitriAppShared": true,

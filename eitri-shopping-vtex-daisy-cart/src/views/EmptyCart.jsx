@@ -1,4 +1,5 @@
 import Eitri from 'eitri-bifrost'
+import {View, Text, Image} from "eitri-luminus";
 import { useTranslation } from 'eitri-i18n'
 import iconCart from '../assets/images/cart-01.svg'
 import { CustomButton } from 'eitri-shopping-vtex-daisy-shared'
@@ -13,55 +14,31 @@ export default function EmptyCart(props) {
 	}
 
 	return (
-		<Window
+		<Page
 			bottomInset
 			topInset>
-			<View
-				grow='1'
-				direction='column'
-				paddingVertical='giant'
-				paddingHorizontal='large'
-				justifyContent='center'
-				alignItems='center'>
-				<View
-					direction='column'
-					alignItems='center'
-					justifyContent='center'
-					gap='20px'
-					marginBottom='medium'>
+			<View className="flex-1 flex flex-col py-12 px-6 justify-center items-center">
+				<View className="flex flex-col items-center justify-center gap-5 mb-4">
 					<Image
 						src={iconCart}
-						width={'50px'}
+						className="w-[50px]"
 					/>
-					<View
-						display='flex'
-						direction='column'
-						justifyContent='start'
-						alignSelf='center'>
-						<Text
-							fontWeight='bold'
-							color='primary-base'
-							fontSize='extra-large'
-							textAlign='center'>
+					<View className="flex flex-col justify-start self-center">
+						<Text className="font-bold text-primary-base text-3xl text-center">
 							{t('emptyCart.txtEmptyCart')}
 						</Text>
-						<Text
-							marginTop='large'
-							color='neutral-700'
-							fontSize='medium'
-							textAlign='center'>
+						<Text className="mt-6 text-neutral-700 text-base text-center">
 							{t('emptyCart.txtMessageList')}
 						</Text>
 					</View>
 					{showCloseButton && (
 						<CustomButton
-							wide
 							label={t('emptyCart.labelButton')}
 							onPress={closeEitriApp}
 						/>
 					)}
 				</View>
 			</View>
-		</Window>
+		</Page>
 	)
 }

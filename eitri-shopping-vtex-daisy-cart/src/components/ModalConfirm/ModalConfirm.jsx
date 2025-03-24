@@ -1,5 +1,5 @@
-import { Spacing, CustomButton } from 'eitri-shopping-vtex-daisy-shared'
-
+import { CustomButton } from 'eitri-shopping-vtex-daisy-shared'
+import {View, Text} from "eitri-luminus";
 export default function ModalConfirm(props) {
 	const { text, showModal, removeItem, closeModal } = props
 
@@ -8,38 +8,20 @@ export default function ModalConfirm(props) {
 			show={showModal}
 			position={'center'}
 			onClose={closeModal}>
-			<View
-				display='flex'
-				direction='column'
-				paddingHorizontal='large'
-				paddingVertical='large'
-				backgroundColor='accent-100'
-				alignItems='center'
-				borderRadius='medium'
-				borderColor='neutral-300'
-				width='80%'>
-				<View
-					display='flex'
-					direction='column'
-					width='100%'
-					alignItems='center'
-					justfyContent='center'>
-					<Text
-						textAlign='center'
-						fontSize='medium'
-						fontWeight='bold'>
+			<View className="flex flex-col px-6 py-6 bg-accent-100 items-center rounded-md border border-neutral-300 w-4/5">
+				<View className="flex flex-col w-full items-center justify-center">
+					<Text className="text-center text-base font-bold"
+						>
 						{text}
 					</Text>
-					<View width='100%'>
+					<View className="w-full">
 						<CustomButton
-							marginTop='large'
 							label={'Excluir'}
 							onPress={() => removeItem(true)}
 							block
 						/>
 						<CustomButton
 							variant='outlined'
-							marginTop='small'
 							label={'Cancelar'}
 							onPress={() => removeItem(false)}
 							block

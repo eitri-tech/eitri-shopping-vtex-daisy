@@ -1,123 +1,128 @@
+import { View, Text, Button } from 'eitri-luminus'
 import { CustomButton, Spacing, Divisor } from 'eitri-shopping-vtex-daisy-shared'
 import { useTranslation } from 'eitri-i18n'
 import { formatAmountInCents } from '../../utils/utils'
-import {useLocalShoppingCart} from "../../providers/LocalCart";
-import {navigateToCheckout} from "../../services/navigationService";
+import { useLocalShoppingCart } from "../../providers/LocalCart";
+import { navigateToCheckout } from "../../services/navigationService";
 
 export default function CartSummary(props) {
-  const { cart } = useLocalShoppingCart()
+	const { cart } = useLocalShoppingCart()
 
 	const [collapsed, setCollapsed] = useState(true)
 
-  const [itemsValue, setItemsValue] = useState({ value: null })
-  const [shipping, setShipping] = useState({ value: null })
-  const [discounts, setDiscounts] = useState({ value: null })
+	const [itemsValue, setItemsValue] = useState({ value: null })
+	const [shipping, setShipping] = useState({ value: null })
+	const [discounts, setDiscounts] = useState({ value: null })
 
 	const { t } = useTranslation()
 
-  useEffect(() => {
-    if (!cart) return
-    setItemsValue(getTotalizerById(cart.totalizers, 'Items'))
-    setShipping(getTotalizerById(cart.totalizers, 'Shipping'))
-    setDiscounts(getTotalizerById(cart.totalizers, 'Discounts'))
-  }, [cart])
+	useEffect(() => {
+		if (!cart) return
+		setItemsValue(getTotalizerById(cart.totalizers, 'Items'))
+		setShipping(getTotalizerById(cart.totalizers, 'Shipping'))
+		setDiscounts(getTotalizerById(cart.totalizers, 'Discounts'))
+	}, [cart])
 
-  const getTotalizerById = (totalizers, id) => totalizers.find(item => item.id === id)
+	const getTotalizerById = (totalizers, id) => totalizers.find(item => item.id === id)
 
-  const goToCheckout = async () => {
-    if (isValidToProceed(cart)) {
-      navigateToCheckout(cart?.orderFormId)
-    }
-  }
+	const goToCheckout = async () => {
+		if (isValidToProceed(cart)) {
+			navigateToCheckout(cart?.orderFormId)
+		}
+	}
 
-  const isValidToProceed = cart => {
-    if (!cart) return false
-    if (!cart?.items) return false
-    if (cart?.shipping?.shippingUnavailable) return false
-    return cart?.items.length !== 0
-  }
+	const isValidToProceed = cart => {
+		if (!cart) return false
+		if (!cart?.items) return false
+		if (cart?.shipping?.shippingUnavailable) return false
+		return cart?.items.length !== 0
+	}
 
-  return (
+	return (
 		<>
 			<View
-				backgroundColor='background-color'
-				position='fixed'
-				bottom='0'>
-				<Divisor />
+				className="bg-base-100 fixed bottom-0 shadow-lg">
+				{/* <Divisor /> */}
 
-				<Spacing height={'10px'} />
+				<View className={'h-[10px]'} />
 
-				<Touchable
-					onPress={() => setCollapsed(!collapsed)}
-					display='flex'
-					justifyContent='center'>
-					<Icon
-						iconKey={collapsed ? 'chevron-up' : 'chevron-down'}
-						width={24}
-						height={24}
-					/>
-				</Touchable>
+				<Button
+					onClick={() => setCollapsed(!collapsed)}
+					className="flex justify-center">
+					{collapsed ?
+						<svg
+							width="24px"
+							height="24px"
+							viewBox="0 0 16 16"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M13.4454 10.4455L8.71747 5.71758C8.32694 5.32705 7.69378 5.32705 7.30325 5.71758L2.57532 10.4455"
+								stroke="#707070"
+								strokeLinecap="round"
+							/>
+						</svg>
+						:
+						<svg
+							width="24px"
+							height="24px"
+							viewBox="0 0 16 16"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M2.57535 5.42468L7.30328 10.1526C7.69381 10.5431 8.32697 10.5431 8.7175 10.1526L13.4454 5.42468"
+								stroke="#707070"
+								strokeLinecap="round"
+							/>
+						</svg>}
+
+				</Button>
 
 				{!collapsed && (
 					<>
 						<View
-							display='flex'
-							direction='column'
-							padding='small'>
+							className="card-body">
 							{itemsValue?.value && (
 								<View
-									display='flex'
-									justifyContent='between'
-									paddingTop='nano'>
+									className="flex justify-between py-2">
 									<Text
-										color='neutral-500'
-										fontSize='small'>
+										className="text-base-content/70 text-sm">
 										{t('cartSummary.txtSubtotal')}
 									</Text>
-									<Text fontSize='small'>{formatAmountInCents(itemsValue.value)}</Text>
+									<Text className="text-sm">{formatAmountInCents(itemsValue.value)}</Text>
 								</View>
 							)}
 							{discounts?.value && (
 								<View
-									display='flex'
-									justifyContent='between'
-									paddingTop='nano'>
+									className="flex justify-between py-2">
 									<Text
-										color='neutral-500'
-										fontSize='small'>
+										className="text-base-content/70 text-sm">
 										{t('cartSummary.txtDiscount')}
 									</Text>
-									<Text fontSize='small'>{formatAmountInCents(discounts.value)}</Text>
+									<Text className="text-sm">{formatAmountInCents(discounts.value)}</Text>
 								</View>
 							)}
 							{shipping && (
 								<View
-									display='flex'
-									justifyContent='between'
-									paddingTop='nano'>
+									className="flex justify-between py-2">
 									<Text
-										color='neutral-500'
-										fontSize='small'>
+										className="text-base-content/70 text-sm">
 										{t('cartSummary.txtDelivery')}
 									</Text>
-									<Text fontSize='small'>{formatAmountInCents(shipping.value)}</Text>
+									<Text className="text-sm">{formatAmountInCents(shipping.value)}</Text>
 								</View>
 							)}
 							{cart?.value && (
 								<View
-									display='flex'
-									justifyContent='between'
-									paddingTop='nano'>
+									className="flex justify-between py-2">
 									<Text
-										color='neutral-900'
-										fontWeight='bold'
-										fontSize='medium'>
+										className="text-base-content font-bold text-base">
 										{t('cartSummary.txtTotal')}
 									</Text>
 									<Text
-										fontSize='medium'
-										fontWeight='bold'
-										color='secondary-500'>
+										className="text-base font-bold text-primary">
 										{formatAmountInCents(cart.value)}
 									</Text>
 								</View>
@@ -126,26 +131,20 @@ export default function CartSummary(props) {
 					</>
 				)}
 
-				<Spacing height={'10px'} />
+<View className={'h-[10px]'} />
 
 				<View
-					display='flex'
-					width='100vw'
-					justifyContent='center'
-					paddingHorizontal='large'
-					alignItems='center'>
+					className="flex w-screen justify-center px-6 items-center">
 					<CustomButton
-						marginTop='large'
 						borderRadius='small'
 						label={t('cartSummary.labelFinish')}
 						onPress={goToCheckout}
 					/>
 				</View>
-				<Spacing height={'16px'} />
+				<View className={'h-[16px]'} />
 				<View bottomInset />
 			</View>
-
-			<Spacing height={collapsed ? '111px' : '224px'} />
+			<View className={collapsed ? 'h-[111px]' : 'h-[224px]' }/>
 		</>
 	)
 }
