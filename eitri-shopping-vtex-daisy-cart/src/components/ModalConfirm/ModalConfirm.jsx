@@ -1,4 +1,4 @@
-import { Spacing, CustomButton } from 'eitri-shopping-vtex-daisy-shared'
+import {  CustomButton } from 'eitri-shopping-vtex-daisy-shared'
 import {View, Text} from "eitri-luminus";
 export default function ModalConfirm(props) {
 	const { text, showModal, removeItem, closeModal } = props

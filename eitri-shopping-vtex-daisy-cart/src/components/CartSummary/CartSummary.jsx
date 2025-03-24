@@ -1,5 +1,5 @@
 import { View, Text, Button, Icon } from 'eitri-luminus'
-import { CustomButton, Spacing, Divisor } from 'eitri-shopping-vtex-daisy-shared'
+import { CustomButton } from 'eitri-shopping-vtex-daisy-shared'
 import { useTranslation } from 'eitri-i18n'
 import { formatAmountInCents } from '../../utils/utils'
 import { useLocalShoppingCart } from "../../providers/LocalCart";
@@ -42,9 +42,9 @@ export default function CartSummary(props) {
 		<>
 			<View
 				className="bg-base-100 fixed bottom-0 shadow-lg">
-				<Divisor />
+				{/* <Divisor /> */}
 
-				<Spacing height={'10px'} />
+				<View className={'h-[10px]'} />
 
 				<Button
 					onClick={() => setCollapsed(!collapsed)}
@@ -131,7 +131,7 @@ export default function CartSummary(props) {
 					</>
 				)}
 
-				<Spacing height={'10px'} />
+<View className={'h-[10px]'} />
 
 				<View
 					className="flex w-screen justify-center px-6 items-center">
@@ -142,11 +142,10 @@ export default function CartSummary(props) {
 						onPress={goToCheckout}
 					/>
 				</View>
-				<Spacing height={'16px'} />
+				<View className={'h-[16px]'} />
 				<View bottomInset />
 			</View>
-
-			<Spacing height={collapsed ? '111px' : '224px'} />
+			<View className={collapsed ? 'h-[111px]' : 'h-[224px]' }/>
 		</>
 	)
 }

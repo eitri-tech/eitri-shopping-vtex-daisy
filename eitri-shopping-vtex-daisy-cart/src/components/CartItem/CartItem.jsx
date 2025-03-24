@@ -2,7 +2,7 @@ import { View, Text, Button, Image } from 'eitri-luminus'
 import trash from '../../assets/images/trash-01.svg'
 import Quantity from '../Quantity/Quantity'
 import SaveButton from '../SaveButton/SaveButton'
-import { Spacing, Loading } from 'eitri-shopping-vtex-daisy-shared'
+import { View, Loading } from 'eitri-shopping-vtex-daisy-shared'
 import { addToWishlist, checkWishlistItem, removeItemFromWishlist } from '../../services/customerService'
 import ModalConfirm from '../ModalConfirm/ModalConfirm'
 import { useTranslation } from 'eitri-i18n'
@@ -144,12 +144,12 @@ export default function CartItem(props) {
 				{message && (
 					<View
 						className="flex flex-col justify-center items-center">
-						<Spacing height={'10px'} />
+						<View className={'h-[10px]'} />
 						<Text
 							className="text-center text-tertiary-500">
 							{message.text || t('cartItem.txtMessageUnavailable')}
 						</Text>
-						<Spacing height={'10px'} />
+						<View className={'h-[10px]'} />
 					</View>
 				)}
 			</View>
