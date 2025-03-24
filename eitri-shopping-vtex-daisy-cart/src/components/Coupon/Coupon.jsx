@@ -124,7 +124,7 @@ export default function Coupon(props) {
 					<Text className={invalidCoupon ? "text-error" : "text-success"}>{couponTextAlert}</Text>
 				</View>
 			)}
-			<Spacing />
+			<View className={'h-[10px]'} />
 		</View>
 	)
 }
