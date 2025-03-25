@@ -1,3 +1,4 @@
+import {Page, View, Text, Image} from "eitri-luminus";
 import pixImg from '../assets/images/pix.png'
 import Eitri from 'eitri-bifrost'
 import { sendPageView, logEvent } from '../services/trackingService'
@@ -84,50 +85,32 @@ export default function PixOrder(props) {
 	if (!pixPayload) return null
 
 	return (
-		<Window
+		<Page
 			topInset
 			bottomInset>
 			<View
-				display='flex'
-				direction='column'
-				justifyContent='center'
-				alignItems='center'
-				minHeight='100vh'
-				padding='small'
-				gap='20px'>
+				className="flex flex-col justify-center items-center min-h-screen p-small gap-5">
 				<View
-					display='flex'
-					direction='column'
-					justifyContent='center'
-					alignItems='center'
-					gap='12px'>
+					 className="flex flex-col justify-center items-center gap-2\.5">
 					<Image
 						src={pixImg}
-						width='50%'
+						className="w-1/2"
 					/>
 					<Text>{t('pixOrder.txtTimeRemaining')}&nbsp;{formatTime(timeOut)}</Text>
 				</View>
 
 				<View
-					display='flex'
-					direction='column'
-					justifyContent='center'
-					alignItems='center'>
+					className="flex flex-col justify-center items-center">
 					<Image
 						src={pixPayload.qrCodeBase64Image}
-						width='70%'
+						className="w-[70%]"
 					/>
 				</View>
 
 				<View
-					maxWidth='100%'
-					borderRadius='small'
-					padding='extra-small'
-					borderColor='neutral-500'
-					borderWidth='hairline'>
+					className="max-w-full rounded-sm p-extra-small border border-neutral-500 border-hairline">
 					<Text
-						overflowWrap='break-word'
-						maxWidth='100%'>
+					 className="break-words max-w-full">
 						{pixPayload.code}
 					</Text>
 				</View>
@@ -138,6 +121,6 @@ export default function PixOrder(props) {
 					onPress={copyCode}
 				/>
 			</View>
-		</Window>
+		</Page>
 	)
 }
