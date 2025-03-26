@@ -31,7 +31,7 @@ export default function DeliveryData(props) {
 			title={isPickUp ? t('deliveryData.txtWithdrawal') : t('deliveryData.txtDelivery')}
 			icon={iconTruck}>
 			{isPickUp ? (
-				<Text fontSize='extra-small'>{pickupAddress}</Text>
+				<Text className="text-xs">{pickupAddress}</Text>
 			) : (
 				<>
 					{firstName && isAddressFilled(address) && (

@@ -3,20 +3,14 @@ export default function Alert(props) {
 
 	return (
 		<View
-			marginTop='nano'
-			backgroundColor={backgroundColor}
-			borderRadius={'small'}
-			display={'flex'}
-			gap={'14px'}
-			alignItems={'center'}
-			padding={'nano'}>
-			<Icon
+			className={`mt-2 ${backgroundColor} rounded flex gap-3.5 items-center p-2`}>
+			{/* <Icon
 				iconKey={iconKey}
 				color={colorIcon}
 				width={20}
 				height={20}
-			/>
-			<Text color={colorMessage}>{message}</Text>
+			/> */}
+			<Text className={`text-${colorMessage}`}>{message}</Text>
 		</View>
 	)
 }
