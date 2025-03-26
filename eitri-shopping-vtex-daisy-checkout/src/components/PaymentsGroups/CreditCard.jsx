@@ -142,7 +142,7 @@ export default function CreditCard(props) {
 			onPress={onSelectThisGroup}
 			isChecked={groupName === selectedPaymentData?.groupName}>
 			<View paddingHorizontal='extra-small'>
-				<Text fontWeight='bold'>Bandeiras aceitas:</Text>
+				<Text className="font-bold">Bandeiras aceitas:</Text>
 				<View
 					display='flex'
 					justifyContent='between'
@@ -259,7 +259,7 @@ export default function CreditCard(props) {
 					</Dropdown>
 				</View>
 				<View marginVertical='nano'>
-					<Text fontWeight='bold'>Endereço de cobrança:</Text>
+					<Text className="font-bold">Endereço de cobrança:</Text>
 					{cart.shipping?.address && (
 						<View
 							marginVertical='nano'
@@ -273,7 +273,7 @@ export default function CreditCard(props) {
 								checked={billingAddressSame}
 								onChange={checkBillingAddressSame}
 							/>
-							<Text>{`Seu endereço de fatura é o mesmo da entrega`}</Text>
+							<Text className="text-sm">{`Seu endereço de fatura é o mesmo da entrega`}</Text>
 						</View>
 					)}
 					{!billingAddressSame && (

@@ -1,35 +1,24 @@
+import { View, Text, Button } from 'eitri-luminus'
+import Radio from '../Radio/Radio'
+
 export default function GroupsWrapper(props) {
 	const { title, icon, isChecked, children, onPress } = props
 
 	return (
-		<Touchable
-			onPress={onPress}
-			paddingVertical='small'
-			paddingHorizontal='extra-small'
-			borderWidth='hairline'
-			borderColor='neutral-400'
-			borderRadius='small'
-			direction='column'>
-			<View
-				direction='column'
-				width='100%'>
-				<View
-					direction='row'
-					alignItems='center'
-					justifyContent='between'
-					gap={12}>
-					<View
-						direction='row'
-						alignItems='center'
-						gap={12}>
+		<Button
+			onClick={onPress}
+			className="py-2 px-1 border border-neutral-400 rounded flex flex-col">
+			<View className="w-full flex flex-col">
+				<View className="flex flex-row items-center justify-between gap-3">
+					<View className="flex flex-row items-center gap-3">
 						<Radio checked={isChecked} />
-						<Text fontSize='extra-small'>{title}</Text>
+						<Text className="text-xs">{title}</Text>
 					</View>
 
 					<View>{icon}</View>
 				</View>
 			</View>
-			{children && isChecked && <View marginTop='large'>{children}</View>}
-		</Touchable>
+			{children && isChecked && <View className="mt-4">{children}</View>}
+		</Button>
 	)
 }

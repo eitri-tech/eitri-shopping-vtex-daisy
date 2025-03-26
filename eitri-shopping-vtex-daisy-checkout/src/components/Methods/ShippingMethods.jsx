@@ -1,4 +1,6 @@
 import { useTranslation } from 'eitri-i18n'
+import { View, Text, Button } from 'eitri-luminus'
+import Radio from '../Radio/Radio'
 
 export default function ShippingMethods(props) {
 	const { customLogisticInfo, onSelectCustomLogistiInfoOption, ...rest } = props
@@ -15,61 +17,31 @@ export default function ShippingMethods(props) {
 
 	return (
 		<View {...rest}>
-			<Text
-				fontWeight='bold'
-				fontSize='extra-small'
-				marginBottom='nano'>
+			<Text className="font-bold text-xs mb-1">
 				{t('shippingMethods.txtSelectDelivery')}
 			</Text>
-			<View
-				width='100%'
-				direction='column'
-				borderRadius='small'
-				borderWidth='hairline'
-				borderColor='neutral-700'
-				paddingHorizontal='small'>
+			<View className="w-full flex flex-col rounded border border-neutral-700 px-4">
 				{customLogisticInfo &&
 					customLogisticInfo?.options.map((option, index) => (
-						<Touchable
+						<Button
 							key={option.label}
-							onPress={() => handleMethodChange(option)}
-							borderBottomWidth={index < customLogisticInfo?.options.length - 1 ? 'hairline' : 'none'}
-							borderColor='neutral-700'>
-							<View
-								paddingVertical='small'
-								justifyContent='between'
-								paddingHorizontal='extra-small'
-								alignItems='center'
-								width='100%'
-								display='flex'>
-								<View
-									direction='row'
-									alignItems='center'
-									gap={12}>
+							onClick={() => handleMethodChange(option)}
+							className={`border-b border-neutral-700 ${index < customLogisticInfo?.options.length - 1 ? '' : 'border-b-0'}`}>
+							<View className="py-2 px-1 flex justify-between items-center w-full">
+								<View className="flex flex-row items-center gap-3">
 									<Radio checked={option.isCurrent} />
-									<View
-										direction='column'
-										gap='6px'>
+									<View className="flex flex-col gap-1.5">
 										<Text>{option.label}</Text>
-										<Text
-											fontSize='nano'
-											color='neutral-700'>
+										<Text className="text-xs text-neutral-700">
 											{option?.shippingEstimate}
 										</Text>
 									</View>
 								</View>
-								<View
-									width='20%'
-									borderLeftWidth='hairline'
-									borderColor='neutral-700'
-									height={35}
-									direction='row'
-									alignItems='center'
-									paddingLeft='extra-small'>
+								<View className="w-1/5 border-l border-neutral-700 h-[35px] flex flex-row items-center pl-1">
 									<Text>{option.price}</Text>
 								</View>
 							</View>
-						</Touchable>
+						</Button>
 					))}
 			</View>
 		</View>

@@ -1,10 +1,13 @@
 import { useLocalShoppingCart } from '../../providers/LocalCart'
 import { CustomInput, Loading, CustomButton } from 'eitri-shopping-vtex-daisy-shared'
+import { Button } from 'eitri-shopping-vtex-daisy-shared'
+import { useTranslation } from 'react-i18next'
 
 export default function GiftCardInput(props) {
 	const { cart, setPaymentOption } = useLocalShoppingCart()
 	const [isLoading, setIsLoading] = useState(false)
 	const [redemptionCode, setRedemptionCode] = useState('')
+	const { t } = useTranslation()
 
 	const addGiftCard = async () => {
 		try {
@@ -90,17 +93,18 @@ export default function GiftCardInput(props) {
 							<View
 								gap={5}
 								direction='row'>
-								<Text>{`${gift.redemptionCode} - ${gift.formattedValue}`} </Text>
+								<Text className="text-sm">{`${gift.redemptionCode} - ${gift.formattedValue}`} </Text>
 							</View>
-							<Touchable onPress={() => removeGiftCart(gift.id)}>
-								<View>
-									<Text
-										color='primary-500'
-										textDecoration='underline'>
-										Remover
+							<View className="flex flex-row items-center justify-between">
+								<Text className="text-xs font-bold">
+									{gift.name}
+								</Text>
+								<Button onClick={() => removeGiftCart(gift.id)}>
+									<Text className="text-xs font-bold text-primary-500">
+										{t('giftCardInput.txtRemove')}
 									</Text>
-								</View>
-							</Touchable>
+								</Button>
+							</View>
 						</View>
 					))}
 			</View>
