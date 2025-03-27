@@ -1,7 +1,7 @@
 import { useLocalShoppingCart } from '../../providers/LocalCart'
 import { CustomInput, Loading, CustomButton } from 'eitri-shopping-vtex-daisy-shared'
 import { Button } from 'eitri-shopping-vtex-daisy-shared'
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'eitri-i18n'
 
 export default function GiftCardInput(props) {
 	const { cart, setPaymentOption } = useLocalShoppingCart()

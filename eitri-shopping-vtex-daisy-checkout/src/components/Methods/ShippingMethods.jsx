@@ -1,6 +1,5 @@
 import { useTranslation } from 'eitri-i18n'
-import { View, Text, Button } from 'eitri-luminus'
-import Radio from '../Radio/Radio'
+import { View, Text, Button, Radio } from 'eitri-luminus'
 
 export default function ShippingMethods(props) {
 	const { customLogisticInfo, onSelectCustomLogistiInfoOption, ...rest } = props

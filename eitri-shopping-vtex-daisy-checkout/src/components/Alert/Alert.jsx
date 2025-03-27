@@ -4,12 +4,12 @@ export default function Alert(props) {
 	return (
 		<View
 			className={`mt-2 ${backgroundColor} rounded flex gap-3.5 items-center p-2`}>
-			{/* <Icon
-				iconKey={iconKey}
-				color={colorIcon}
+			<Image
+				src={iconKey}
+				className={`${colorIcon}`}
 				width={20}
 				height={20}
-			/> */}
+			/>
 			<Text className={`text-${colorMessage}`}>{message}</Text>
 		</View>
 	)

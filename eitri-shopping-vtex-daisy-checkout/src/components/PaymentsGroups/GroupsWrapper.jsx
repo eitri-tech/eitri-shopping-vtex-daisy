@@ -1,5 +1,4 @@
-import { View, Text, Button } from 'eitri-luminus'
-import Radio from '../Radio/Radio'
+import { View, Text, Button, Radio } from 'eitri-luminus'
 
 export default function GroupsWrapper(props) {
 	const { title, icon, isChecked, children, onPress } = props
