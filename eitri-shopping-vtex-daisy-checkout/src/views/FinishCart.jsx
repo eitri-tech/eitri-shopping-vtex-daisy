@@ -121,9 +121,7 @@ export default function FinishCart() {
 	}
 
 	return (
-		<Window
-			bottomInset
-			topInset>
+		<View topInset bottomInset>
 			<HeaderTemplate
 				headerType={HEADER_TYPE.RETURN_AND_TEXT}
 				viewBackButton={true}
@@ -241,6 +239,6 @@ export default function FinishCart() {
 				siteKey={RECAPTCHA_SITE_KEY}
 				onRecaptchaReady={() => setRecaptchaIsReady(true)}
 			/>
-		</Window>
+		</View>
 	)
 }

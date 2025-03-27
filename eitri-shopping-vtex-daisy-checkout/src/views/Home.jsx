@@ -56,13 +56,13 @@ export default function Home() {
 	}
 
 	return (
-		<Window bottomInset topInset>
+		<View topInset bottomInset>
 			<HeaderTemplate
 				headerType={HEADER_TYPE.RETURN_AND_TEXT}
 				viewBackButton={true}
 				contentText={t('home.title')}
 			/>
 			<Loading fullScreen />
-		</Window>
+		</View>
 	)
 }
