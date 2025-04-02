@@ -1,3 +1,4 @@
+import {Page, View, Text} from "eitri-luminus";
 import { sendPageView } from '../services/trackingService'
 import { Spacing, CustomButton, HeaderTemplate, HEADER_TYPE } from 'eitri-shopping-vtex-daisy-shared'
 import { goHome, openAccount } from '../services/navigationService'
@@ -12,76 +13,59 @@ export default function OrderCompleted(props) {
 	}, [])
 
 	return (
-		<Window topInset>
+		<Page topInset>
 			<HeaderTemplate
 				headerType={HEADER_TYPE.RETURN_AND_TEXT}
 				viewBackButton={true}
 				contentText={t('orderCompleted.title')}
 			/>
 			<View
-				padding='large'
-				direction='column'
-				display='flex'
-				marginTop='big'
-				gap={20}>
+				className="p-10 flex flex-col mt-4 gap-5">
 				<View
-					display='flex'
-					direction='column'
-					width='100%'
-					alignItems='center'
-					justifyContent='center'>
-					<Icon
-						width={45}
-						height={45}
-						color={'positive-700'}
-						iconKey={'check-circle'}
-					/>
+				className="flex flex-col w-full items-center justify-center">
+					<svg
+						height="45px"
+						width="45px"
+						viewBox="0 0 310.277 310.277"
+						fill="#000000"
+					>
+						<g>
+						<path
+							style={{ fill: '#12805C' }}
+							d="M155.139,0C69.598,0,0,69.598,0,155.139c0,85.547,69.598,155.139,155.139,155.139 c85.547,0,155.139-69.592,155.139-155.139C310.277,69.598,240.686,0,155.139,0z M144.177,196.567L90.571,142.96l8.437-8.437 l45.169,45.169l81.34-81.34l8.437,8.437L144.177,196.567z"
+						/>
+						</g>
+					</svg>
 					<Spacing height={15} />
 					<Text
-						width='100%'
-						textAlign='center'
-						fontSize='display'
-						fontWeight='bold'>
+						className="w-full text-center text-4xl font-bold">
 						{t('orderCompleted.txtCongratulation')}
 					</Text>
 				</View>
 
-				<View marginTop='large'>
+				<View className="my-4">
 					<Text
-						fontSize='large'
-						width='100%'
-						textAlign='center'>
+						className="text-lg w-full text-center">
 						{t('orderCompleted.txtOrderSuccessful')}
 					</Text>
 				</View>
 
-				<View
-					backgroundColor='neutral-100'
-					paddingHorizontal='medium'
-					paddingVertical='large'
-					marginTop='small'
-					justifyContent='center'
-					alignItems='center'
-					direction='row'>
+				<View className="bg-neutral-100 px-4 py-6 mt-2 flex justify-center items-center">
 					<Text
-						fontSize='lerge'
-						fontWeight='bold'>
+						 className="text-lg font-bold">
 						{t('orderCompleted.txtOrderNumber')}
 					</Text>
 					&nbsp;
-					<Text fontSize='small'>{orderId}</Text>
+					<Text className="text-sm">{orderId}</Text>
 				</View>
 
 				<Text
-					fontSize='large'
-					textAlign='center'>
+					className="text-lg text-center">
 					{t('orderCompleted.txtOrderFollow')}
 				</Text>
 
 				<View
-					direction='column'
-					justifyContent='center'
-					alignItems='center'>
+					className="flex flex-col justify-center items-center">
 					<CustomButton
 						borderRadius='pill'
 						marginTop='large'
@@ -101,6 +85,6 @@ export default function OrderCompleted(props) {
 					/>
 				</View>
 			</View>
-		</Window>
+		</Page>
 	)
 }

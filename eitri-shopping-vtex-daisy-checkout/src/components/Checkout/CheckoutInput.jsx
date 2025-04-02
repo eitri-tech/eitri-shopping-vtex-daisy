@@ -2,9 +2,9 @@ export default function CheckoutInput(props) {
 	const { icon, type, backgroundColor, mask, label, width, ...rest } = props
 
 	return (
-		<View width='100%'>
+		<View className="w-full">
 			{label && (
-				<View marginBottom='nano'>
+				<View className="mb-2">
 					<Text
 						fontSize='extra-small'
 						fontWeight={'bold'}>
@@ -13,16 +13,7 @@ export default function CheckoutInput(props) {
 				</View>
 			)}
 			<View
-				backgroundColor={backgroundColor || 'background-color'}
-				borderColor='neutral-300'
-				borderWidth='hairline'
-				height='37px'
-				display='flex'
-				alignItems='center'
-				color='neutral-500'
-				paddingHorizontal='small'
-				width={width || '100%'}
-				borderRadius='pill'>
+				className={`${backgroundColor || 'bg-background-color'} border border-neutral-300 h-[37px] flex items-center text-neutral-500 px-4 ${width || 'w-full'} rounded-full`}>
 				{icon && (
 					<View>
 						<Image src={icon} />

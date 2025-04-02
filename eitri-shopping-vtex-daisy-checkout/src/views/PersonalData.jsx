@@ -1,3 +1,4 @@
+import {Page, View, Text, Button} from "eitri-luminus";
 import Eitri from 'eitri-bifrost'
 import { CustomButton, Loading, HeaderTemplate, HEADER_TYPE, CustomInput } from 'eitri-shopping-vtex-daisy-shared'
 import { useLocalShoppingCart } from '../providers/LocalCart'
@@ -221,7 +222,7 @@ export default function PersonalData() {
 	}
 
 	return (
-		<Window
+		<Page
 			topInset
 			bottomInset>
 			{isLoading && <Loading fullScreen />}
@@ -232,20 +233,12 @@ export default function PersonalData() {
 			/>
 
 			<View
-				padding='large'
-				grow='1'
-				direction='column'
-				justifyContent='between'>
+				className="p-10 flex-1 flex flex-col justify-between"> 
 				<View>
 					<View
-						display='flex'
-						direction='column'
-						gap='16px'>
+						 className="flex flex-col gap-16">
 						<View
-							display={'flex'}
-							gap={'8px'}
-							width={'100%'}
-							alignItems={'end'}>
+							 className="flex gap-8 w-full items-end">
 							<CustomInput
 								width='100%'
 								autoFocus={true}
@@ -285,25 +278,14 @@ export default function PersonalData() {
 							))}
 
 						{userDataVerified && (
-							<View
-								justifyContent='center'
-								alignItems='center'
-								direction='column'>
-								<Touchable
-									block={false}
-									backgroundColor='none'
-									label={
-										isLegalPerson ? t('personalData.labelPerson') : t('personalData.labelCorporate')
-									}
-									onPress={handleLegalPerson}>
-									<Text
-										color={'primary-900'}
-										fontWeight='bold'>
+							<View className="flex flex-col justify-center items-center">
+								<Button className="bg-transparent" onClick={handleLegalPerson}>
+									<Text className="text-primary-900 font-bold">
 										{isLegalPerson
 											? t('personalData.labelPerson')
 											: t('personalData.labelCorporate')}
 									</Text>
-								</Touchable>
+								</Button>
 							</View>
 						)}
 
@@ -324,21 +306,12 @@ export default function PersonalData() {
 				</View>
 
 				{socialNumberError && (
-					<View
-						direction='column'
-						gap='16px'
-						backgroundColor='negative-700'
-						padding='small'
-						borderRadius='small'
-						marginHorizontal='small'>
-						<Text color='neutral-100'>{t('personalData.errorInvalidDoc')}</Text>
+					<View className="flex flex-col gap-16 bg-negative-700 p-small rounded-lg mx-1">
+						<Text className="text-neutral-100">{t('personalData.errorInvalidDoc')}</Text>
 					</View>
 				)}
 
-				<View
-					alignItems='center'
-					paddingHorizontal='extra-small'
-					marginTop='small'>
+				<View className="items-center mt-2"> 
 					<CustomButton
 						disabled={!handleDataFilled()}
 						label={t('personalData.labelButton')}
@@ -346,6 +319,6 @@ export default function PersonalData() {
 					/>
 				</View>
 			</View>
-		</Window>
+		</Page>
 	)
 }

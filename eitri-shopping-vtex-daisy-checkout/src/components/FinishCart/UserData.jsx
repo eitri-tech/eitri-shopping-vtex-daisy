@@ -4,6 +4,7 @@ import SimpleCard from '../Card/SimpleCard'
 import personalIcon from '../../assets/images/personal.svg'
 import { removeClientData } from '../../services/cartService'
 import { useTranslation } from 'eitri-i18n'
+import { View, Text, Button } from 'eitri-bifrost'
 
 export default function UserData(props) {
 	const { cart, startCart } = useLocalShoppingCart()
@@ -30,41 +31,22 @@ export default function UserData(props) {
 			title={t('userData.txtPersonData')}
 			icon={personalIcon}
 			index='1'>
-			<View
-				display='flex'
-				direction='column'>
-				<View
-					direction='row'
-					justifyContent='between'>
-					<Text
-						marginBottom='quark'
-						fontSize='extra-small'>
+			<View className="flex flex-col">
+				<View className="flex flex-row justify-between">
+					<Text className="text-xs mb-1">
 						{email}
 					</Text>
 					{clientProfileData && !cart.canEditData && (
-						<Touchable onPress={clearClientData}>
-							<Text
-								marginBottom='extra-small'
-								color='primary-300'
-								textDecoration='underline'>
-									{t('userData.txtMessageLeave')}
+						<Button onClick={clearClientData}>
+							<Text className="text-xs text-primary-300 underline">
+								{t('userData.txtMessageLeave')}
 							</Text>
-						</Touchable>
+						</Button>
 					)}
 				</View>
-				<Text
-					marginBottom='nano'
-					fontSize='extra-small'>{`${firstName} ${lastName}`}</Text>
-				<Text
-					marginBottom='nano'
-					fontSize='extra-small'>
-					{document}
-				</Text>
-				<Text
-					marginBottom='nano'
-					fontSize='extra-small'>
-					{phone}
-				</Text>
+				<Text className="text-xs mb-1">{`${firstName} ${lastName}`}</Text>
+				<Text className="text-xs mb-1">{document}</Text>
+				<Text className="text-xs mb-1">{phone}</Text>
 			</View>
 		</SimpleCard>
 	)
