@@ -3,7 +3,7 @@ import Eitri from 'eitri-bifrost'
 export const openCart = async cart => {
 	try {
 		Eitri.nativeNavigation.open({
-			slug: 'cart',
+			slug: 'eitri-shopping-vtex-daisy-cart',
 			initParams: { orderFormId: cart?.orderFormId }
 		})
 	} catch (e) {
@@ -14,7 +14,7 @@ export const openCart = async cart => {
 export const openProduct = async (product) => {
 	try {
 		Eitri.nativeNavigation.open({
-			slug: 'pdp',
+			slug: 'eitri-shopping-vtex-daisy-pdp',
 			initParams: { product: product }
 		})
 	} catch (e) {

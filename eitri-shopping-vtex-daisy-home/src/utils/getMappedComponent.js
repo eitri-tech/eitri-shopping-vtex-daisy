@@ -19,7 +19,7 @@ const componentMap = {
 	LastSeenProducts: LastSeenProducts,
 	CategoryListSwipe: CategoryListSwipe,
 	ProductInfiniteScroll: ProductInfiniteScroll,
-	WordPressCardList: BlogPostShelf
+	// WordPressCardList: BlogPostShelf
 }
 
 const shouldReloadOnResume = componentName => {

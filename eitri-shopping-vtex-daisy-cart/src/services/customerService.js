@@ -6,7 +6,7 @@ let CheckLoginPromise = null
 export const requestLogin = () => {
 	return new Promise((resolve, reject) => {
 		Eitri.nativeNavigation.open({
-			slug: 'account',
+			slug: 'eitri-shopping-vtex-daisy-account',
 			initParams: { action: 'RequestLogin' }
 		})
 		CheckLoginPromise = null

@@ -10,9 +10,10 @@ import InstallmentsMsg from '../components/InstallmentsMsg/InstallmentsMsg'
 import CartItemsContent from '../components/CartItemsContent/CartItemsContent'
 import { setLanguage, startConfigure } from '../services/AppService'
 import { Page } from "eitri-luminus";
+import { useTranslation } from 'eitri-i18n'
 export default function Home(props) {
 	const openWithBottomBar = !!props?.location?.state?.tabIndex
-
+	const { t, i18n } = useTranslation()
 	const { cart, startCart } = useLocalShoppingCart()
 
 	const [appIsLoading, setAppIsLoading] = useState(true)
@@ -37,8 +38,8 @@ export default function Home(props) {
 	const startHome = async () => {
 		await startConfigure()
 		await loadCart()
-		setLanguage(i18n)
 		setAppIsLoading(false)
+		setLanguage(i18n)
 		sendPageView('Home')
 	}
 
@@ -61,9 +62,11 @@ export default function Home(props) {
 			/>
 
 			<HeaderTemplate
-				headerType={openWithBottomBar ? HEADER_TYPE.TEXT : HEADER_TYPE.RETURN_AND_TEXT}
+				headerType={"returnAndText"}
 				contentText="Cart"
 			/>
+			
+			<View height="85px" />
 
 			<InstallmentsMsg />
 

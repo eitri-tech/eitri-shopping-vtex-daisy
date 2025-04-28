@@ -153,7 +153,7 @@ export const openNativeProduct = product => {
 	}
 
 	Eitri.nativeNavigation.open({
-		slug: 'catalog',
+		slug: 'eitri-shopping-vtex-daisy-catalog',
 		initParams: { route: 'product', product: product }
 	})
 }

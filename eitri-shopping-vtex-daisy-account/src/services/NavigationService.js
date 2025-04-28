@@ -16,7 +16,7 @@ export const PAGES = {
 export const openProduct = async product => {
 	try {
 		Eitri.nativeNavigation.open({
-			slug: 'pdp',
+			slug: 'eitri-shopping-vtex-daisy-pdp',
 			initParams: { product }
 		})
 	} catch (e) {
