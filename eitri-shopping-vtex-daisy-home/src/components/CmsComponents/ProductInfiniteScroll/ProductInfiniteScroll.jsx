@@ -38,11 +38,11 @@ export default function ProductInfiniteScroll(props) {
 	const _getProductsByFacets = async (selectedFacets, page) => {
 		try {
 			if (productLoading || pagesHasEnded) return
-
+			console.log("selectedFacets",selectedFacets)
 			setProductLoading(true)
 
 			const facetsPath = selectedFacets?.facets?.map(facet => `${facet.key}/${facet.value}`).join('/')
-
+			console.log("facetsPath",facetsPath)
 			const result = await getProductsByFacets(facetsPath, {
 				sort: selectedFacets.sort,
 				query: selectedFacets?.query || selectedFacets?.q || '',

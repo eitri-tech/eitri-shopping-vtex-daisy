@@ -4,7 +4,7 @@ export default function Quantity(props) {
     const { quantity, handleItemQuantity, disable } = props
 
     return (
-        <View className="flex border border-neutral-300 rounded-sm w-1/2 h-[35px] justify-between items-center pl-1">
+        <View className="flex border border-neutral-300 rounded-sm w-3/2 h-[35px] justify-between items-center pl-1">
             <View className="w-1/3 flex items-center justify-center">
                 {quantity === 1 || disable ?
                     <svg width="16px" height="16px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
