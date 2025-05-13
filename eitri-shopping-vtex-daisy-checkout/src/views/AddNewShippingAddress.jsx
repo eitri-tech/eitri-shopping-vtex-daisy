@@ -274,13 +274,13 @@ export default function AddNewShippingAddress(props) {
 												<View
 													display={'flex'}
 													justifyContent={'end'}>
-													<Touchable onPress={() => setSeeCompactedMode(false)}>
+													<View onClick={() => setSeeCompactedMode(false)}>
 														<Text
 															fontWeight={'bold'}
 															color={'primary-500'}>
 															{t('addNewShippingAddress.txtEdit')}
 														</Text>
-													</Touchable>
+													</View>
 												</View>
 											</View>
 

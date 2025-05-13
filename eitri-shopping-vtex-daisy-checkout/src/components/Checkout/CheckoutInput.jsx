@@ -20,15 +20,12 @@ export default function CheckoutInput(props) {
 					</View>
 				)}
 				{mask ? (
-					<MaskedInput
-						borderHidden={true}
+					<TextInput
+						variant="mask"
 						mask={mask}
-						{...rest}
 					/>
 				) : (
-					<Input
-						borderHidden={true}
-						type={'text'}
+					<TextInput
 						{...rest}
 					/>
 				)}
