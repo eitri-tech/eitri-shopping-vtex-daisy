@@ -24,7 +24,10 @@ export default function ShelfOfProductsCarousel(props) {
         <ProductCardLoading gap={gap} />
       ) : (
         <View  className="w-full overflow-x-auto flex space-x-4">
-          <Carousel className="flex" onSwipe={handleScroll}>
+          <Carousel className="flex" config={{
+              onChange: handleScroll
+            }}
+          >
             {productsPage.map((page, index) => (
               <Carousel.Item key={page?.[0]?.productId || index} className="flex w-full gap-2">
                 <View className="w-[50%] pl-2">

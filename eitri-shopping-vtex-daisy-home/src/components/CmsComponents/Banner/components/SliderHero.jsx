@@ -15,7 +15,9 @@ export default function SliderHero(props) {
         </View>
       )}
       <Carousel
-        onSwipe={onSwipe}   
+        config={{
+          onChange: onSwipe
+        }} 
       >
         {imagesList &&
           imagesList.map((image) => (

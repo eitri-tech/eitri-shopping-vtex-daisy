@@ -30,7 +30,7 @@ export default function HeaderTemplate(props) {
 		logo,
 		children
 	} = props
-console.info("@HeaderTemplate",headerType)
+
 	const [backgroundColor, setBackgroundColor] = useState('')
 	const [contentColor, setContentColor] = useState('')
 	const [urlLogo, setUrlLogo] = useState('')

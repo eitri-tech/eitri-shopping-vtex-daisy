@@ -11,7 +11,10 @@ export default function ImageCarousel(props) {
 
   return (
     <View>
-      <Carousel onSwipe={beforeChange}>
+      <Carousel config={{
+          onChange: beforeChange
+        }}
+      >
         {currentSku?.images?.slice(0, 8).map((item, index) => {
           return (
             <Carousel.Item key={index}>

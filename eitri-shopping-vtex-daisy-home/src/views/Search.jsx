@@ -162,6 +162,7 @@ export default function Search(props) {
       >
         <SearchInput incomingValue={incomingSearchTerm} onSubmit={handleSearchSubmit} />
       </HeaderTemplate>
+      <View className="mt-[150px]" />
       {isPristine ? (
         <PristineView />
       ) : (
