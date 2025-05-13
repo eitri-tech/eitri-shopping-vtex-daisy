@@ -1,6 +1,6 @@
 export default function Home() {
 	return (
-		<Window
-			topInset></Window>
+		<Page
+			topInset></Page>
 	)
 }

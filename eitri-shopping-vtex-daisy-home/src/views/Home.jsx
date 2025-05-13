@@ -65,11 +65,11 @@ export default function Home() {
   }
   const navigateToSearch = () => {
     Eitri.navigation.navigate({
-      path: 'Error',
+      path: 'Search',
     })
   }
   return (
-    <Page topInset bottomInset className="bg-white-300">
+    <Page className="bg-white-300">
       <HeaderTemplate
         headerType={HEADER_TYPE.LOGO_SEARCH_AND_CART}
         scrollEffect={true}
