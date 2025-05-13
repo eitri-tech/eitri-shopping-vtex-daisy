@@ -82,27 +82,21 @@ export default function Banner(props) {
     }
   }
   if (mode === 'SliderHero') {
-    console.log("SliderHero")
     return <SliderHero data={data} onClick={processActions} />
   }
   if (mode === 'BannerList') {
-    console.log("BannerList")
     return <BannerList data={data} onClick={processActions} />
   }
   if (mode === 'RoundedBannerList') {
-    console.log("RoundedBannerList")
     return <RoundedBannerList data={data} onClick={processActions} />
   }
   if (mode === 'GridList') {
-    console.log("GridList")
     return <GridList data={data} onClick={processActions} />
   }
   if (mode === 'SingleBanner') {
-    console.log("SingleBanner")
     return <SingleBanner data={data} onClick={processActions} />
   }
   if (mode === 'FitOnScreen') {
-    console.log("FitOnScreen")
     return (
       <View>
         <FitOnScreen data={data} onClick={processActions} />

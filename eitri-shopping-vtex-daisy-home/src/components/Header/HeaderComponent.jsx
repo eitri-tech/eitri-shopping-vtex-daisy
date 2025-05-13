@@ -42,12 +42,9 @@ export default function HeaderComponent(props) {
 	}, [])
 
 	const loadSafeAreas = async () => {
-		// console.warn("loadSafeAreas", window)
 		const { EITRI } = window
-		// console.warn("loadSafeAreas", EITRI)
 		if (EITRI) {
 			const { superAppData } = await EITRI.miniAppConfigs
-			console.warn("loadSafeAreas", superAppData)
 			const { safeAreaInsets } = superAppData
 			const { top } = safeAreaInsets
 			setSafeAreaTop(top)
