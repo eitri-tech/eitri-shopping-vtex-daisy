@@ -1,0 +1,182 @@
+name: Push and publish Eitri Application
+
+on:
+  pull_request:
+    types:
+      - closed
+    branches:
+      - develop
+      - main
+
+env:
+  EITRI_CLI_CLIENT_ID: ${{ secrets.EITRI_CLI_CLIENT_ID }}
+  EITRI_CLI_CLIENT_SECRET: ${{ secrets.EITRI_CLI_CLIENT_SECRET }}
+
+  DEV_ENVID: ${{ vars.APP_DEV_ENV_ID }}
+  PROD_ENVID: ${{ vars.APP_PRD_ENV_ID }}
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check if PR was merged
+        run: |
+          if [ "${{ github.event.pull_request.merged }}" != "true" ]; then
+            echo "❌ PR foi fechado sem merge. Encerrando pipeline."
+            exit 0
+          fi
+          echo "☑️ PR foi mergeado. Continuando pipeline..."
+
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install Eitri CLI
+        run: npm install -g eitri-cli
+
+      - name: Install yq v4 locally
+        run: |
+          mkdir -p $HOME/bin
+          curl -L https://github.com/mikefarah/yq/releases/download/v4.43.1/yq_linux_amd64 -o $HOME/bin/yq
+          chmod +x $HOME/bin/yq
+          echo "$HOME/bin" >> $GITHUB_PATH
+          yq --version
+
+      - name: Detect changed Eitri-apps
+        id: detect
+        run: |
+          set -euo pipefail
+          trap 'echo "❌ Falha na detecção de eitri-apps alterados!"' ERR
+
+          echo "🔍 Detectando eitri-apps alterados..."
+
+          if [ ! -f app-config.yaml ]; then
+            echo "❌ Arquivo app-config.yaml não encontrado na raiz do repositório."
+            exit 1
+          fi
+
+          CHANGED_MODULES=""
+
+          BASE_SHA=${{ github.event.pull_request.base.sha }}
+          HEAD_SHA=${{ github.event.pull_request.head.sha }}
+
+          echo "🔗 Base SHA: $BASE_SHA"
+          echo "🔗 Head SHA: $HEAD_SHA"
+
+          CHANGED_FILES=$(git diff --name-only $BASE_SHA $HEAD_SHA)
+
+          echo "📝 Arquivos alterados detectados:"
+          echo "$CHANGED_FILES"
+
+          MODULE_PATHS=$(yq eval '.eitri-apps[].path' app-config.yaml)
+
+          echo "📂 Paths configurados no app-config.yaml:"
+          echo "$MODULE_PATHS"
+
+          for path in $MODULE_PATHS; do
+            NORMALIZED_PATH=${path#./}
+            echo "🔎 Verificando se $NORMALIZED_PATH foi alterado..."
+
+            MATCH=$(echo "$CHANGED_FILES" | grep -E "^${NORMALIZED_PATH}/" || true)
+
+            if [ -n "$MATCH" ]; then
+              echo "☑️ Eitri-app $path alterado."
+              CHANGED_MODULES="$CHANGED_MODULES $path"
+            else
+              echo "⚠️ Nenhuma alteração detectada em ./$NORMALIZED_PATH."
+            fi
+          done
+
+          if [ -z "$CHANGED_MODULES" ]; then
+            echo "☑️ Nenhum eitri-app alterado."
+          else
+            echo "☑️ Eitri-apps alterados: $CHANGED_MODULES"
+          fi
+
+          echo "changed_modules=$CHANGED_MODULES" >> $GITHUB_OUTPUT
+
+      - name: Process changed eitri-apps
+        if: steps.detect.outputs.changed_modules != ''
+        run: |
+          set -euo pipefail
+          trap 'echo "❌ Falha no processamento dos eitri-apps!"' ERR
+
+          SUCCESSFUL_MODULES=""
+          FAILED_MODULES=""
+
+          for module in ${{ steps.detect.outputs.changed_modules }}; do
+            echo "⚙️ Processando eitri-app: $module"
+
+            if [ ! -d "$module" ]; then
+              echo "⚠️ Diretório $module não encontrado. Pulando..."
+              FAILED_MODULES="$FAILED_MODULES $module"
+              continue
+            fi
+
+            pushd "$module" > /dev/null
+
+            if [[ "${{ github.base_ref }}" == "main" ]]; then
+              ENV_ID="${{ env.PROD_ENVID }}"
+            else
+              ENV_ID="${{ env.DEV_ENVID }}"
+            fi
+
+            echo "🌍 Ambiente selecionado: $ENV_ID"
+
+            NORMALIZED_MODULE=$(printf '%s' "$module" | tr -d '\r\n')
+            echo "☑️ Normalized eitri-app: [$NORMALIZED_MODULE]"
+
+            echo "☑️ Todos os paths em app-config.yaml:"
+            yq eval '.eitri-apps[].path' ../app-config.yaml
+
+            SHARED=$(yq eval '.eitri-apps[] | select(.path | sub("^\\./"; "") == "'"$NORMALIZED_MODULE"'") | .shared' ../app-config.yaml)
+
+            echo "🔍 Valor de SHARED para $module: [$SHARED]"
+
+            if [[ "${SHARED,,}" == "true" ]]; then
+              echo "🔗 Eitri-app $module é compartilhado. Executando 'eitri push-version --shared'"
+              if ! eitri push-version --shared; then
+                echo "❌ Falha ao executar push-version --shared no módulo $module"
+                FAILED_MODULES="$FAILED_MODULES $module"
+                popd > /dev/null
+                continue
+              fi
+            else
+              echo "🔗 Eitri-app $module não é compartilhado. Executando 'eitri push-version'"
+              if ! eitri push-version; then
+                echo "❌ Falha ao executar push-version no módulo $module"
+                FAILED_MODULES="$FAILED_MODULES $module"
+                popd > /dev/null
+                continue
+              fi
+            fi
+
+            if [[ "${{ github.base_ref }}" == "develop" ]]; then
+              echo "🚀 Publicando com 'eitri publish -e $ENV_ID'"
+              if ! eitri publish -e $ENV_ID; then
+                echo "❌ Falha ao executar publish no módulo $module"
+                FAILED_MODULES="$FAILED_MODULES $module"
+                popd > /dev/null
+                continue
+              fi
+            else
+              echo "⚠️ Publicação desativada, PR não é para develop."
+            fi
+
+            SUCCESSFUL_MODULES="$SUCCESSFUL_MODULES $module"
+
+            popd > /dev/null
+            echo "✅ Finalizado processamento do eitri-app: $module"
+          done
+
+          echo "======================================"
+          echo "✅ Módulos processados com sucesso: $SUCCESSFUL_MODULES"
+          echo "❌ Módulos que falharam: $FAILED_MODULES"
+          echo "======================================"
