@@ -1,0 +1,158 @@
+name: Push and publish Eitri Application
+
+on:
+  pull_request:
+    types:
+      - closed
+    branches:
+      - develop
+      - main
+
+env:
+  EITRI_CLI_CLIENT_ID: ${{ secrets.EITRI_CLI_CLIENT_ID }}
+  EITRI_CLI_CLIENT_SECRET: ${{ secrets.EITRI_CLI_CLIENT_SECRET }}
+
+  DEV_ENVID: ${{ vars.APP_DEV_ENV_ID }}
+  PROD_ENVID: ${{ vars.APP_PRD_ENV_ID }}
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check if PR was merged
+        run: |
+          if [ "${{ github.event.pull_request.merged }}" != "true" ]; then
+            echo "❌ PR foi fechado sem merge. Encerrando pipeline."
+            exit 0
+          fi
+          echo "☑️ PR foi mergeado. Continuando pipeline..."
+
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install Eitri CLI
+        run: npm install -g eitri-cli
+
+      - name: Detect changed Eitri-apps by version
+        id: detect
+        run: |
+          set -euo pipefail
+          trap 'echo "❌ Falha na detecção de eitri-apps alterados!"' ERR
+
+          BASE_SHA=${{ github.event.pull_request.base.sha }}
+          HEAD_SHA=${{ github.event.pull_request.head.sha }}
+
+          echo "🔗 Base SHA: $BASE_SHA"
+          echo "🔗 Head SHA: $HEAD_SHA"
+
+          SHARED_MODULES=""
+          NON_SHARED_MODULES=""
+
+          for config_file in $(find . -name 'eitri-app.conf.js'); do
+            module_dir=$(dirname "$config_file")
+            echo "🔍 Analisando eitri-app: $module_dir"
+
+            # Extrair versão no HEAD
+            NEW_VERSION=$(git show $HEAD_SHA:"$config_file" | node -p "eval(require('fs').readFileSync(0)); version" || echo "undefined")
+            # Extrair versão no BASE
+            OLD_VERSION=$(git show $BASE_SHA:"$config_file" | node -p "eval(require('fs').readFileSync(0)); version" || echo "undefined")
+
+            echo "🔸 Versão base: $OLD_VERSION"
+            echo "🔸 Versão nova: $NEW_VERSION"
+
+            if [ "$NEW_VERSION" != "$OLD_VERSION" ]; then
+              echo "✅ Versão modificada, marcar para publicação."
+
+              SHARED_VERSION=$(git show $HEAD_SHA:"$config_file" | node -p "try { eval(require('fs').readFileSync(0)); sharedVersion } catch { '' }" || echo "")
+
+              echo "🔸 sharedVersion: $SHARED_VERSION"
+
+              if [ "$SHARED_VERSION" = "v2" ]; then
+                SHARED_MODULES="$SHARED_MODULES $module_dir"
+              else
+                NON_SHARED_MODULES="$NON_SHARED_MODULES $module_dir"
+              fi
+            else
+              echo "⚠️ Versão não modificada, ignorando."
+            fi
+          done
+
+          echo "shared_modules=$SHARED_MODULES" >> $GITHUB_OUTPUT
+          echo "non_shared_modules=$NON_SHARED_MODULES" >> $GITHUB_OUTPUT
+
+          echo "☑️ Eitri-apps compartilhados a publicar: $SHARED_MODULES"
+          echo "☑️ Eitri-apps comuns a publicar: $NON_SHARED_MODULES"
+
+      - name: Publish shared Eitri-apps
+        if: steps.detect.outputs.shared_modules != ''
+        run: |
+          set -euo pipefail
+          trap 'echo "❌ Falha ao publicar eitri-apps compartilhados!"' ERR
+
+          for module in ${{ steps.detect.outputs.shared_modules }}; do
+            echo "⚙️ Publicando eitri-app compartilhado: $module"
+
+            pushd "$module" > /dev/null
+
+            if [[ "${{ github.base_ref }}" == "main" ]]; then
+              ENV_ID="${{ env.PROD_ENVID }}"
+            else
+              ENV_ID="${{ env.DEV_ENVID }}"
+            fi
+
+            echo "🌍 Ambiente selecionado: $ENV_ID"
+
+            echo "🔗 Executando 'eitri push-version --shared'"
+            eitri push-version --shared
+
+            if [[ "${{ github.base_ref }}" == "develop" ]]; then
+              echo "🚀 Publicando com 'eitri publish -e $ENV_ID'"
+              eitri publish -e $ENV_ID
+            else
+              echo "⚠️ Publicação desativada, PR não é para develop."
+            fi
+
+            popd > /dev/null
+            echo "✅ Finalizado: $module"
+          done
+
+      - name: Publish non-shared Eitri-apps
+        if: steps.detect.outputs.non_shared_modules != ''
+        run: |
+          set -euo pipefail
+          trap 'echo "❌ Falha ao publicar eitri-pps!"' ERR
+
+          for module in ${{ steps.detect.outputs.non_shared_modules }}; do
+            echo "⚙️ Publicando eitri-app: $module"
+
+            pushd "$module" > /dev/null
+
+            if [[ "${{ github.base_ref }}" == "main" ]]; then
+              ENV_ID="${{ env.PROD_ENVID }}"
+            else
+              ENV_ID="${{ env.DEV_ENVID }}"
+            fi
+
+            echo "🌍 Ambiente selecionado: $ENV_ID"
+
+            echo "🔗 Executando 'eitri push-version'"
+            eitri push-version
+
+            if [[ "${{ github.base_ref }}" == "develop" ]]; then
+              echo "🚀 Publicando com 'eitri publish -e $ENV_ID'"
+              eitri publish -e $ENV_ID
+            else
+              echo "⚠️ Publicação desativada, PR não é para develop."
+            fi
+
+            popd > /dev/null
+            echo "✅ Finalizado: $module"
+          done
