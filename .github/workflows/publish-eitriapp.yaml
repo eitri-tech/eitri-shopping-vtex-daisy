@@ -82,7 +82,7 @@ jobs:
           echo "$MODULE_PATHS"
 
           for path in $MODULE_PATHS; do
-            NORMALIZED_PATH=${path#./}
+            NORMALIZED_PATH=$(echo "$path" | sed 's#^./##' | sed 's#/$##')
             echo "🔎 Verificando se $NORMALIZED_PATH foi alterado..."
 
             MATCH=$(echo "$CHANGED_FILES" | grep -E "^${NORMALIZED_PATH}/" || true)
@@ -90,10 +90,11 @@ jobs:
             if [ -n "$MATCH" ]; then
               echo "☑️ Eitri-app $path alterado."
 
-              IS_SHARED=$(yq eval '.eitri-apps[] | select(.path | sub("^\\./"; "") == "'"$NORMALIZED_PATH"'") | .shared' app-config.yaml)
+              IS_SHARED=$(yq eval '.eitri-apps[] | select(.path | sub("^\\./"; "" ) | sub("/$"; "") == "'"$NORMALIZED_PATH"'") | .shared' app-config.yaml || echo "false")
+              IS_SHARED=${IS_SHARED:-false}
               echo "🔍 Valor de SHARED para $path: [$IS_SHARED]"
 
-              if [[ "${IS_SHARED,,}" == "true" ]]; then
+              if [[ "$IS_SHARED" =~ ^[Tt][Rr][Uu][Ee]$ ]]; then
                 CHANGED_SHARED_MODULES="$CHANGED_SHARED_MODULES $path"
               else
                 CHANGED_NON_SHARED_MODULES="$CHANGED_NON_SHARED_MODULES $path"
