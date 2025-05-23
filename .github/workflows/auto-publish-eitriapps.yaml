@@ -60,19 +60,17 @@ jobs:
             module_dir=$(dirname "$config_file")
             echo "🔍🔍🔍 Analisando módulo: $module_dir"
 
-            # Extrair versão no HEAD
             NEW_VERSION=$(git show $HEAD_SHA:"$config_file" | grep "version" | head -1 | sed -E 's/.*version[^:]*:\s*["'\'']([^"'\'']+)["'\''].*/\1/' || echo "undefined")
-            # Extrair versão no BASE
             OLD_VERSION=$(git show $BASE_SHA:"$config_file" | grep "version" | head -1 | sed -E 's/.*version[^:]*:\s*["'\'']([^"'\'']+)["'\''].*/\1/' || echo "undefined")
 
             if [ "$NEW_VERSION" != "$OLD_VERSION" ]; then
-              echo "☑️ Versão modificada: $OLD_VERSION -> $NEW_VERSION"
+              echo "🔸 Versão modificada: $OLD_VERSION -> $NEW_VERSION"
 
               SHARED_VERSION=$(git show $HEAD_SHA:"$config_file" | grep "sharedVersion" | head -1 | sed -E 's/.*sharedVersion[^:]*:\s*["'\'']([^"'\'']+)["'\''].*/\1/' || echo "")
 
               if [ "$SHARED_VERSION" = "v2" ]; then
                 SHARED_MODULES="$SHARED_MODULES $module_dir"
-                echo "☑️ Eitri-app shared identificado."
+                echo "🔸 Eitri-app shared identificado."
               else
                 NON_SHARED_MODULES="$NON_SHARED_MODULES $module_dir"
               fi
@@ -93,6 +91,8 @@ jobs:
           set -euo pipefail
           trap 'echo "❌ Falha ao publicar eitri-apps shared!"' ERR
 
+          PUBLISHED_MODULES=""
+
           for module in ${{ steps.detect.outputs.shared_modules }}; do
             echo "⚙️⚙️⚙️ Publicando shared eitri-app: $module"
 
@@ -102,27 +102,32 @@ jobs:
               ENV_ID="${{ env.PROD_ENVID }}"
             else
               ENV_ID="${{ env.DEV_ENVID }}"
-              fi
+            fi
 
-            echo "🔗 Executando 'eitri push-version --shared'"
-            eitri push-version --shared
+            echo "🔸 Executando 'eitri push-version --shared --message \"${{ github.event.pull_request.title }}\"'"
+            eitri push-version --shared --message "${{ github.event.pull_request.title }}"
 
             if [[ "${{ github.base_ref }}" == "develop" ]]; then
-              echo "🚀 Publicando em dev com 'eitri publish -e $ENV_ID'"
+              echo "🔸 Executando 'eitri publish -e $ENV_ID' em DEV"
               eitri publish -e $ENV_ID
             else
               echo "⚠️ Publicação desativada, PR não é para develop."
             fi
 
             popd > /dev/null
+            PUBLISHED_MODULES="$PUBLISHED_MODULES $module"
             echo "✅ Finalizado: $module"
           done
+
+          echo "✅✅✅ Eitri-apps shared publicados: $PUBLISHED_MODULES"
 
       - name: Publish non-shared Eitri-apps
         if: steps.detect.outputs.non_shared_modules != ''
         run: |
           set -euo pipefail
           trap 'echo "❌ Falha ao publicar módulos não compartilhados!"' ERR
+
+          PUBLISHED_MODULES=""
 
           for module in ${{ steps.detect.outputs.non_shared_modules }}; do
             echo "⚙️ Publicando módulo não compartilhado: $module"
@@ -137,8 +142,8 @@ jobs:
 
             echo "🌍 Ambiente selecionado: $ENV_ID"
 
-            echo "🔗 Executando 'eitri push-version'"
-            eitri push-version
+            echo "🔗 Executando 'eitri push-version --message \"${{ github.event.pull_request.title }}\"'"
+            eitri push-version --message "${{ github.event.pull_request.title }}"
 
             if [[ "${{ github.base_ref }}" == "develop" ]]; then
               echo "🚀 Publicando com 'eitri publish -e $ENV_ID'"
@@ -148,5 +153,8 @@ jobs:
             fi
 
             popd > /dev/null
+            PUBLISHED_MODULES="$PUBLISHED_MODULES $module"
             echo "✅✅✅ Finalizado: $module"
           done
+
+          echo "✅✅✅ Eitri-apps publicados: $PUBLISHED_MODULES"
