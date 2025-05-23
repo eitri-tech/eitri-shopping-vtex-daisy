@@ -142,7 +142,7 @@ jobs:
 
             echo "🌍 Ambiente selecionado: $ENV_ID"
 
-            echo "🔗 Executando 'eitri push-version --message \"${{ github.event.pull_request.title }}\"'"
+            echo "🔗 Executando 'eitri push-version --message \"PR #${{ github.event.pull_request.number }}: ${{ github.event.pull_request.title }}\"'"
             eitri push-version --message "${{ github.event.pull_request.title }}"
 
             if [[ "${{ github.base_ref }}" == "develop" ]]; then
